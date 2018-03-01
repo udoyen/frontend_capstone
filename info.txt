@@ -1,0 +1,7 @@
+Projects needed to work:
+=========================
+
+1) Advanced_css
+2) Advanced_angular
+3) bootstrap_project
+4) tooling_module
