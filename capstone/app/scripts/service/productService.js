@@ -21,12 +21,6 @@ angular.module("capstoneApp").service("productService", function($http, $q) {
       });
 
       return deferred.promise;
-    // $http.get("https://webmppcapstone.blob.core.windows.net/data/itemsdata.json")
-    //   .then(function(response) {
-    //     JSON.stringify(response)
-    //     // this.product = JSON.stringify(response);
-    //     console.log(JSON.stringify(response));
-    //     // alert(JSON.stringify(response));
-    //   })
+    
   };
 });
