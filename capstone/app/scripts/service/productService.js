@@ -21,6 +21,6 @@ angular.module("capstoneApp").service("productService", function($http, $q) {
       });
 
       return deferred.promise;
-    
+
   };
 });

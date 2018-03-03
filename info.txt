@@ -5,3 +5,4 @@ Projects needed to work:
 2) Advanced_angular
 3) bootstrap_project
 4) tooling_module
+5) project/contact_manager

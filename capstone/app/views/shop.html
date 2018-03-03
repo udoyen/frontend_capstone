@@ -1,4 +1,7 @@
 <p>This is the shopping page</p>
-<!-- <p>{{this.products}}</p> -->
-<button type="button" class="btn btn-warning" ng-click="this.myProducts()">Send us a Message</button>
+<div ng-if="!data">
+  Loading results...
+</div>
+<p data-ng-init="init()">{{perishablesData}}</p>
+<button type="button" class="btn btn-warning" ng-click="this.getCategories('Perishable')">Send us a Message</button>
 
