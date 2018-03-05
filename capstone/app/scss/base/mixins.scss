@@ -1,0 +1,32 @@
+
+@mixin flexbox-display {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+
+@mixin order($values) {
+  -webkit-order: $values;
+  order: $values;
+}
+
+@mixin grow($values) {
+  -webkit-grow: $values;
+  flex-grow: $values;
+}
+
+@mixin flex-wrap($value) {
+  -ms-flex-wrap: $value;
+  -webkit-flex-wrap: $value;
+  flex-wrap: $value;
+}

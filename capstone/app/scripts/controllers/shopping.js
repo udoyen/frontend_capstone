@@ -39,7 +39,7 @@ angular.module("capstoneApp").controller("ShoppingCtrl", [
             $scope.perishablesData = products.data[2]["subcategories"];
             $scope.pantryItemsData = products.data[1]["sub0categories"];
 
-            alert(JSON.stringify(products.data));
+            // alert(JSON.stringify(products.data));
             // console.log(products.data);
             $scope.objectData = JSON.parse(products.data);
           },
@@ -59,7 +59,7 @@ angular.module("capstoneApp").controller("ShoppingCtrl", [
 
     // Use this function to load the api result into the page
     $scope.init =  function () {
-      alert("Angular call function on page load");
+      // alert("Angular call function on page load");
       $scope.myProducts();
     }
 

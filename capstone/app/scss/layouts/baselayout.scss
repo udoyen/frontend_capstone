@@ -13,6 +13,10 @@ Layout Styles
 
 body {
   padding: 0;
+  html {
+    height: 100vh;
+    min-height: 100vh;
+  }
 }
 
 .header,
@@ -42,5 +46,23 @@ body {
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
+  }
+
+  .flexbox-sm {
+    @include flexbox-display();
+    [col*="col-1"] {
+      float: none;
+    }
+    .col-2-3 {
+      @include flex(0 1 66.6666%);
+    }
+    /* Column Third */
+    .col-1-3 {
+      @include flex(0 1 33.3333%);
+    }
+    /* Column Half */
+    .col-1-2 {
+      @include flex(0 1 50%);
+    }
   }
 }

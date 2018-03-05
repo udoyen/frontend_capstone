@@ -1,0 +1,50 @@
+/**********************
+Shop Page Design
+***********************/
+main#shop-container {
+  height: 100vh;
+  margin-top: -3.4em;
+}
+
+aside {
+  border-right: 2px solid gray;
+}
+
+main#shop-container > aside,
+main#shop-container > section {
+  padding-top: 70px;
+  height: 100vh;
+}
+
+.subcategories-holder {
+  @include flexbox-display();
+  flex-direction: column;
+}
+
+.subcategories-container {
+  @include flex-wrap(nowrap);
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  margin: 20px;
+
+}
+
+.shop-page-subcategories {
+  @include flexbox-display();
+  @include flex-wrap(wrap);
+  justify-content: center;
+  align-items: center;
+}
+
+.shop-page-subcategories {
+  height: 100px;
+  width: 250px;
+  border: 2px solid gray;
+  text-align: center;
+  vertical-align: middle;
+  margin: 20px;
+
+}
+
+

@@ -3,13 +3,16 @@ Reset and Base Imports
 ***************************/
 @import "base/variables";
 @import "base/normalize";
+@import "base/mixins";
 @import "base/media-queries";
 @import "base/base";
 
 /***************************
 Layout Imports
 ***************************/
-@import "layouts/layout";
+@import "layouts/baselayout";
+@import "layouts/mainpage";
+@import "layouts/shoppage";
 
 /***************************
 Module Imports
@@ -18,6 +21,8 @@ Module Imports
 @import "modules/header";
 @import "modules/marketting";
 @import "modules/footer";
+@import "modules/image";
+@import "modules/carousel";
 /***************************
 Theme Imports
 ***************************/
