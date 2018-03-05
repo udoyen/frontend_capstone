@@ -30,3 +30,7 @@
   -webkit-flex-wrap: $value;
   flex-wrap: $value;
 }
+
+@mixin flex-basis($value) {
+  flex-basis: $value;
+}

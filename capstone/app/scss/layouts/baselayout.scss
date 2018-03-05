@@ -26,6 +26,15 @@ body {
   padding-right: 15px;
 }
 
+#base-container:before, #base-container:after {
+  display: table;
+  content: "";
+}
+
+#base-container:after {
+  clear: both;
+}
+
 /* Responsive: Portrait tablets and up */
 @include small-and-above {
   .container {
@@ -63,6 +72,11 @@ body {
     /* Column Half */
     .col-1-2 {
       @include flex(0 1 50%);
+    }
+
+    /* Flex Three Columns */
+    .col-0-3 {
+      @include flex(0 1 24%);
     }
   }
 }

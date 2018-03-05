@@ -428,6 +428,13 @@ body {
   padding-left: 15px;
   padding-right: 15px; }
 
+#base-container:before, #base-container:after {
+  display: table;
+  content: ""; }
+
+#base-container:after {
+  clear: both; }
+
 /* Responsive: Portrait tablets and up */
 @media only screen and (min-width: 48em) {
   .container {
@@ -451,7 +458,8 @@ body {
     display: -webkit-flex;
     display: flex;
     /* Column Third */
-    /* Column Half */ }
+    /* Column Half */
+    /* Flex Three Columns */ }
     .flexbox-sm [col*="col-1"] {
       float: none; }
     .flexbox-sm .col-2-3 {
@@ -471,19 +479,22 @@ body {
       -moz-box-flex: 0 1 50%;
       -webkit-flex: 0 1 50%;
       -ms-flex: 0 1 50%;
-      flex: 0 1 50%; } }
+      flex: 0 1 50%; }
+    .flexbox-sm .col-0-3 {
+      -webkit-box-flex: 0 1 24%;
+      -moz-box-flex: 0 1 24%;
+      -webkit-flex: 0 1 24%;
+      -ms-flex: 0 1 24%;
+      flex: 0 1 24%; } }
 
 /**********************
 Base Container
 ***********************/
-div#base-container {
-  height: 100vh; }
-
 /**********************
 Shop Page Design
 ***********************/
 main#shop-container {
-  height: 100vh;
+  height: 100%;
   margin-top: -3.4em; }
 
 aside {
@@ -492,26 +503,18 @@ aside {
 main#shop-container > aside,
 main#shop-container > section {
   padding-top: 70px;
-  height: 100vh; }
+  height: 100%; }
 
-.subcategories-holder {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: column; }
+/* Prevent content from spilling over */
+#shop-container:before,
+#shop-container:after {
+  display: table;
+  content: ""; }
+
+#shop-container:after {
+  clear: both; }
 
 .subcategories-container {
-  -ms-flex-wrap: nowrap;
-  -webkit-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  vertical-align: middle;
-  margin: 20px; }
-
-.shop-page-subcategories {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -520,16 +523,26 @@ main#shop-container > section {
   -ms-flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center; }
+  justify-content: center; }
 
-.shop-page-subcategories {
-  height: 100px;
-  width: 250px;
+.subcategories-container .shop-page-subcategories {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-basis: 27rem;
+  justify-content: center;
+  align-self: flex-start;
+  box-sizing: border-box;
+  height: 120px;
   border: 2px solid gray;
   text-align: center;
-  vertical-align: middle;
-  margin: 20px; }
+  margin: 20px;
+  align-items: center; }
+
+.shop-page-subcategories > p {
+  vertical-align: middle; }
 
 /***************************
 Module Imports
@@ -594,7 +607,7 @@ Header
   padding-right: 2em; }
 
 body {
-  min-height: 2000px;
+  height: auto;
   padding-top: 7em; }
 
 /***********************

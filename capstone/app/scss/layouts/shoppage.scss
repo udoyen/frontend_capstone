@@ -2,7 +2,7 @@
 Shop Page Design
 ***********************/
 main#shop-container {
-  height: 100vh;
+  height: 100%;
   margin-top: -3.4em;
 }
 
@@ -13,38 +13,45 @@ aside {
 main#shop-container > aside,
 main#shop-container > section {
   padding-top: 70px;
-  height: 100vh;
+  height: 100%;
 }
 
-.subcategories-holder {
-  @include flexbox-display();
-  flex-direction: column;
+/* Prevent content from spilling over */
+#shop-container:before,
+#shop-container:after{
+  display: table;
+  content: "";
 }
+
+#shop-container:after {
+  clear: both;
+}
+
 
 .subcategories-container {
-  @include flex-wrap(nowrap);
-  justify-content: center;
-  align-items: center;
-  vertical-align: middle;
-  margin: 20px;
-
-}
-
-.shop-page-subcategories {
   @include flexbox-display();
   @include flex-wrap(wrap);
   justify-content: center;
+
+}
+
+.subcategories-container .shop-page-subcategories {
+  @include flexbox-display();
+  @include flex-basis(27rem);
+  justify-content: center;
+  align-self: flex-start;
+  box-sizing: border-box;
+  height: 120px;
+  border: 2px solid gray;
+  text-align: center;
+  margin: 20px;
   align-items: center;
 }
 
-.shop-page-subcategories {
-  height: 100px;
-  width: 250px;
-  border: 2px solid gray;
-  text-align: center;
+.shop-page-subcategories > p {
   vertical-align: middle;
-  margin: 20px;
-
 }
+
+
 
 
