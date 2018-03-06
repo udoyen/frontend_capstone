@@ -1,5 +1,5 @@
 'use strict';
-
+// TODO: Clean up this file
 /**
  * @ngdoc function
  * @name capstoneApp.controller:ShoppingCtrl
@@ -20,6 +20,7 @@ angular.module('capstoneApp').controller('ShoppingCtrl', [
     $scope.perishablesData = {};
     $scope.pantryItemsData = {};
     $scope.mProducts = {};
+    $scope.allSubcategories = {};
 
     $scope.categories = {
       'Household and Beauty': 0,
@@ -35,18 +36,21 @@ angular.module('capstoneApp').controller('ShoppingCtrl', [
           function(products) {
             $scope.mProducts = products;
             $scope.allProductsData = products.data;
-            $scope.houseHoldAndBeautyData = JSON.stringify(products.data[0].subcategories);
-            $scope.produceData = JSON.stringify(products.data[3].subcategories);
+            $scope.houseHoldAndBeautyData = products.data[0].subcategories;
+            $scope.produceData = products.data[3].subcategories;
             $scope.perishablesData = products.data[2].subcategories;
-            $scope.pantryItemsData = JSON.stringify(products.data[1].subcategories);
+            $scope.pantryItemsData = products.data[1].subcategories;
+            // $scope.allSubcategories = products.data.subcategories;
+
+            // $window.alert(JSON.stringify(allSubcategories));
 
             // alert(JSON.stringify(products.data));
             console.log(products.data);
-            $window.alert($scope.allProductsData);
-            $scope.objectData = JSON.stringify(products.data);
+            // $window.alert($scope.allProductsData);
+            $scope.objectData = products.data;
           },
           function(response) {
-            $window.alert('There was an arror: ' + response.data);
+            console.log('There was an arror: ' + response.data);
           }
         ).then(
           function (response) {
@@ -61,7 +65,7 @@ angular.module('capstoneApp').controller('ShoppingCtrl', [
 
     // Use this function to load the api result into the page
     $scope.init =  function () {
-      $window.alert('Angular call function on page load');
+      console.log('Angular call function on page load');
       $scope.myProducts();
     };
 

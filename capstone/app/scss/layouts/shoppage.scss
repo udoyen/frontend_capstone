@@ -2,15 +2,30 @@
 Shop Page Design
 ***********************/
 main#shop-container {
+  @include flexbox-display();
   height: 100%;
   margin-top: -3.4em;
+  position: relative;
 }
 
-aside {
+.shop-menu-container {
+  @include flexbox-display();
+  flex-direction: column;
+  height: 100%;
+}
+
+.shop-menu-child {
+  flex: 1;
+}
+
+main#shop-container > aside {
   border-right: 2px solid gray;
+  height: 100vh;
+  padding-top: 70px;
+
 }
 
-main#shop-container > aside,
+
 main#shop-container > section {
   padding-top: 70px;
   height: 100%;
@@ -18,7 +33,7 @@ main#shop-container > section {
 
 /* Prevent content from spilling over */
 #shop-container:before,
-#shop-container:after{
+#shop-container:after {
   display: table;
   content: "";
 }
@@ -27,12 +42,10 @@ main#shop-container > section {
   clear: both;
 }
 
-
 .subcategories-container {
   @include flexbox-display();
   @include flex-wrap(wrap);
-  justify-content: center;
-
+  justify-content: flex-start;
 }
 
 .subcategories-container .shop-page-subcategories {
@@ -49,9 +62,23 @@ main#shop-container > section {
 }
 
 .shop-page-subcategories > p {
+  // vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.shop-page-subcategories {
+  @include flexbox-display();
+  align-items: center;
+  justify-content: center;
   vertical-align: middle;
 }
 
 
+.link-in-div-fill {
+  width: 100%;
+  height: 100%;
+  padding-top: 40%;
 
-
+}

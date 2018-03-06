@@ -3,7 +3,7 @@
  the API service
  ****************************************************/
 'use strict';
-
+// TODO: Clean up this file
 angular.module('capstoneApp').service('productService', function($window, $http, $q) {
   var baseUrl =
     'https://webmppcapstone.blob.core.windows.net/data/itemsdata.json';
@@ -17,11 +17,11 @@ angular.module('capstoneApp').service('productService', function($window, $http,
     })
       .then(function successCallback(response) {
         deferred.resolve(response);
-        $window.alert("Success: " + JSON.stringify(response.data));
+        console.log("Success: " + JSON.stringify(response.data));
 
       }),
       (function errorCallback(response) {
-        $window.alert('There was an error: ' + response);
+        console.log('There was an error: ' + response);
       });
 
       return deferred.promise;

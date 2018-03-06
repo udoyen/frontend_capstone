@@ -402,6 +402,10 @@ a {
 a:hover {
   text-decoration: underline; }
 
+ol li, ul li {
+  text-decoration: none;
+  list-style: none; }
+
 /***************************
 Layout Imports
 ***************************/
@@ -494,13 +498,32 @@ Base Container
 Shop Page Design
 ***********************/
 main#shop-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
   height: 100%;
-  margin-top: -3.4em; }
+  margin-top: -3.4em;
+  position: relative; }
 
-aside {
-  border-right: 2px solid gray; }
+.shop-menu-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  height: 100%; }
 
-main#shop-container > aside,
+.shop-menu-child {
+  flex: 1; }
+
+main#shop-container > aside {
+  border-right: 2px solid gray;
+  height: 100vh;
+  padding-top: 70px; }
+
 main#shop-container > section {
   padding-top: 70px;
   height: 100%; }
@@ -523,7 +546,7 @@ main#shop-container > section {
   -ms-flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
-  justify-content: center; }
+  justify-content: flex-start; }
 
 .subcategories-container .shop-page-subcategories {
   display: -webkit-box;
@@ -542,7 +565,23 @@ main#shop-container > section {
   align-items: center; }
 
 .shop-page-subcategories > p {
+  align-items: center;
+  justify-content: center; }
+
+.shop-page-subcategories {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   vertical-align: middle; }
+
+.link-in-div-fill {
+  width: 100%;
+  height: 100%;
+  padding-top: 40%; }
 
 /***************************
 Module Imports

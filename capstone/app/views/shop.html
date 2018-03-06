@@ -1,11 +1,11 @@
  <main id="shop-container" class="container-fluid" data-ng-init="init()">
-   <aside class="col-md-2">
+   <aside class="col-md-2 shop-menu-container">
     <p>Aside Menu</p>
     <!-- <p>{{$scope.allProductsData}}</p> -->
     <div ng-if="!perishablesData">
       Loading results...
     </div>
-    <div ng-repeat="cat in allProductsData track by $index">
+    <div class="shop-menu-child" ng-repeat="cat in allProductsData track by $index">
         <div class="shop-page-menu-container">
             {{cat.category}}
             <div class="shop-page-subcategories-menu-container">
@@ -16,90 +16,15 @@
         </div>
     </div>
    </aside>
-   <section class="col-md-10">
+   <section class="col-md-10 subcategories-item-box">
       <p>Subcategories</p>
-          <div class="subcategories-container flexbox-sm">
-              <div class="shop-page-subcategories col-0-3">
-                  Subcategories
-                </div>
-                <div class="shop-page-subcategories col-0-3">
-                 Subcategories
-               </div>
-               <div class="shop-page-subcategories col-0-3">
-                 Subcategories
-               </div>
-               <div class="shop-page-subcategories col-0-3">
-                 Subcategories
-               </div>
-               <div class="shop-page-subcategories col-0-3">
-                 Subcategories
-               </div>
-               <div class="shop-page-subcategories col-0-3">
-                 Subcategories
-               </div>
-           </div>
-           <div class="subcategories-container flexbox-sm">
-              <div class="shop-page-subcategories col-0-3">
-                  Subcategories
-                </div>
-                <div class="shop-page-subcategories col-0-3">
-                 Subcategories
-               </div>
-               <div class="shop-page-subcategories col-0-3">
-                 Subcategories
-               </div>
+          <div ng-repeat="cat in allProductsData track by $index" class="subcategories-container flexbox-sm">
+            <!-- <p>{{cat.category}}</p> -->
+              <div ng-repeat="c in cat.subcategories track by $index" class="shop-page-subcategories col-0-3">
 
-               <div class="shop-page-subcategories col-0-3">
-                 Subcategories
-               </div>
-               <div class="shop-page-subcategories col-0-3">
-                 Subcategories
-               </div>
-               <div class="shop-page-subcategories col-0-3">
-                 Subcategories
-               </div>
-           </div>
-           <div class="subcategories-container flexbox-sm">
-              <div class="shop-page-subcategories col-0-3">
-                  Subcategories
-                </div>
-                <div class="shop-page-subcategories col-0-3">
-                 Subcategories
-               </div>
-               <div class="shop-page-subcategories col-0-3">
-                 Subcategories
-               </div>
+                    <a class="link-in-div-fill" href="#">{{c.name}}</a>
 
-               <div class="shop-page-subcategories col-0-3">
-                 Subcategories
-               </div>
-               <div class="shop-page-subcategories col-0-3">
-                 Subcategories
-               </div>
-               <div class="shop-page-subcategories col-0-3">
-                 Subcategories
-               </div>
-           </div>
-           <div class="subcategories-container flexbox-sm">
-              <div class="shop-page-subcategories col-0-3">
-                  Subcategories
                 </div>
-                <div class="shop-page-subcategories col-0-3">
-                 Subcategories
-               </div>
-               <div class="shop-page-subcategories col-0-3">
-                 Subcategories
-               </div>
-
-               <div class="shop-page-subcategories col-0-3">
-                 Subcategories
-               </div>
-               <div class="shop-page-subcategories col-0-3">
-                 Subcategories
-               </div>
-               <div class="shop-page-subcategories col-0-3">
-                 Subcategories
-               </div>
            </div>
    </section>
  </main>
