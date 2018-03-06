@@ -27,7 +27,7 @@ angular.module('capstoneApp').controller('ShoppingCtrl', [
       'Produce': 3
     };
     $scope.myProducts = function() {
-      // alert(JSON.stringify(productService.getProducts().data));
+      $window.alert(JSON.stringify(productService.getProducts().data));
       productService
         .getProducts()
         .then(
@@ -59,7 +59,7 @@ angular.module('capstoneApp').controller('ShoppingCtrl', [
 
     // Use this function to load the api result into the page
     $scope.init =  function () {
-      // alert('Angular call function on page load');
+      $window.alert('Angular call function on page load');
       $scope.myProducts();
     };
 

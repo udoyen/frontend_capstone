@@ -4,7 +4,7 @@
  ****************************************************/
 'use strict';
 
-angular.module('capstoneApp').service('productService', function($http, $q) {
+angular.module('capstoneApp').service('productService', ['$window'], function($window, $http, $q) {
   var baseUrl =
     'https://webmppcapstone.blob.core.windows.net/data/itemsdata.json';
   this.getProducts = function() {
@@ -17,10 +17,13 @@ angular.module('capstoneApp').service('productService', function($http, $q) {
     })
       .then(function successCallback(data) {
         deferred.resolve(data);
-        return deferred.promise;
+        $window.alert(data);
+
       })
       .then(function errorCallback(response) {
-        return deferred.reject('There was an error: ' + response);
+        $window.alert('There was an error: ' + response);
       });
+
+      return deferred.promise;
   };
 });
