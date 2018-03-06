@@ -10,7 +10,20 @@
  <main id="shop-container" class="container-fluid" data-ng-init="init()">
    <aside class="col-md-2">
     <p>Aside Menu</p>
-    <p>{{$scope.mProducts}}</p>
+    <!-- <p>{{$scope.allProductsData}}</p> -->
+    <div ng-if="!perishablesData">
+      Loading results...
+    </div>
+    <div ng-repeat="cat in allProductsData track by $index">
+        <div class="shop-page-menu-container">
+            {{cat.category}}
+            <div class="shop-page-subcategories-menu-container">
+              <ul>
+                <li ng-repeat="c in cat.subcategories track by $index"><a href=#>{{c.name}}</a></li>
+              </ul>
+            </div>
+        </div>
+    </div>
    </aside>
    <section class="col-md-10">
       <p>Subcategories</p>

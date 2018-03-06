@@ -4,7 +4,7 @@
  ****************************************************/
 'use strict';
 
-angular.module('capstoneApp').service('productService', ['$window'], function($window, $http, $q) {
+angular.module('capstoneApp').service('productService', function($window, $http, $q) {
   var baseUrl =
     'https://webmppcapstone.blob.core.windows.net/data/itemsdata.json';
   this.getProducts = function() {
@@ -15,12 +15,12 @@ angular.module('capstoneApp').service('productService', ['$window'], function($w
       dataType: 'json',
       cache: true
     })
-      .then(function successCallback(data) {
-        deferred.resolve(data);
-        $window.alert(data);
+      .then(function successCallback(response) {
+        deferred.resolve(response);
+        $window.alert("Success: " + JSON.stringify(response.data));
 
-      })
-      .then(function errorCallback(response) {
+      }),
+      (function errorCallback(response) {
         $window.alert('There was an error: ' + response);
       });
 

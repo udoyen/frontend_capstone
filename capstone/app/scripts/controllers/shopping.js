@@ -14,6 +14,7 @@ angular.module('capstoneApp').controller('ShoppingCtrl', [
   function($window, $scope, productService) {
     $scope.data = {};
     $scope.cat = {};
+    $scope.allProductsData = {};
     $scope.houseHoldAndBeautyData = {};
     $scope.produceData = {};
     $scope.perishablesData = {};
@@ -27,24 +28,25 @@ angular.module('capstoneApp').controller('ShoppingCtrl', [
       'Produce': 3
     };
     $scope.myProducts = function() {
-      $window.alert(JSON.stringify(productService.getProducts().data));
+      // $window.alert(JSON.stringify(productService.getProducts().data));
       productService
         .getProducts()
         .then(
           function(products) {
             $scope.mProducts = products;
             $scope.allProductsData = products.data;
-            $scope.houseHoldAndBeautyData = products.data[0].subcategories;
-            $scope.produceData = products.data[3].subcategories;
+            $scope.houseHoldAndBeautyData = JSON.stringify(products.data[0].subcategories);
+            $scope.produceData = JSON.stringify(products.data[3].subcategories);
             $scope.perishablesData = products.data[2].subcategories;
-            $scope.pantryItemsData = products.data[1].sub0categories;
+            $scope.pantryItemsData = JSON.stringify(products.data[1].subcategories);
 
             // alert(JSON.stringify(products.data));
-            // console.log(products.data);
-            $scope.objectData = JSON.parse(products.data);
+            console.log(products.data);
+            $window.alert($scope.allProductsData);
+            $scope.objectData = JSON.stringify(products.data);
           },
           function(response) {
-            $window.alert('There was an arror: ' + response);
+            $window.alert('There was an arror: ' + response.data);
           }
         ).then(
           function (response) {
