@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /**
  * @ngdoc function
@@ -7,10 +7,10 @@
  * # ShoppingCtrl
  * Controller of the capstoneApp
  */
-angular.module("capstoneApp").controller("ShoppingCtrl", [
-  "$window",
-  "$scope",
-  "productService",
+angular.module('capstoneApp').controller('ShoppingCtrl', [
+  '$window',
+  '$scope',
+  'productService',
   function($window, $scope, productService) {
     $scope.data = {};
     $scope.cat = {};
@@ -34,24 +34,24 @@ angular.module("capstoneApp").controller("ShoppingCtrl", [
           function(products) {
             $scope.mProducts = products;
             $scope.allProductsData = products.data;
-            $scope.houseHoldAndBeautyData = products.data[0]["subcategories"];
-            $scope.produceData = products.data[3]["subcategories"];
-            $scope.perishablesData = products.data[2]["subcategories"];
-            $scope.pantryItemsData = products.data[1]["sub0categories"];
+            $scope.houseHoldAndBeautyData = products.data[0].subcategories;
+            $scope.produceData = products.data[3].subcategories;
+            $scope.perishablesData = products.data[2].subcategories;
+            $scope.pantryItemsData = products.data[1].sub0categories;
 
             // alert(JSON.stringify(products.data));
             // console.log(products.data);
             $scope.objectData = JSON.parse(products.data);
           },
           function(response) {
-            alert("There was an arror: " + response);
+            $window.alert('There was an arror: ' + response);
           }
         ).then(
           function (response) {
             $scope.getCategories = function (name) {
-              var d = response.data[categories[name]]["subcategories"];
+              var d = response.data[$scope.categories[name]].subcategories;
               return d;
-            }
+            };
           }
 
         );
@@ -59,9 +59,9 @@ angular.module("capstoneApp").controller("ShoppingCtrl", [
 
     // Use this function to load the api result into the page
     $scope.init =  function () {
-      // alert("Angular call function on page load");
+      // alert('Angular call function on page load');
       $scope.myProducts();
-    }
+    };
 
 
   }

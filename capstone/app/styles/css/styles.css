@@ -632,6 +632,9 @@ Footer Module
 .container-narrow > hr {
   margin: 30px 0; }
 
+img {
+  object-fit: cover; }
+
 .carousel {
   position: relative;
   height: 150px; }

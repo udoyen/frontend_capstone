@@ -37,6 +37,13 @@ module.exports = function (grunt) {
         files: ['bower.json'],
         tasks: ['wiredep']
       },
+      sass: {
+        options: {},
+        build: {
+          src: 'app/scss/styles.scss',
+          dest: 'app/styles/css/styles.css'
+        }
+      },
       js: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
         tasks: ['newer:jshint:all', 'newer:jscs:all'],
@@ -220,7 +227,7 @@ module.exports = function (grunt) {
             }
           }
       }
-    }, 
+    },
 
     // Renames files for browser caching purposes
     filerev: {
@@ -478,6 +485,7 @@ module.exports = function (grunt) {
     'newer:jshint',
     'newer:jscs',
     'test',
-    'build'
+    'build',
+    'sass'
   ]);
 };
