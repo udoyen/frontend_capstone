@@ -5,22 +5,18 @@ main#shop-container {
   @include flexbox-display();
   height: 100%;
   margin-top: -3.4em;
-  position: relative;
+
 }
 
 .shop-menu-container {
   @include flexbox-display();
   flex-direction: column;
-  height: 100%;
 }
 
-.shop-menu-child {
-  flex: 1;
-}
 
 main#shop-container > aside {
   border-right: 2px solid gray;
-  height: 100vh;
+  // height: 100vh;
   padding-top: 70px;
 
 }
@@ -45,14 +41,15 @@ main#shop-container > section {
 .subcategories-container {
   @include flexbox-display();
   @include flex-wrap(wrap);
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .subcategories-container .shop-page-subcategories {
   @include flexbox-display();
   @include flex-basis(27rem);
-  justify-content: center;
-  align-self: flex-start;
+
   box-sizing: border-box;
   height: 120px;
   border: 2px solid gray;
@@ -82,3 +79,5 @@ main#shop-container > section {
   padding-top: 40%;
 
 }
+
+
