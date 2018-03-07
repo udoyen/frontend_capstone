@@ -40,9 +40,9 @@ angular.module('capstoneApp').controller('ShoppingCtrl', [
             $scope.produceData = products.data[3].subcategories;
             $scope.perishablesData = products.data[2].subcategories;
             $scope.pantryItemsData = products.data[1].subcategories;
-            // $scope.allSubcategories = products.data.subcategories;
+            $scope.allSubcategories = products.data.subcategories;
 
-            // $window.alert(allSubcategories);
+            $window.alert("Subcategories: " + $scope.allSubcategories);
 
             // alert(JSON.stringify(products.data));
             console.log(products.data);

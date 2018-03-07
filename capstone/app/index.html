@@ -8,7 +8,9 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/bower_components/font-awesome/web-fonts-with-css/css/fontawesome-all.css" />
+
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -23,30 +25,23 @@
 
     <!-- Add your site or application content here -->
     <header>
-      <nav class="navbar navbar-default navbar-fixed-top">
-        <div id="nabar-header" class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-            data-target="#navbar" aria-exapanded="false" aria-controls="navbar">
-            <span class="sr-only"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">capstone</a>
-        </div>
-        <div class="collapse navbar-collapse" id="navbar">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="/">Home</a></li>
-            <li><a ng-href="/shopping_page">Shop</a></li>
-            <li><a ng-href="/cart">Shopping Cart</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a ng-href="#"><i class="fas fa-shopping-cart"></i></a></li>
-          </ul>
-        </div>
-        </div>
-      </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-info fixed-top">
+            <a class="navbar-brand" href="/">capstone</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAll" aria-controls="navbarNavAll" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNavAll">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="/shopping_page">Shop</a>
+                <a class="nav-item nav-link" href="/cart">Shopping Cart</a>
+              </div>
+              <div class="navbar-nav navbar-right">
+                <a class="nav-item nav-link" ng-href="#"><i class="fas fa-shopping-cart"></i></a>
+              </div>
+            </div>
+
+          </nav>
     </header>
     <div id="base-container" class="container-fluid">
     <div ng-view=""></div>
@@ -54,7 +49,7 @@
 
     <div class="footer">
       <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+        <p><span class="glyphicon glyphicon-heart"></span> Footer</p>
       </div>
     </div>
 
