@@ -495,41 +495,18 @@ body {
 Base Container
 ***********************/
 .main-page-container {
-  min-height: 100vh;
+  min-height: 100vh; }
+
+.carousel-inner {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  flex-direction: column;
-  -ms-flex-wrap: nowrap;
-  -webkit-flex-wrap: nowrap;
-  flex-wrap: nowrap; }
+  height: 500px; }
 
-.main-page-container > main {
-  flex: 3; }
-
-div.carousel-inner div {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-
-.main-page-container > div {
-  min-width: 100vw;
-  flex: 1; }
-
-.main-page-container > div.container-fluid {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
+.carousel-item, .carousel-item img {
+  height: 100%; }
 
 /**********************
 Shop Page Design
@@ -704,7 +681,6 @@ img {
   object-fit: cover; }
 
 img {
-  height: 150px;
   width: 100%; }
 
 .jumbotron {

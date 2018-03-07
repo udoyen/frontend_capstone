@@ -2,30 +2,16 @@
 Base Container
 ***********************/
 .main-page-container {
+  // @include flexbox-display();
   min-height: 100vh;
+  // @include flexbox-wrap(nowrap);
+}
+.carousel-inner {
   @include flexbox-display();
-  flex-direction: column;
-  @include flexbox-wrap(nowrap)
+  height: 500px;
 }
 
-.main-page-container > main {
-  flex: 3;
+.carousel-item, .carousel-item img {
+  height: 100%;
 }
 
-div.carousel-inner div {
-  @include flexbox-display();
-  align-items: center;
-  justify-content: center;
-}
-
-.main-page-container > div {
-  min-width: 100vw;
-  flex: 1;
-  //align-self: flex-center;
-}
-
-.main-page-container > div.container-fluid {
-  @include flexbox-display();
-  align-items: center;
-  justify-content: center;
-}
