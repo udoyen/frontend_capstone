@@ -1,6 +1,7 @@
 /**********************
 Base Container
 ***********************/
+
 .main-page-container {
   @include flexbox-display();
   min-height: 100vh;
@@ -11,7 +12,7 @@ Base Container
   flex: 3;
 }
 
-.main-page-container > div.contianer-fluid {
+.main-page-container>div.contianer-fluid {
   flex: 1;
 }
 
@@ -32,7 +33,7 @@ div.mainpage-btn {
   justify-content: center;
 }
 
-div.mainpage-btn > div {
+div.mainpage-btn>div {
   margin-bottom: 20px;
 }
 
@@ -50,33 +51,28 @@ div.mainpage-btn > div {
 .carousel-control-next {
   height: 100%;
   position: relative;
-
 }
 
-.indicator-container > div:nth-child(1) {
+.indicator-container>div:nth-child(1) {
   @include flexbox-display();
   width: auto;
   @include order(1);
 }
 
-.indicator-container > div:nth-child(3) {
+.indicator-container>div:nth-child(3) {
   @include flexbox-display();
   justify-content: flex-start;
   width: auto;
   @include order(3);
-
 }
 
-
-.indicator-container > div:nth-child(2) {
+.indicator-container>div:nth-child(2) {
   @include flexbox-display();
   justify-content: center;
   height: 100%;
   width: auto;
   @include order(2);
-
 }
-
 
 ul.carousel-indicators {
   position: relative;
@@ -96,6 +92,7 @@ ul.carousel-indicators li {
   width: 100%;
   height: 100%;
 }
+
 .carousel-control-next-icon:after {
   font-size: 30px;
   color: gray;
@@ -111,5 +108,4 @@ ul.carousel-indicators li {
 ul.carousel-indicators li[class='active'] {
   background: cornflowerblue;
   outline: white;
-  
 }
