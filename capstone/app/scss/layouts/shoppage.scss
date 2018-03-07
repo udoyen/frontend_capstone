@@ -48,7 +48,7 @@ main#shop-container > section {
 
 .subcategories-container .shop-page-subcategories {
   @include flexbox-display();
-  @include flexbox-basis(27rem);
+  // @include flexbox-basis(27rem);
 
   box-sizing: border-box;
   height: 120px;

@@ -495,7 +495,19 @@ body {
 Base Container
 ***********************/
 .main-page-container {
-  min-height: 100vh; }
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column; }
+
+.carousel-container {
+  flex: 3; }
+
+.main-page-container > div.contianer-fluid {
+  flex: 1; }
 
 .carousel-inner {
   display: -webkit-box;
@@ -505,8 +517,103 @@ Base Container
   display: flex;
   height: 500px; }
 
-.carousel-item, .carousel-item img {
+.carousel-item,
+.carousel-item img {
   height: 100%; }
+
+div.mainpage-btn {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center; }
+
+div.mainpage-btn > div {
+  margin-bottom: 20px; }
+
+/* Carousel Indicator Style */
+.indicator-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  align-items: center;
+  justify-content: space-around; }
+
+.carousel-control-prev,
+.carousel-control-next {
+  height: 100%;
+  position: relative; }
+
+.indicator-container > div:nth-child(1) {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: flex-end; }
+
+.indicator-container > div:nth-child(3) {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: flex-start; }
+
+.indicator-container > div:nth-child(1) {
+  -webkit-order: 1;
+  order: 1;
+  flex-grow: 1; }
+
+.indicator-container > div:nth-child(2) {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100px;
+  -webkit-order: 2;
+  order: 2;
+  flex-grow: 2; }
+
+.indicator-container > div:nth-child(3) {
+  -webkit-order: 3;
+  order: 3;
+  flex-grow: 1; }
+
+ul.carousel-indicators {
+  position: relative;
+  bottom: 0 !important;
+  align-self: center; }
+
+ul.carousel-indicators li {
+  background: red; }
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  background-image: none;
+  outline: black;
+  width: 100%;
+  height: 100%; }
+
+.carousel-control-next-icon:after {
+  font-size: 30px;
+  color: gray;
+  content: ">"; }
+
+.carousel-control-prev-icon:after {
+  font-size: 30px;
+  color: gray;
+  content: "<"; }
 
 /**********************
 Shop Page Design
@@ -563,7 +670,6 @@ main#shop-container > section {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  flex-basis: 27rem;
   box-sizing: border-box;
   height: 120px;
   border: 2px solid gray;

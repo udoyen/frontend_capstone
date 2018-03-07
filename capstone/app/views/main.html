@@ -1,12 +1,6 @@
 <div class="main-page-container">
   <main class="carousel-container">
     <div id="carouselControls" class="carousel slide" data-ride="carousel">
-      <!-- indeciators -->
-      <ul class="carousel-indicators">
-        <li data-target="#carouselControls" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselControls" data-slide-to="1"></li>
-        <li data-target="#carouselControls" data-slide-to="2"></li>
-      </ul>
 
       <!-- Slide show -->
       <div class="carousel-inner">
@@ -21,17 +15,32 @@
         </div>
       </div>
 
-      <!-- Left and Right controls -->
-      <a class="carousel-control-prev" href="#carouselControls" data-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </a>
-      <a class="carousel-control-next" href="#carouselControls" data-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </a>
+      <div class="indicator-container">
+        <div>
+          <!-- Left and Right controls -->
+          <a class="carousel-control-prev" href="#carouselControls" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+        </div>
+        <div>
+          <!-- indeciators -->
+          <ul class="carousel-indicators">
+            <li data-target="#carouselControls" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselControls" data-slide-to="1"></li>
+            <li data-target="#carouselControls" data-slide-to="2"></li>
+          </ul>
+        </div>
+        <div>
+          <!-- Left and Right controls -->
+          <a class="carousel-control-next" href="#carouselControls" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+        </div>
+      </div>
     </div>
   </main>
 
-  <div class="container-fluid">
+  <div class="container-fluid mainpage-btn">
     <div>
       <a ng-href="/shopping_page">
         <input class="btn btn-info" type="button" value="Go Shopping" />

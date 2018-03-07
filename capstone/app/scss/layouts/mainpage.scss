@@ -2,16 +2,114 @@
 Base Container
 ***********************/
 .main-page-container {
-  // @include flexbox-display();
+  @include flexbox-display();
   min-height: 100vh;
-  // @include flexbox-wrap(nowrap);
+  flex-direction: column;
 }
+
+.carousel-container {
+  flex: 3;
+}
+
+.main-page-container > div.contianer-fluid {
+  flex: 1;
+}
+
 .carousel-inner {
   @include flexbox-display();
   height: 500px;
 }
 
-.carousel-item, .carousel-item img {
+.carousel-item,
+.carousel-item img {
   height: 100%;
 }
 
+div.mainpage-btn {
+  @include flexbox-display();
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+div.mainpage-btn > div {
+  margin-bottom: 20px;
+}
+
+/* Carousel Indicator Style */
+
+.indicator-container {
+  @include flexbox-display();
+  flex-direction: row;
+  height: 40px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  height: 100%;
+  position: relative;
+  // width: 50px;
+}
+
+.indicator-container > div:nth-child(1) {
+  @include flexbox-display();
+  justify-content: flex-end;
+
+}
+
+.indicator-container > div:nth-child(3) {
+  @include flexbox-display();
+  justify-content: flex-start;
+
+}
+
+
+.indicator-container > div:nth-child(1) {
+  @include order(1);
+  flex-grow: 1;
+}
+
+.indicator-container > div:nth-child(2) {
+  @include flexbox-display();
+  justify-content: center;
+  height: 100%;
+  width: 100px;
+  @include order(2);
+  flex-grow: 2;
+}
+
+.indicator-container > div:nth-child(3) {
+  @include order(3);
+  flex-grow: 1;
+}
+
+ul.carousel-indicators {
+  position: relative;
+  bottom: 0 !important;
+  align-self: center;
+}
+
+ul.carousel-indicators li {
+  background: red;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  background-image: none;
+  outline: black;
+  width: 100%;
+  height: 100%;
+}
+.carousel-control-next-icon:after {
+  font-size: 30px;
+  color: gray;
+  content: ">";
+}
+
+.carousel-control-prev-icon:after {
+  font-size: 30px;
+  color: gray;
+  content: "<";
+}
