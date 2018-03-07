@@ -43,56 +43,50 @@ div.mainpage-btn > div {
   flex-direction: row;
   height: 40px;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .carousel-control-prev,
 .carousel-control-next {
   height: 100%;
   position: relative;
-  // width: 50px;
+
 }
 
 .indicator-container > div:nth-child(1) {
   @include flexbox-display();
-  justify-content: flex-end;
-
+  width: auto;
+  @include order(1);
 }
 
 .indicator-container > div:nth-child(3) {
   @include flexbox-display();
   justify-content: flex-start;
+  width: auto;
+  @include order(3);
 
 }
 
-
-.indicator-container > div:nth-child(1) {
-  @include order(1);
-  flex-grow: 1;
-}
 
 .indicator-container > div:nth-child(2) {
   @include flexbox-display();
   justify-content: center;
   height: 100%;
-  width: 100px;
+  width: auto;
   @include order(2);
-  flex-grow: 2;
+
 }
 
-.indicator-container > div:nth-child(3) {
-  @include order(3);
-  flex-grow: 1;
-}
 
 ul.carousel-indicators {
   position: relative;
   bottom: 0 !important;
   align-self: center;
+  align-self: flex-end;
 }
 
 ul.carousel-indicators li {
-  background: red;
+  background: gray;
 }
 
 .carousel-control-next-icon,
@@ -112,4 +106,10 @@ ul.carousel-indicators li {
   font-size: 30px;
   color: gray;
   content: "<";
+}
+
+ul.carousel-indicators li[class='active'] {
+  background: cornflowerblue;
+  outline: white;
+  
 }

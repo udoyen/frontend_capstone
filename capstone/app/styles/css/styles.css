@@ -544,7 +544,7 @@ div.mainpage-btn > div {
   flex-direction: row;
   height: 40px;
   align-items: center;
-  justify-content: space-around; }
+  justify-content: center; }
 
 .carousel-control-prev,
 .carousel-control-next {
@@ -557,7 +557,9 @@ div.mainpage-btn > div {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  justify-content: flex-end; }
+  width: auto;
+  -webkit-order: 1;
+  order: 1; }
 
 .indicator-container > div:nth-child(3) {
   display: -webkit-box;
@@ -565,12 +567,10 @@ div.mainpage-btn > div {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  justify-content: flex-start; }
-
-.indicator-container > div:nth-child(1) {
-  -webkit-order: 1;
-  order: 1;
-  flex-grow: 1; }
+  justify-content: flex-start;
+  width: auto;
+  -webkit-order: 3;
+  order: 3; }
 
 .indicator-container > div:nth-child(2) {
   display: -webkit-box;
@@ -580,23 +580,18 @@ div.mainpage-btn > div {
   display: flex;
   justify-content: center;
   height: 100%;
-  width: 100px;
+  width: auto;
   -webkit-order: 2;
-  order: 2;
-  flex-grow: 2; }
-
-.indicator-container > div:nth-child(3) {
-  -webkit-order: 3;
-  order: 3;
-  flex-grow: 1; }
+  order: 2; }
 
 ul.carousel-indicators {
   position: relative;
   bottom: 0 !important;
-  align-self: center; }
+  align-self: center;
+  align-self: flex-end; }
 
 ul.carousel-indicators li {
-  background: red; }
+  background: gray; }
 
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
@@ -614,6 +609,10 @@ ul.carousel-indicators li {
   font-size: 30px;
   color: gray;
   content: "<"; }
+
+ul.carousel-indicators li[class='active'] {
+  background: cornflowerblue;
+  outline: white; }
 
 /**********************
 Shop Page Design
