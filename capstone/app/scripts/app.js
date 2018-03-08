@@ -48,7 +48,7 @@ angular
           controller: 'CartCtrl',
           controllerAs: 'cart'
         })
-        .when('/product', {
+        .when('/product/:subcategory', {
           templateUrl: 'views/product.html',
           controller: 'ProductCtrl',
           controllerAs: 'product'

@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 // TODO: Tidy this page
 /**
  * @ngdoc function
@@ -7,9 +7,9 @@
  * # MainCtrl
  * Controller of the capstoneApp
  */
-angular.module("capstoneApp").controller("MainCtrl", [
-  "$window",
-  "$scope",
+angular.module('capstoneApp').controller('MainCtrl', [
+  '$window',
+  '$scope',
   function($window, $scope) {
     $scope.goToShop = function() {
       $window.location.href='http://localhost/shopping_page';
