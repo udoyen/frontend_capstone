@@ -18,14 +18,14 @@ angular.module('capstoneApp').controller('ShoppingCtrl', [
     $scope.perishablesData = {};
     $scope.pantryItemsData = {};
     $scope.allSubcategories = {};
-    $scope.subcatArrayList = [];
+    $scope.subcatArrayList = {};
     $scope.singleCategory = {};
 
     $scope.categoriesList = {
       'Household and Beauty': 0,
       'Pantry Items': 1,
-      Perishable: 2,
-      Produce: 3
+      'Perishable': 2,
+      'Produce': 3
     };
     $scope.myProducts = function() {
       // $window.alert(JSON.stringify(productService.getProducts().data));
@@ -41,9 +41,6 @@ angular.module('capstoneApp').controller('ShoppingCtrl', [
 
         console.log(products);
 
-        // alert(JSON.stringify(products.data));
-        // console.log(allSubcategories);
-        // $window.alert($scope.allProductsData);
         $scope.objectData = products;
       });
 
@@ -61,6 +58,22 @@ angular.module('capstoneApp').controller('ShoppingCtrl', [
 
             $window.alert(JSON.stringify($scope.singleCategory));
           };
+
+          angular.forEach($scope.allProductsData, function (key, value) {
+            var m = key.category;
+            angular.forEach(key.subcategories, function (key, value) {
+              $scope.subcatArrayList[key.name] =  m;
+
+              // $window.alert(JSON.stringify(key.name));
+            })
+
+          })
+          // for (let index = 0; index <  $scope.subcatArrayList.length; index++) {
+            console.log(JSON.stringify($scope.subcatArrayList));
+
+          // }
+          $window.alert(JSON.stringify($scope.subcatArrayList));
+          // console.log()
         })
         .catch(function(e) {
           console.log('There was an error: ' + e);

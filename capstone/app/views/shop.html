@@ -19,10 +19,10 @@
    </aside>
    <section class="col-md-10 subcategories-item-box">
       <p>Subcategories</p>
-          <div ng-repeat="cat in allProductsData" class="subcategories-container flexbox-sm">
+          <div class="subcategories-container flexbox-sm">
             <!-- <p>{{cat.category}}</p> -->
-              <div ng-repeat="c in cat.subcategories track by $index" class="shop-page-subcategories col-0-3">
-                    <a class="link-in-div-fill" ng-href="/product/{{cat.category}}">{{c.name}} {{cat.category}}</a>
+              <div ng-repeat="(key, value) in subcatArrayList" class="shop-page-subcategories col-0-3">
+                    <a class="link-in-div-fill" ng-href="/product/{{value}}">{{key}} {{value}}</a>
                 </div>
            </div>
    </section>

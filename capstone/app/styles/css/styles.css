@@ -792,7 +792,7 @@ main.product-list {
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center; }
+  justify-content: start; }
 
 .product-page-items {
   display: -webkit-box;
