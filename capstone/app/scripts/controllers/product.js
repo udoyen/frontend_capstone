@@ -40,6 +40,7 @@ angular.module('capstoneApp')
             });
 
             $window.alert(JSON.stringify($scope.singleCategory));
+            console.log()
 
         })
         .catch(function(e) {

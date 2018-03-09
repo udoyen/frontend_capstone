@@ -4,16 +4,16 @@ div.wrapper-container.container-fluid {
   margin-right: -1em !important;
   padding-bottom: 3em !important;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
 }
 
 .page-search-header {
   @include flexbox-display();
-  @include grow(1);
+  // @include grow(1);
   margin-bottom: 30px;
   flex-direction: row;
   align-items: center;
-  height: 30%;
+  height: 40%;
 }
 
 .search-header-content {
@@ -43,8 +43,8 @@ div.wrapper-container.container-fluid {
 
 .contents {
   @include flexbox-display();
-  @include grow(3);
-  height: 70%;
+  // @include grow(3);
+  height: auto;
 }
 
 .products-menu-container {
@@ -60,7 +60,47 @@ div.wrapper-container.container-fluid {
 }
 
 .dropdown-menu.show {
-  right: 5.1em !important;
+  left: -5em !important;
 
 }
+
+
+main.product-list {
+  padding-left: 3em;
+  padding-right: 5em;
+}
+
+.items-container {
+  @include flexbox-display();
+  @include flexbox-wrap(wrap);
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+
+.product-page-items {
+  @include flexbox-display();
+  box-sizing: border-box;
+  height: 120px;
+  border: 2px solid gray;
+  text-align: center;
+  margin: 20px;
+  align-items: center;
+}
+
+.product-page-items > p {
+  align-items: center;
+  justify-content: center;
+}
+
+.link-in-div-fill {
+  width: 100%;
+  height: 100%;
+  padding-top: 40%;
+
+}
+
+
 
