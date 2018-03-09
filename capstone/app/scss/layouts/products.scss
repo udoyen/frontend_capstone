@@ -1,15 +1,70 @@
 .wrapper-container {
-
+  @include flexbox-display();
+  @include flexbox-wrap(nowrap);
+  padding: 2em 3em 4em 4em !important;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .page-search-header {
+  @include flexbox-display();
+  @include grow(1);
+  margin-bottom: 30px;
+  flex-direction: row;
+  align-items: center;
+  height: 30%;
+}
 
+.search-header-content {
+  @include flexbox-display();
+  border: 2px solid gray;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-header-content>div {
+  align-self: baseline;
+}
+
+.search-name {
+  align-self: flex-start;
 }
 
 .contents {
-  
+  @include flexbox-display();
+  @include grow(3);
+  height: 70%;
 }
 
 .products-menu-container {
+  @include flexbox-display();
+  flex-direction: column;
+  border: 2px solid gray;
+}
 
+.sort-box-container {
+  @include flexbox-display();
+  flex-direction: row;
+}
+
+.dropdown>button {
+
+}
+
+.sort-box-inner-container {
+  @include flexbox-display();
+  width: 100%;
+  height: 100%;
+
+}
+
+.sort-box-inner-container > div:first-child {
+  align-self: flex-start;
+}
+
+.sort-box-inner-container > div.btn-group {
+  height: 35px;
+  box-sizing: border-box;
 }

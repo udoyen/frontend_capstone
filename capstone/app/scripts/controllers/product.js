@@ -32,6 +32,9 @@ angular.module('capstoneApp')
             angular.forEach($scope.categoriesList, function(value, key) {
               if (key === subcat) {
                 $scope.singleCategory = products[value].subcategories;
+                console.log($scope.singleCategory);
+                $scope.category = products[value].category;
+                console.log($scope.category);
                 return $scope.singleCategory;
               }
             });
@@ -46,7 +49,7 @@ angular.module('capstoneApp')
 
       // Use this function to load the api result into the page
       $scope.init = function() {
-      console.log('Angular call function on page load');
+      console.log('Angular call function on product page load');
       $scope.subcategoriesProductList();
     };
 

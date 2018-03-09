@@ -11,12 +11,12 @@ angular.module('capstoneApp').controller('ShoppingCtrl', [
   '$window',
   '$scope',
   'productService',
-  function($window, $scope, productService) {   
+  function($window, $scope, productService) {
     $scope.allProductsData = {};
     $scope.houseHoldAndBeautyData = {};
     $scope.produceData = {};
     $scope.perishablesData = {};
-    $scope.pantryItemsData = {};    
+    $scope.pantryItemsData = {};
     $scope.allSubcategories = {};
     $scope.subcatArrayList = [];
     $scope.singleCategory = {};
@@ -31,7 +31,7 @@ angular.module('capstoneApp').controller('ShoppingCtrl', [
       // $window.alert(JSON.stringify(productService.getProducts().data));
       productService
         .getProducts()
-        .then(function(products) {       
+        .then(function(products) {
         $scope.allProductsData = products;
         $scope.houseHoldAndBeautyData = products[0].subcategories;
         $scope.produceData = products[3].subcategories;
