@@ -16,6 +16,7 @@ angular.module('capstoneApp')
     function ($routeParams, $window, $scope, productService) {
       var subcat = $routeParams.subcategory;
       $scope.singleCategory = {};
+      $scope.itemsNameArrayList = [];
       $scope.itemsArrayList = [];
       $scope.categoriesList = {
         'Household and Beauty': 0,
@@ -44,18 +45,15 @@ angular.module('capstoneApp')
 
             angular.forEach($scope.singleCategory, function (key, value) {
               angular.forEach(key.items, function (key, value) {
-                $scope.itemsArrayList.push(key.name);
-
-                // $window.alert(JSON.stringify(key.name));
+                $scope.itemsNameArrayList.push(key.name);
               })
 
             })
-            for (let index = 0; index <  $scope.itemsArrayList.length; index++) {
-              console.log( $scope.itemsArrayList[index]);
+            for (let index = 0; index <  $scope.itemsNameArrayList.length; index++) {
+              console.log( $scope.itemsNameArrayList[index]);
 
             }
-            $window.alert($scope.itemsArrayList.toString());
-            // console.log()
+            $window.alert($scope.itemsNameArrayList.toString());
 
         })
         .catch(function(e) {

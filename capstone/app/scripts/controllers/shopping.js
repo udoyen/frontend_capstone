@@ -13,11 +13,6 @@ angular.module('capstoneApp').controller('ShoppingCtrl', [
   'productService',
   function($window, $scope, productService) {
     $scope.allProductsData = {};
-    $scope.houseHoldAndBeautyData = {};
-    $scope.produceData = {};
-    $scope.perishablesData = {};
-    $scope.pantryItemsData = {};
-    $scope.allSubcategories = {};
     $scope.subcatArrayList = {};
     $scope.singleCategory = {};
 
@@ -33,15 +28,8 @@ angular.module('capstoneApp').controller('ShoppingCtrl', [
         .getProducts()
         .then(function(products) {
         $scope.allProductsData = products;
-        $scope.houseHoldAndBeautyData = products[0].subcategories;
-        $scope.produceData = products[3].subcategories;
-        $scope.perishablesData = products[2].subcategories;
-        $scope.pantryItemsData = products[1].subcategories;
-        // $scope.allSubcategories = products.subcategories;
-
         console.log(products);
 
-        $scope.objectData = products;
       });
 
       productService
@@ -68,12 +56,9 @@ angular.module('capstoneApp').controller('ShoppingCtrl', [
             })
 
           })
-          // for (let index = 0; index <  $scope.subcatArrayList.length; index++) {
             console.log(JSON.stringify($scope.subcatArrayList));
 
-          // }
           $window.alert(JSON.stringify($scope.subcatArrayList));
-          // console.log()
         })
         .catch(function(e) {
           console.log('There was an error: ' + e);
