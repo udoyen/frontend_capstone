@@ -79,7 +79,6 @@ main.product-list {
 }
 
 
-
 .product-page-items {
   @include flexbox-display();
   box-sizing: border-box;
@@ -93,13 +92,6 @@ main.product-list {
 .product-page-items > p {
   align-items: center;
   justify-content: center;
-}
-
-.link-in-div-fill {
-  width: 100%;
-  height: 100%;
-  padding-top: 40%;
-
 }
 
 

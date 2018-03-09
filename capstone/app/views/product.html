@@ -45,9 +45,9 @@
     </aside>
     <main class="product-list col-md-10">
       <p>Items</p>
-      <div ng-repeat="item in singleCategory" class="items-container flexbox-sm">
-        <div ng-repeat="itname in item.items track by $index" class="product-page-items col-0-3">
-          <a class="link-in-div-fill" ng-href="#">{{itname.name}} {{item.name}}</a>
+      <div  class="items-container flexbox-sm">
+        <div ng-repeat="item in itemsArrayList" class="product-page-items col-0-3">
+          <a class="link-in-div-fill" ng-href="#">{{item}}</a>
         </div>
       </div>
     </main>
