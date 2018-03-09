@@ -2,51 +2,26 @@
   <section class="page-search-header row">
     <div class="search-header-content">
       <div>
-        <p class="search-name d-block-inline">{{category}}</p>
+        <p class="search-name">{{category}}</p>
       </div>
       <div class="sort-box-container">
-        <div class="sort-box-inner-container">
-          <div>
-            <label>Sort By:
-              <input type="text" name="sortBy">
-            </label>
-          </div>
-          <!-- Split button -->
-          <div class="btn-group" uib-dropdown>
-            <button id="split-button" type="button" class="btn btn-danger">Action</button>
-            <button type="button" class="btn btn-danger" uib-dropdown-toggle>
-              <span class="caret"></span>
-              <span class="sr-only">Split button!</span>
-            </button>
-            <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="split-button">
-              <li role="menuitem">
-                <a href="#">Action</a>
-              </li>
-              <li role="menuitem">
-                <a href="#">Another action</a>
-              </li>
-              <li role="menuitem">
-                <a href="#">Something else here</a>
-              </li>
-              <li class="divider"></li>
-              <li role="menuitem">
-                <a href="#">Separated link</a>
-              </li>
-            </ul>
-          </div>
-          <!-- <div class="btn-group">
-              <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="sr-only">Toggle Dropdown</span>
-              </button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <a class="dropdown-item" href="#">Separated link</a>
-              </div>
-            </div> -->
+        <div>
+          <label>Sort By:
+            <input type="text" name="sortBy">
+          </label>
         </div>
-
+        <div class="btn-group">
+          <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+        </div>
       </div>
 
 
