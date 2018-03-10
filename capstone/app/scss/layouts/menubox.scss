@@ -1,0 +1,29 @@
+/**************************
+Pages Menu box basic Layout Styles
+***************************/
+.menustyle-basic {
+  color: $dark-brown;
+  padding-top: 3em;
+  ul li {
+    margin-bottom: 0.4em;
+  }
+  .menu-header-text {
+    font-weight: bold;
+  }
+  ul li a {
+    font-weight: normal;
+    color: $dark-gray;
+    text-shadow: -1px 0 $dark-orange, 0 1px $dark-orange, 1px 0 $dark-orange, 0 -1px $dark-orange;
+    width: 100% !important;
+    display: block;
+    &:hover {
+      color: $dark-orange;
+      text-decoration: none;
+      text-shadow: none;
+    }
+  }
+}
+
+
+
+

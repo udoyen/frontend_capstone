@@ -7,10 +7,10 @@
       <div class="sort-box-container">
         <div>
           <label>Sort By:
-            <input type="text" name="sortBy">
+            <input class="inputbox-flat-design" type="text" name="sortBy">
           </label>
         </div>
-        <div cgit plass="btn-group">
+        <div class="btn-group sort-btn-group">
           <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
             <span class="sr-only">Toggle Dropdown</span>
@@ -29,10 +29,10 @@
 
   </section>
   <section class="contents row">
-    <aside class="col-md-2 products-menu-container">
+    <aside class="col-md-2 products-menu-container menustyle-basic">
       <div class="shop-menu-child">
         <div class="shop-page-menu-container">
-          {{category}}
+          <p class="menu-header-text">{{category}}</p>
           <div class="shop-page-subcategories-menu-container">
             <ul>
               <li ng-repeat="sub in singleCategory">
@@ -46,8 +46,8 @@
     <main class="product-list col-md-10">
       <p>Items</p>
       <div  class="items-container flexbox-sm">
-        <div ng-repeat="item in itemsNameArrayList" class="product-page-items col-0-3">
-          <a class="link-in-div-fill" ng-href="#">{{item}}</a>
+        <div ng-repeat="item in itemsNameArrayList" class="card product-page-items col-0-3 product-boxitem">
+          <a class="card-body link-in-div-fill" ng-href="#">{{item}}</a>
         </div>
       </div>
     </main>

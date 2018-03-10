@@ -392,7 +392,7 @@ Base Styles
 ****************************
 ***************************/
 body {
-  color: #414042;
+  color: #3D362D;
   font-family: Roboto, Helvetica, Arial, sans-serif;
   font-weight: normal; }
 
@@ -732,7 +732,7 @@ div.wrapper-container.container-fluid {
   display: flex;
   border: 2px solid gray;
   width: 100%;
-  height: 100%;
+  height: 12em;
   align-items: center;
   justify-content: center; }
 
@@ -747,8 +747,10 @@ div.wrapper-container.container-fluid {
   flex-grow: 3; }
 
 .sort-box-container > div.btn-group {
-  height: 35px;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  margin-left: 0.4em;
+  height: 2em;
+  padding: 0 !important; }
 
 .contents {
   display: -webkit-box;
@@ -776,7 +778,13 @@ div.wrapper-container.container-fluid {
   flex-direction: row; }
 
 .dropdown-menu.show {
-  left: -5em !important; }
+  left: -5.3em !important;
+  margin-top: -0.2rem;
+  border-radius: 0 !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+
+.inputbox-flat-design, .sort-btn-group {
+  border-radius: 0 !important; }
 
 main.product-list {
   padding-left: 3em;
@@ -810,6 +818,27 @@ main.product-list {
 .product-page-items > p {
   align-items: center;
   justify-content: center; }
+
+/**************************
+Pages Menu box basic Layout Styles
+***************************/
+.menustyle-basic {
+  color: #3D362D;
+  padding-top: 3em; }
+  .menustyle-basic ul li {
+    margin-bottom: 0.4em; }
+  .menustyle-basic .menu-header-text {
+    font-weight: bold; }
+  .menustyle-basic ul li a {
+    font-weight: normal;
+    color: #a9a9a9;
+    text-shadow: -1px 0 #EE7600, 0 1px #EE7600, 1px 0 #EE7600, 0 -1px #EE7600;
+    width: 100% !important;
+    display: block; }
+    .menustyle-basic ul li a:hover {
+      color: #EE7600;
+      text-decoration: none;
+      text-shadow: none; }
 
 /***************************
 Module Imports
@@ -906,6 +935,35 @@ img {
 
 .jumbotron {
   padding: 0; }
+
+/***************************
+Items Box Modules
+***************************/
+.product-boxitem {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+
+.product-boxitem > a {
+  color: #EE7600;
+  text-decoration: none; }
+
+.product-boxitem:hover {
+  box-shadow: 0 4px 8px 0 rgba(255, 165, 0, 0.2), 0 6px 20px 0 rgba(255, 165, 0, 0.9); }
+
+/************************
+Custom Navabar Style
+*************************/
+.navbar-light.bg-info {
+  background: #3D362D !important; }
+  .navbar-light.bg-info .navbar-brand {
+    color: #FF9900; }
+  .navbar-light.bg-info .navbar-nav .nav-item.nav-link {
+    color: #a9a9a9 !important; }
+    .navbar-light.bg-info .navbar-nav .nav-item.nav-link:focus {
+      color: #FEFFFD !important; }
+    .navbar-light.bg-info .navbar-nav .nav-item.nav-link:hover {
+      color: #FEFFFD !important; }
+  .navbar-light.bg-info .navbar-nav .nav-item.nav-link.active {
+    color: #FEFFFD !important; }
 
 /***************************
 Theme Imports

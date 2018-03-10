@@ -1,0 +1,25 @@
+/************************
+Custom Navabar Style
+*************************/
+.navbar-light {
+  &.bg-info {
+    background: $dark-brown !important;
+    .navbar-brand {
+      color: $orange;
+    }
+    .navbar-nav .nav-item.nav-link {
+      color: $dark-gray !important;
+      &:focus {
+        color: $ceramic !important;
+      }
+      &:hover {
+        color: $ceramic !important;
+      }
+    }
+
+    .navbar-nav .nav-item.nav-link.active {
+      color: $ceramic !important;
+    }
+  }
+
+}
