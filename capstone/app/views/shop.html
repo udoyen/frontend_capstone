@@ -11,7 +11,7 @@
             <p class="menu-header-text">{{cat.category}}</p>
             <div class="shop-page-subcategories-menu-container">
               <ul>
-                <li ng-repeat="c in cat.subcategories track by $index"><a href=#>{{c.name}}</a></li>
+                <li ng-repeat="c in cat.subcategories track by $index"><a ng-href="/product/{{cat.category}}">{{c.name}}</a></li>
               </ul>
             </div>
         </div>
@@ -22,7 +22,7 @@
           <div class="subcategories-container flexbox-sm">
             <!-- <p>{{cat.category}}</p> -->
               <div ng-repeat="(key, value) in subcatArrayList" class="card shop-page-subcategories col-0-3 product-boxitem">
-                    <a class="card-body link-in-div-fill" ng-href="/product/{{value}}">{{key}} {{value}}</a>
+                    <a class="card-body link-in-div-fill" ng-href="/product/{{value}}"><span class="special-h2">{{key}} {{value}}</span></a>
                 </div>
            </div>
    </section>

@@ -15,7 +15,7 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch',
+    'ngTouch'
   ])
   .config([
     '$routeProvider',
@@ -58,3 +58,10 @@ angular
         });
     }
   ]);
+  // .run(function ($rootScope, $location) {
+  //   $rootScope.$on("$routeChangeStart", funtion (event, next, current) {
+  //     if (!current) {
+
+  //     }
+  //   })
+  // });

@@ -2,29 +2,29 @@
   <section class="page-search-header row">
     <div class="search-header-content">
       <div>
-        <p class="search-name">{{category}}</p>
+        <p class="search-name special-h1">{{category}}</p>
       </div>
       <div class="sort-box-container">
-        <div>
-          <label>Sort By:
-            <input class="inputbox-flat-design" type="text" name="sortBy">
+        <!-- <div> -->
+          <label special-h1>Sort By:
+            <!-- <input class="inputbox-flat-design" type="text" name="sortBy"> -->
           </label>
-        </div>
-        <div class="btn-group sort-btn-group">
-          <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            <span class="sr-only">Toggle Dropdown</span>
-          </button>
-          <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <a class="dropdown-item" href="#">Separated link</a>
+        <!-- </div> -->
+        <div class="input-group sort-btn-group">
+          <input type="text" class="form-control col-md-4 inputbox-flat-design">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+              <span class="caret"></span>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+              <a class="dropdown-item" href="#">Separated link</a>
+            </div>
           </div>
         </div>
       </div>
-
-
     </div>
 
   </section>
@@ -45,12 +45,13 @@
     </aside>
     <main class="product-list col-md-10">
       <p>Items</p>
-      <div  class="items-container flexbox-sm">
+      <div class="items-container flexbox-sm">
         <div ng-repeat="item in itemsNameArrayList" class="card product-page-items col-0-3 product-boxitem">
-          <a class="card-body link-in-div-fill" ng-href="#">{{item}}</a>
+          <a class="card-body link-in-div-fill" ng-href="#">
+            <span class="special-h2">{{item}}</span>
+          </a>
         </div>
       </div>
     </main>
   </section>
 </div>
-

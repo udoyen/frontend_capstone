@@ -35,12 +35,6 @@ div.wrapper-container.container-fluid {
   @include grow(3);
 }
 
-.sort-box-container > div.btn-group {
-  box-sizing: border-box;
-  margin-left: 0.4em;
-  height: 2em;
-  padding: 0 !important;
-}
 
 
 .contents {
@@ -62,16 +56,42 @@ div.wrapper-container.container-fluid {
 }
 
 .dropdown-menu.show {
-  left: -5.3em !important;
-  margin-top: -0.2rem;
+  left: -5em !important;
   border-radius: 0 !important;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background: #a9a9a9;
 
+}
 
+.input-group-btn div {
+  width: 33.3%
 }
 
 .inputbox-flat-design, .sort-btn-group {
   border-radius: 0 !important;
+  height: 3em;
+  box-sizing: border-box;
+
+}
+
+.sort-btn-group {
+  @include grow(10);
+  width: 0 !important;
+}
+
+.sort-box-container > label {
+  @include grow(1);
+  flex-grow: 1;
+  align-self: center;
+  text-align: end;
+  font-size: 1.5em;
+  padding-right: 0.3em;
+}
+
+.input-group-btn .btn {
+  background: #665847;
+  color: white;
+  border-radius: 0;
 
 }
 
@@ -93,7 +113,7 @@ main.product-list {
 .product-page-items {
   @include flexbox-display();
   box-sizing: border-box;
-  height: 120px;
+  height: 10rem;
   border: 2px solid gray;
   text-align: center;
   margin: 20px;
@@ -105,5 +125,21 @@ main.product-list {
   justify-content: center;
 }
 
+
+.link-in-div-fill {
+  @include flexbox-display();
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  &> span {
+    align-self: center;
+  }
+
+}
+
+.dropdown-menu.dropdown-menu-right.show .dropdown-item:hover {
+  color: $ceramic;
+  background: $orange;
+}
 
 

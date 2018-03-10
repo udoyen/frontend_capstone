@@ -12,8 +12,14 @@ angular.module('capstoneApp')
     '$routeParams',
     '$window',
     '$scope',
+    '$rootScope',
     'productService',
-    function ($routeParams, $window, $scope, productService) {
+    function ($routeParams, $window, $scope, $rootScope, productService) {
+      $rootScope.$on("$routeChangeStart", function (event, next, current) {
+          if (!current) {
+            $window.location.reload(true);
+          }
+      })
       var subcat = $routeParams.subcategory;
       $scope.singleCategory = {};
       $scope.itemsNameArrayList = [];
@@ -24,6 +30,8 @@ angular.module('capstoneApp')
         'Perishable': 2,
         'Produce': 3
       };
+
+
 
       $scope.subcategoriesProductList = function () {
         productService
@@ -66,6 +74,10 @@ angular.module('capstoneApp')
       console.log('Angular call function on product page load');
       $scope.subcategoriesProductList();
     };
+
+
+
+
 
     }
   ]);

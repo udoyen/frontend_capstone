@@ -410,6 +410,36 @@ ol li, ul li {
   text-decoration: none;
   list-style: none; }
 
+.special-h1 {
+  font-size: 1.5em; }
+
+.special-h2 {
+  font-size: 1.2em; }
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border-color: rgba(169, 169, 169, 0.8);
+  outline: 0;
+  outline: thin dotted \9;
+  /* IE6-9 */
+  -webkit-box-shadow: inset 0 1px 1px rgba(61, 54, 45, 0.075), 0 0 8px rgba(255, 153, 0, 0.6);
+  -moz-box-shadow: inset 0 1px 1px rgba(61, 54, 45, 0.075), 0 0 8px rgba(255, 153, 0, 0.6);
+  box-shadow: inset 0 1px 1px rgba(61, 54, 45, 0.075), 0 0 8px rgba(255, 153, 0, 0.6); }
+
 /***************************
 Layout Imports
 ***************************/
@@ -674,7 +704,7 @@ main#shop-container > section {
   display: -webkit-flex;
   display: flex;
   box-sizing: border-box;
-  height: 120px;
+  height: 10rem;
   border: 2px solid gray;
   text-align: center;
   margin: 20px;
@@ -695,9 +725,16 @@ main#shop-container > section {
   vertical-align: middle; }
 
 .link-in-div-fill {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
   width: 100%;
   height: 100%;
-  padding-top: 40%; }
+  justify-content: center; }
+  .link-in-div-fill > span {
+    align-self: center; }
 
 div.wrapper-container.container-fluid {
   display: -webkit-box;
@@ -746,12 +783,6 @@ div.wrapper-container.container-fluid {
   -webkit-grow: 3;
   flex-grow: 3; }
 
-.sort-box-container > div.btn-group {
-  box-sizing: border-box;
-  margin-left: 0.4em;
-  height: 2em;
-  padding: 0 !important; }
-
 .contents {
   display: -webkit-box;
   display: -moz-box;
@@ -778,13 +809,37 @@ div.wrapper-container.container-fluid {
   flex-direction: row; }
 
 .dropdown-menu.show {
-  left: -5.3em !important;
-  margin-top: -0.2rem;
+  left: -5em !important;
   border-radius: 0 !important;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background: #a9a9a9; }
+
+.input-group-btn div {
+  width: 33.3%; }
 
 .inputbox-flat-design, .sort-btn-group {
-  border-radius: 0 !important; }
+  border-radius: 0 !important;
+  height: 3em;
+  box-sizing: border-box; }
+
+.sort-btn-group {
+  -webkit-grow: 10;
+  flex-grow: 10;
+  width: 0 !important; }
+
+.sort-box-container > label {
+  -webkit-grow: 1;
+  flex-grow: 1;
+  flex-grow: 1;
+  align-self: center;
+  text-align: end;
+  font-size: 1.5em;
+  padding-right: 0.3em; }
+
+.input-group-btn .btn {
+  background: #665847;
+  color: white;
+  border-radius: 0; }
 
 main.product-list {
   padding-left: 3em;
@@ -809,7 +864,7 @@ main.product-list {
   display: -webkit-flex;
   display: flex;
   box-sizing: border-box;
-  height: 120px;
+  height: 10rem;
   border: 2px solid gray;
   text-align: center;
   margin: 20px;
@@ -818,6 +873,22 @@ main.product-list {
 .product-page-items > p {
   align-items: center;
   justify-content: center; }
+
+.link-in-div-fill {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center; }
+  .link-in-div-fill > span {
+    align-self: center; }
+
+.dropdown-menu.dropdown-menu-right.show .dropdown-item:hover {
+  color: #FEFFFD;
+  background: #FF9900; }
 
 /**************************
 Pages Menu box basic Layout Styles
