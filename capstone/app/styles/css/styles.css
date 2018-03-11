@@ -440,6 +440,14 @@ input[type="color"]:focus,
   -moz-box-shadow: inset 0 1px 1px rgba(61, 54, 45, 0.075), 0 0 8px rgba(255, 153, 0, 0.6);
   box-shadow: inset 0 1px 1px rgba(61, 54, 45, 0.075), 0 0 8px rgba(255, 153, 0, 0.6); }
 
+.btn-dark {
+  color: #fff;
+  background-color: #3b3b3b;
+  border-color: #3b3b3b;
+  -webkit-box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.3), inset 0 -1px 0 0 rgba(39, 39, 39, 0.22), 0 1px 3px 0 rgba(0, 0, 0, 0.22);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.3), inset 0 -1px 0 0 rgba(39, 39, 39, 0.22), 0 1px 3px 0 rgba(0, 0, 0, 0.22);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.07); }
+
 /***************************
 Layout Imports
 ***************************/
@@ -771,7 +779,8 @@ div.wrapper-container.container-fluid {
   width: 100%;
   height: 12em;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  background: gray; }
 
 .search-header-content > div:first-child {
   align-self: center;
@@ -842,8 +851,9 @@ div.wrapper-container.container-fluid {
   border-radius: 0; }
 
 main.product-list {
-  padding-left: 3em;
-  padding-right: 5em; }
+  padding-left: 5em;
+  padding-right: 5em;
+  padding-top: 2em; }
 
 .items-container {
   display: -webkit-box;
@@ -864,31 +874,23 @@ main.product-list {
   display: -webkit-flex;
   display: flex;
   box-sizing: border-box;
-  height: 10rem;
   border: 2px solid gray;
   text-align: center;
   margin: 20px;
   align-items: center; }
 
-.product-page-items > p {
-  align-items: center;
-  justify-content: center; }
-
-.link-in-div-fill {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  justify-content: center; }
-  .link-in-div-fill > span {
-    align-self: center; }
-
 .dropdown-menu.dropdown-menu-right.show .dropdown-item:hover {
   color: #FEFFFD;
   background: #FF9900; }
+
+/* Card Images */
+img.card-img-top {
+  height: 15em;
+  object-fit: scale-down; }
+
+.card.col-md-4.product-boxitem {
+  margin: 1em !important;
+  max-width: 24em !important; }
 
 /**************************
 Pages Menu box basic Layout Styles

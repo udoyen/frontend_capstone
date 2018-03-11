@@ -11,16 +11,14 @@
           </label>
         <!-- </div> -->
         <div class="input-group sort-btn-group">
-          <input type="text" class="form-control col-md-4 inputbox-flat-design">
+          <input type="text" ng-model="dropdownChoiceIndex" class="form-control col-md-4 inputbox-flat-design text-capitalize">
           <div class="input-group-btn">
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
               <span class="caret"></span>
             </button>
             <div class="dropdown-menu dropdown-menu-right">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-              <a class="dropdown-item" href="#">Separated link</a>
+              <a ng-repeat="f in sortFilterArray" ng-click="getDropdownIndex($index)" class="dropdown-item text-capitalize" href="#">{{f}}</a>
+
             </div>
           </div>
         </div>
@@ -44,12 +42,14 @@
       </div>
     </aside>
     <main class="product-list col-md-10">
-      <p>Items</p>
       <div class="items-container flexbox-sm">
-        <div ng-repeat="item in itemsNameArrayList" class="card product-page-items col-0-3 product-boxitem">
-          <a class="card-body link-in-div-fill" ng-href="#">
-            <span class="special-h2">{{item}}</span>
-          </a>
+        <div ng-repeat="item in subcatArrayListItems" class="card col-md-4 product-boxitem">
+          <img class="card-img-top" src="{{item.imagelink}}" alt="image of {{item.name}}">
+          <div class="card-body">
+              <p class="special-h2">Name: {{item.name}}</p>
+              <p>Price: &#x20A6;{{item.price}}</p>
+              <a href="#" class="btn btn-primary">Add to Cart</a>
+          </div>
         </div>
       </div>
     </main>

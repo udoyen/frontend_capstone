@@ -12,24 +12,28 @@ angular.module('capstoneApp')
     '$routeParams',
     '$window',
     '$scope',
-    '$rootScope',
     'productService',
-    function ($routeParams, $window, $scope, $rootScope, productService) {
-      $rootScope.$on("$routeChangeStart", function (event, next, current) {
-          if (!current) {
-            $window.location.reload(true);
-          }
-      })
+    function ($routeParams, $window, $scope, productService) {
+
       var subcat = $routeParams.subcategory;
       $scope.singleCategory = {};
       $scope.itemsNameArrayList = [];
       $scope.itemsArrayList = [];
+      $scope.dropdownChoiceIndex;
+      $scope.subcatArrayListItems = [];
+      $scope.sortFilterArray = [
+        'none', 'price', 'alphabetical', 'rating'
+      ]
       $scope.categoriesList = {
         'Household and Beauty': 0,
         'Pantry Items': 1,
         'Perishable': 2,
         'Produce': 3
       };
+
+      $scope.getDropdownIndex = function (dIndex) {
+        $scope.dropdownChoiceIndex = $scope.sortFilterArray[dIndex];
+      }
 
 
 
@@ -54,6 +58,7 @@ angular.module('capstoneApp')
             angular.forEach($scope.singleCategory, function (key, value) {
               angular.forEach(key.items, function (key, value) {
                 $scope.itemsNameArrayList.push(key.name);
+                $scope.subcatArrayListItems.push(key);
               })
 
             })
@@ -62,6 +67,7 @@ angular.module('capstoneApp')
 
             }
             $window.alert($scope.itemsNameArrayList.toString());
+            $window.alert(JSON.stringify($scope.subcatArrayListItems));
 
         })
         .catch(function(e) {

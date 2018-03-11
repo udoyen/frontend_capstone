@@ -38,7 +38,7 @@ angular
           controller: 'ContactCtrl',
           controllerAs: 'contact'
         })
-        .when('/shopping_page', {
+        .when('/shopping', {
           templateUrl: 'views/shop.html',
           controller: 'ShoppingCtrl',
           controllerAs: 'shopping'
@@ -58,10 +58,4 @@ angular
         });
     }
   ]);
-  // .run(function ($rootScope, $location) {
-  //   $rootScope.$on("$routeChangeStart", funtion (event, next, current) {
-  //     if (!current) {
 
-  //     }
-  //   })
-  // });

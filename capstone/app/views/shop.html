@@ -1,7 +1,7 @@
  <main id="shop-container" class="container-fluid" data-ng-init="init()">
    <aside class="col-md-2 shop-menu-container">
     <p>Aside Menu</p>
-    <!-- <button type="button" class="btn btn-dark" ng-click="goToCategoriesPage('Household and Beauty')">Click Me!</button> -->
+    <button type="button" class="btn btn-dark" ng-click="getMe()">Click Me!</button>
     <!-- <p>{{$scope.allProductsData}}</p> -->
     <div ng-if="!allProductsData">
       Loading results...
@@ -21,7 +21,7 @@
       <p>Subcategories</p>
           <div class="subcategories-container flexbox-sm">
             <!-- <p>{{cat.category}}</p> -->
-              <div ng-repeat="(key, value) in subcatArrayList" class="card shop-page-subcategories col-0-3 product-boxitem">
+              <div ng-repeat="(key, value) in subcatArrayNameList" class="card shop-page-subcategories col-0-3 product-boxitem">
                     <a class="card-body link-in-div-fill" ng-href="/product/{{value}}"><span class="special-h2">{{key}} {{value}}</span></a>
                 </div>
            </div>

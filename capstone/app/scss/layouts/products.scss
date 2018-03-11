@@ -23,6 +23,7 @@ div.wrapper-container.container-fluid {
   height: 12em;
   align-items: center;
   justify-content: center;
+  background: gray;
 }
 
 .search-header-content > div:first-child {
@@ -34,8 +35,6 @@ div.wrapper-container.container-fluid {
 .sort-box-container {
   @include grow(3);
 }
-
-
 
 .contents {
   @include flexbox-display();
@@ -97,8 +96,10 @@ div.wrapper-container.container-fluid {
 
 
 main.product-list {
-  padding-left: 3em;
+  padding-left: 5em;
   padding-right: 5em;
+  padding-top: 2em;
+
 }
 
 .items-container {
@@ -113,28 +114,11 @@ main.product-list {
 .product-page-items {
   @include flexbox-display();
   box-sizing: border-box;
-  height: 10rem;
+  // height: 10rem;
   border: 2px solid gray;
   text-align: center;
   margin: 20px;
   align-items: center;
-}
-
-.product-page-items > p {
-  align-items: center;
-  justify-content: center;
-}
-
-
-.link-in-div-fill {
-  @include flexbox-display();
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  &> span {
-    align-self: center;
-  }
-
 }
 
 .dropdown-menu.dropdown-menu-right.show .dropdown-item:hover {
@@ -142,4 +126,14 @@ main.product-list {
   background: $orange;
 }
 
+/* Card Images */
+img.card-img-top {
+  height: 15em;
+  object-fit: scale-down;
+}
+
+.card.col-md-4.product-boxitem {
+  margin: 1em !important;
+  max-width: 24em !important;
+}
 

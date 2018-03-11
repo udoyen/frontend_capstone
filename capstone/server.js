@@ -14,7 +14,7 @@ app.use(function(req, res) {
 });
 
 // Pick a port to listen on
-app.listen(3000, function () {
-  console.log('Our app is listenning on port 3000!');
+app.listen(8080, function () {
+  console.log('Our app is listenning on port 8080!');
 });
 
