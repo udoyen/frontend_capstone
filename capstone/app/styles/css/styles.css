@@ -404,7 +404,7 @@ a {
   font-weight: bold; }
 
 a:hover {
-  text-decoration: underline; }
+  text-decoration: none; }
 
 ol li, ul li {
   text-decoration: none;
@@ -1037,6 +1037,12 @@ Custom Navabar Style
       color: #FEFFFD !important; }
   .navbar-light.bg-info .navbar-nav .nav-item.nav-link.active {
     color: #FEFFFD !important; }
+
+/***********************
+ Marketting Module
+ ***********************/
+.hide-menu {
+  display: none; }
 
 /***************************
 Theme Imports

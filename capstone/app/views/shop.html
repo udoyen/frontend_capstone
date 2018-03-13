@@ -11,7 +11,7 @@
             <p class="menu-header-text">{{cat.category}}</p>
             <div class="shop-page-subcategories-menu-container">
               <ul>
-                <li ng-repeat="c in cat.subcategories track by $index"><a ng-href="/product/{{cat.category}}">{{c.name}}</a></li>
+                <li ng-repeat="c in cat.subcategories track by $index"><a ng-href="/product/{{cat.category}}/{{c.name}}">{{c.name}}</a></li>
               </ul>
             </div>
         </div>

@@ -57,7 +57,7 @@ angular.module('capstoneApp')
                 console.log($scope.singleCategory);
                 $scope.category = products[value].category;
                 console.log($scope.category);
-               
+
               }
             });
 
