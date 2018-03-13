@@ -57,7 +57,7 @@ angular.module('capstoneApp')
                 console.log($scope.singleCategory);
                 $scope.category = products[value].category;
                 console.log($scope.category);
-                // return $scope.singleCategory;
+               
               }
             });
 
@@ -73,27 +73,12 @@ angular.module('capstoneApp')
 
             })
             angular.forEach($scope.subcatArrayListItems, function (key, value) {
-              $scope.subcategory = $routeParams.subcategory;
-              // $scope.category = $routeParams.category;
-              // $window.alert("Inside the forEach: " + $scope.subcategory);
-              // $window.alert("Inside the forEach: " + $scope.category);
               if (angular.equals(key.subcategory, $scope.subcategory)) {
                 $window.alert(JSON.stringify(key));
                 $scope.filteredItemsArrayList.push(key);
               }
-              // if (key.subcategory === subcat) {
-              //   $scope.filteredItemsArrayList.push(key);
-              // }
-              // $window.alert("Subcate: " + JSON.stringify(key));
-            })
 
-            // for (let index = 0; index < $scope.subcatArrayListItems.length; index++) {
-            //   // $window.alert($scope.subcatArrayListItems[index].subcategory);
-            //   if ($scope.subcatArrayListItems[index].subcategory === $scope.subcat) {
-            //     $scope.filteredItemsArrayList.push($scope.subcatArrayListItems[index]);
-            //     $window.alert(JSON.stringify($scope.subcatArrayListItems[index]));
-            //   }
-            // }
+            })
 
             // for (let index = 0; index <  $scope.itemsNameArrayList.length; index++) {
             //   console.log( $scope.itemsNameArrayList[index]);
