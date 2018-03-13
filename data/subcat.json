@@ -1,0 +1,248 @@
+[
+  {
+    "name": "Bib",
+    "description":
+      "Baby Bib helps with keeps baby cloth clean during meal time",
+    "price": 10,
+    "imagelink":
+      "https://webmppcapstone.blob.core.windows.net/babycare-royaltyfree/babybib.png",
+    "rating": "4",
+    "stock": "30",
+    "category": "Household and Beauty",
+    "subcategory": "Baby care"
+  },
+  {
+    "name": "Blanket",
+    "description": "Baby blanket helps keep the baby warm",
+    "price": 20,
+    "imagelink":
+      "https://webmppcapstone.blob.core.windows.net/babycare-royaltyfree/babyblanket.png",
+    "rating": "5",
+    "stock": "15",
+    "category": "Household and Beauty",
+    "subcategory": "Baby care"
+  },
+  {
+    "name": "Baby Bottle",
+    "description": "Baby bottle with 10 oz capacity",
+    "price": 8,
+    "imagelink":
+      "https://webmppcapstone.blob.core.windows.net/babycare-royaltyfree/babyBottle.png",
+    "rating": "5",
+    "stock": "55",
+    "category": "Household and Beauty",
+    "subcategory": "Baby care"
+  },
+  {
+    "name": "Baby Girl Dress",
+    "description": "Baby Girl Dress with beautiful colors",
+    "price": 13,
+    "imagelink":
+      "https://webmppcapstone.blob.core.windows.net/babycare-royaltyfree/babydress.png",
+    "rating": "5",
+    "stock": "55",
+    "category": "Household and Beauty",
+    "subcategory": "Baby care"
+  },
+  {
+    "name": "Baby Monitor",
+    "description": "Baby monitor while baby is sleeping away from mom or dad",
+    "price": 30,
+    "imagelink":
+      "https://webmppcapstone.blob.core.windows.net/babycare-royaltyfree/babymonitor.png",
+    "rating": "5",
+    "stock": "40",
+    "category": "Household and Beauty",
+    "subcategory": "Baby care"
+  },
+  {
+    "name": "Baby Socks",
+    "description": "keeps baby warm, fits 0 to 12 months old",
+    "price": 2,
+    "imagelink":
+      "https://webmppcapstone.blob.core.windows.net/babycare-royaltyfree/babysocks.png",
+    "rating": "3",
+    "stock": "18",
+    "category": "Household and Beauty",
+    "subcategory": "Baby care"
+  },
+  {
+    "name": "Baby Stroller",
+    "description": "Baby Stroller with  multiple seat levels",
+    "price": 69.99,
+    "imagelink":
+      "https://webmppcapstone.blob.core.windows.net/babycare-royaltyfree/babystroller.png",
+    "rating": "4",
+    "stock": "100",
+    "category": "Household and Beauty",
+    "subcategory": "Baby care"
+  },
+  {
+    "name": "Baby Suit",
+    "description": "Baby Suite fits 3-6 months old baby boy",
+    "price": 9.99,
+    "imagelink":
+      "https://webmppcapstone.blob.core.windows.net/babycare-royaltyfree/babysuit.png",
+    "rating": "4",
+    "stock": "70",
+    "category": "Household and Beauty",
+    "subcategory": "Baby care"
+  },
+  {
+    "name": "Baby Walker",
+    "description": "Helps babies as they start learning how to walk",
+    "price": 45.5,
+    "imagelink":
+      "https://webmppcapstone.blob.core.windows.net/babycare-royaltyfree/babywalker.png",
+    "rating": "5",
+    "stock": "10",
+    "category": "Household and Beauty",
+    "subcategory": "Baby care"
+  },
+  {
+    "name": "Bandage",
+    "description": "Flexible Fabric, 100-Count Boxes",
+    "price": 5,
+    "imagelink":
+      "https://webmppcapstone.blob.core.windows.net/drugs-royaltyfree/bandage.png",
+    "rating": "4",
+    "stock": "58",
+    "category": "Household and Beauty",
+    "subcategory": "Drug Store"
+  },
+  {
+    "name": "Severe Cold and Flu",
+    "description": "Severe Cold and Flu Medicine (4 fl. oz. Bottle)",
+    "price": 6.5,
+    "imagelink":
+      "https://webmppcapstone.blob.core.windows.net/drugs-royaltyfree/coldandflusyrup.png",
+    "rating": "5",
+    "stock": "17",
+    "category": "Household and Beauty",
+    "subcategory": "Drug Store"
+  },
+  {
+    "name": "Extra Strength Pain Relief Caplets",
+    "description":
+      "Excedrin Extra Strength Pain Relief Caplets 200 count For Headache Relief",
+    "price": 8,
+    "imagelink":
+      "https://webmppcapstone.blob.core.windows.net/drugs-royaltyfree/painrelief.png",
+    "rating": "5",
+    "stock": "90",
+    "category": "Household and Beauty",
+    "subcategory": "Drug Store"
+  },
+  {
+    "name": "100 Piece First Aid Kit",
+    "description":
+      "100 Piece First Aid Kit, Exceeds OSHA ANSI Standards for 10 People - Office, Home, Car, School, Emergency, Survival, Hunting, and Sports",
+    "price": 14.99,
+    "imagelink":
+      "https://webmppcapstone.blob.core.windows.net/drugs-royaltyfree/firstaidkit.png",
+    "rating": "5",
+    "stock": "10",
+    "category": "Household and Beauty",
+    "subcategory": "Drug Store"
+  },
+  {
+    "name": "Cold Relief Caplets",
+    "description": "Tylenol Cold Multi-Symptom Relief Caplets, 24 Count",
+    "price": 6.5,
+    "imagelink":
+      "https://webmppcapstone.blob.core.windows.net/drugs-royaltyfree/coldpills.png",
+    "rating": "2",
+    "stock": "17",
+    "category": "Household and Beauty",
+    "subcategory": "Drug Store"
+  },
+  {
+    "name": "Air Freshener",
+    "description": "Air Freshener, Powder Fresh, 8 oz",
+    "price": 1.25,
+    "imagelink":
+      "https://webmppcapstone.blob.core.windows.net/house-royaltyfree/airfreshner.png",
+    "rating": "5",
+    "stock": "12",
+    "category": "Household and Beauty",
+    "subcategory": "Household Supplies"
+  },
+  {
+    "name": "All Purpose Cleaner",
+    "description": "40-oz. Summer Citrus Cleaner",
+    "price": 2.99,
+    "imagelink":
+      "https://webmppcapstone.blob.core.windows.net/house-royaltyfree/cleaningLiquid.png",
+    "rating": "4",
+    "stock": "45",
+    "category": "Household and Beauty",
+    "subcategory": "Household Supplies"
+  },
+  {
+    "name": "Disinfecting Wipes",
+    "description":
+      "Disinfecting Wipes Value Pack, Fresh Scent and Citrus Blend, 225 Count",
+    "price": 8.99,
+    "imagelink":
+      "https://webmppcapstone.blob.core.windows.net/house-royaltyfree/disinfectantspray.png",
+    "rating": "5",
+    "stock": "5",
+    "category": "Household and Beauty",
+    "subcategory": "Household Supplies"
+  },
+  {
+    "name": "Reusable Latex Gloves",
+    "description": "Reusable Latex Gloves, Medium, 2 Pairs/2 Colors",
+    "price": 4.25,
+    "imagelink":
+      "https://webmppcapstone.blob.core.windows.net/house-royaltyfree/workgloves.png",
+    "rating": "2",
+    "stock": "0",
+    "category": "Household and Beauty",
+    "subcategory": "Household Supplies"
+  },
+  {
+    "name": "Glass Cleaner",
+    "description": "Perfect Glass Cleaner, 32-Ounce",
+    "price": 7.25,
+    "imagelink":
+      "https://webmppcapstone.blob.core.windows.net/house-royaltyfree/glasscleaner.png",
+    "rating": "4",
+    "stock": "10",
+    "category": "Household and Beauty",
+    "subcategory": "Household Supplies"
+  },
+  {
+    "name": "Toilete Paper",
+    "description": "6 2-Pack, Regular Roll Toilete Paper",
+    "price": 7.25,
+    "imagelink":
+      "https://webmppcapstone.blob.core.windows.net/house-royaltyfree/toiletpaper.png",
+    "rating": "2",
+    "stock": "0",
+    "category": "Household and Beauty",
+    "subcategory": "Household Supplies"
+  },
+  {
+    "name": "Beauty Soap Bar",
+    "description": "Beauty Bar, White 4 oz, 14 bar",
+    "price": 17.25,
+    "imagelink":
+      "https://webmppcapstone.blob.core.windows.net/house-royaltyfree/soap.png",
+    "rating": "2",
+    "stock": "40",
+    "category": "Household and Beauty",
+    "subcategory": "Household Supplies"
+  },
+  {
+    "name": "Laundry Detergent",
+    "description": "TLaundry Detergent 72-load Tub",
+    "price": 17.55,
+    "imagelink":
+      "https://webmppcapstone.blob.core.windows.net/house-royaltyfree/detergent.png",
+    "rating": "4",
+    "stock": "40",
+    "category": "Household and Beauty",
+    "subcategory": "Household Supplies"
+  }
+]

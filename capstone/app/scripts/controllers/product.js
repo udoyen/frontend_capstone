@@ -13,10 +13,12 @@ angular.module('capstoneApp')
     '$window',
     '$scope',
     'productService',
-    function ($routeParams, $window, $scope, productService) {
-
-      var subcat = $routeParams.subcategory;
-      var category = $routeParams.category;
+    '$route',
+    function ($routeParams, $window, $scope, productService, $route) {
+      $window.alert("Subcategory" + $route.current.params.subcategory);
+      $window.alert("Category" + $routeParams.category);
+      $scope.subcategory = $routeParams.subcategory;
+      $scope.category = $routeParams.category;
       $scope.singleCategory = {};
       $scope.itemsNameArrayList = [];
       $scope.itemsArrayList = [];
@@ -25,7 +27,7 @@ angular.module('capstoneApp')
       $scope.filteredItemsArrayList = [];
       $scope.sortFilterArray = [
         'none', 'price', 'alphabetical', 'rating'
-      ]
+      ];
       $scope.categoriesList = {
         'Household and Beauty': 0,
         'Pantry Items': 1,
@@ -43,10 +45,14 @@ angular.module('capstoneApp')
         productService
         .getProducts()
         .then(function(products) {
+              $scope.subcategory = $routeParams.subcategory;
+              $scope.category = $routeParams.category;
+              $window.alert(typeof $scope.subcategory);
+              $window.alert(typeof $scope.category);
 
             // Get the index of the categoryName
             angular.forEach($scope.categoriesList, function(value, key) {
-              if (key === category) {
+              if (key === $scope.category) {
                 $scope.singleCategory = products[value].subcategories;
                 console.log($scope.singleCategory);
                 $scope.category = products[value].category;
@@ -60,29 +66,42 @@ angular.module('capstoneApp')
             angular.forEach($scope.singleCategory, function (key, value) {
               angular.forEach(key.items, function (key, value) {
                 $scope.itemsNameArrayList.push(key.name);
+                $scope.itemsArrayList.push(key);
                 $scope.subcatArrayListItems.push(key);
 
               })
 
             })
             angular.forEach($scope.subcatArrayListItems, function (key, value) {
-              angular.forEach(key, function (value) {
-                if (value === subcat) {
-                  $scope.filteredItemsArrayList.push(key);
-                }
-              })
+              $scope.subcategory = $routeParams.subcategory;
+              // $scope.category = $routeParams.category;
+              // $window.alert("Inside the forEach: " + $scope.subcategory);
+              // $window.alert("Inside the forEach: " + $scope.category);
+              if (angular.equals(key.subcategory, $scope.subcategory)) {
+                $window.alert(JSON.stringify(key));
+                $scope.filteredItemsArrayList.push(key);
+              }
               // if (key.subcategory === subcat) {
               //   $scope.filteredItemsArrayList.push(key);
               // }
               // $window.alert("Subcate: " + JSON.stringify(key));
             })
 
-            for (let index = 0; index <  $scope.itemsNameArrayList.length; index++) {
-              console.log( $scope.itemsNameArrayList[index]);
+            // for (let index = 0; index < $scope.subcatArrayListItems.length; index++) {
+            //   // $window.alert($scope.subcatArrayListItems[index].subcategory);
+            //   if ($scope.subcatArrayListItems[index].subcategory === $scope.subcat) {
+            //     $scope.filteredItemsArrayList.push($scope.subcatArrayListItems[index]);
+            //     $window.alert(JSON.stringify($scope.subcatArrayListItems[index]));
+            //   }
+            // }
 
-            }
-            $window.alert($scope.itemsNameArrayList.toString());
+            // for (let index = 0; index <  $scope.itemsNameArrayList.length; index++) {
+            //   console.log( $scope.itemsNameArrayList[index]);
+
+            // }
+            // $window.alert($scope.itemsNameArrayList.toString());
             $window.alert("List items" + JSON.stringify($scope.subcatArrayListItems));
+            $window.alert("Items Array List" + JSON.stringify($scope.itemsArrayList));
 
         })
         .catch(function(e) {

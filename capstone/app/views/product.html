@@ -34,7 +34,7 @@
           <div class="shop-page-subcategories-menu-container">
             <ul>
               <li ng-repeat="sub in singleCategory">
-                <a href=#>{{sub.name}}</a>
+                <a ng-href="/product/{{category}}/{{sub.name}}">{{sub.name}}</a>
               </li>
             </ul>
           </div>
@@ -43,7 +43,7 @@
     </aside>
     <main class="product-list col-md-10">
       <div class="items-container flexbox-sm">
-        <div ng-repeat="item in filteredItemsArrayList" class="card col-md-4 product-boxitem">
+        <div ng-repeat="item in subcatArrayListItems | filter:subcategory" class="card col-md-4 product-boxitem">
           <img class="card-img-top" src="{{item.imagelink}}" alt="image of {{item.name}}">
           <div class="card-body">
               <p class="special-h2">Name: {{item.name}}</p>

@@ -20,11 +20,11 @@ angular
       })
         .then(function successCallback(response) {
           deferred.resolve(response.data);
-          angular.forEach(JSON.parse(response.data), function (value, key) {
-            this.push(key + ': ' + value);
-          }, resultArray);
-          console.log(resultArray);
-          console.log('Success: ' + JSON.stringify(response.data));
+          // angular.forEach(JSON.parse(response.data), function (value, key) {
+          //   this.push(key + ': ' + value);
+          // }, resultArray);
+          // console.log(resultArray);
+          // console.log(response.data);
         })
         .catch(function (e) {
           console.log('There was an error: ' + e);
