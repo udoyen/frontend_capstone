@@ -14,7 +14,8 @@ angular.module('capstoneApp')
     '$scope',
     'productService',
     '$route',
-    function ($routeParams, $window, $scope, productService, $route) {
+    'cartFactoryService',
+    function ($routeParams, $window, $scope, productService, $route, cartFactoryService) {
       $window.alert("Subcategory" + $route.current.params.subcategory);
       $window.alert("Category" + $routeParams.category);
       $scope.subcategory = $routeParams.subcategory;
