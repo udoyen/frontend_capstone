@@ -27,7 +27,7 @@ angular
           // console.log(response.data);
         })
         .catch(function (e) {
-          console.log('There was an error: ' + e);
+          console.log('There was an error: ' + JSON.stringify(e));
         });
 
       return deferred.promise;

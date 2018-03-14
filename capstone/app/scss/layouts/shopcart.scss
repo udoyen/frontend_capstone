@@ -1,0 +1,64 @@
+main.shoppingcart-container {
+  @include flexbox-display();
+}
+
+.cart-items-list-container {
+  @include flexbox-display();
+  border: 2px solid black;
+  @include grow(1);
+  width: 50%;
+  flex-direction: column;
+  div div {
+    @include flexbox-display();
+    flex-direction: row;
+  }
+  & div:last-child() {
+    align-self: flex-end;
+  }
+}
+
+.cart-items-list-inner-box {
+  @include flexbox-display();
+  flex-direction: column;
+  div {
+    border: 2px solid black;
+  }
+}
+
+.payment-summary-container {
+  @include flexbox-display();
+  border: 2px solid black;
+  @include grow(1);
+  width: 50%;
+  flex-direction: column;
+}
+
+.cart-summary-breakdown-container {
+  @include flexbox-display();
+  flex-direction: row;
+}
+
+.cart-summary-details-container {
+  @include flexbox-display();
+  flex-direction: column;
+  div span {
+    border: 2px solid black;
+  }
+}
+
+.cart-summary-values-container {
+  @include flexbox-display();
+  flex-direction: column;
+  div {
+    border: 2px solid black;
+    width: 70%;
+  }
+}
+
+.checkout-btn-container {
+  @include flexbox-display();
+  a[class*='checkout'] {
+    justify-self: flex-end;
+  }
+
+}

@@ -16,8 +16,8 @@ angular.module('capstoneApp')
     '$route',
     'cartFactoryService',
     function ($routeParams, $window, $scope, productService, $route, cartFactoryService) {
-      $window.alert("Subcategory" + $route.current.params.subcategory);
-      $window.alert("Category" + $routeParams.category);
+      console.log("Subcategory" + $route.current.params.subcategory);
+      console.log("Category" + $routeParams.category);
       $scope.subcategory = $routeParams.subcategory;
       $scope.category = $routeParams.category;
       $scope.singleCategory = {};
@@ -25,6 +25,7 @@ angular.module('capstoneApp')
       $scope.itemsArrayList = [];
       $scope.dropdownChoiceIndex;
       $scope.subcatArrayListItems = [];
+      $scope.allProductsData = {};
       $scope.filteredItemsArrayList = [];
       $scope.sortFilterArray = [
         'none', 'price', 'alphabetical', 'rating'
@@ -36,6 +37,9 @@ angular.module('capstoneApp')
         'Produce': 3
       };
 
+      $scope.addItemToCartFromProductspage = cartFactoryService.addItemToCart();
+      $scope.allShopItems = [];
+
       $scope.getDropdownIndex = function (dIndex) {
         $scope.dropdownChoiceIndex = $scope.sortFilterArray[dIndex];
       }
@@ -45,11 +49,18 @@ angular.module('capstoneApp')
       $scope.subcategoriesProductList = function () {
         productService
         .getProducts()
+        .then(function (products) {
+          $scope.allProductsData = products;
+          console.log(products);
+        });
+
+        productService
+        .getProducts()
         .then(function(products) {
               $scope.subcategory = $routeParams.subcategory;
               $scope.category = $routeParams.category;
-              $window.alert(typeof $scope.subcategory);
-              $window.alert(typeof $scope.category);
+              console.log(typeof $scope.subcategory);
+              console.log(typeof $scope.category);
 
             // Get the index of the categoryName
             angular.forEach($scope.categoriesList, function(value, key) {
@@ -62,7 +73,7 @@ angular.module('capstoneApp')
               }
             });
 
-            $window.alert(JSON.stringify($scope.singleCategory));
+            console.log(JSON.stringify($scope.singleCategory));
 
             angular.forEach($scope.singleCategory, function (key, value) {
               angular.forEach(key.items, function (key, value) {
@@ -75,19 +86,34 @@ angular.module('capstoneApp')
             })
             angular.forEach($scope.subcatArrayListItems, function (key, value) {
               if (angular.equals(key.subcategory, $scope.subcategory)) {
-                $window.alert(JSON.stringify(key));
+                console.log(JSON.stringify(key));
                 $scope.filteredItemsArrayList.push(key);
               }
 
             })
 
+
+              angular.forEach(products, function (key, value) {
+                angular.forEach(key.subcategories, function (key, value) {
+                  angular.forEach(key.items, function (key, value) {
+                    $scope.allShopItems.push(key);
+                  })
+                })
+              })
+
+              // The items in session storage
+              cartFactoryService.save('shopItems', $scope.allShopItems);
+
+              console.log($scope.allShopItems);
+
+
             // for (let index = 0; index <  $scope.itemsNameArrayList.length; index++) {
             //   console.log( $scope.itemsNameArrayList[index]);
 
             // }
-            // $window.alert($scope.itemsNameArrayList.toString());
-            $window.alert("List items" + JSON.stringify($scope.subcatArrayListItems));
-            $window.alert("Items Array List" + JSON.stringify($scope.itemsArrayList));
+            // console.log($scope.itemsNameArrayList.toString());
+            console.log("List items" + JSON.stringify($scope.subcatArrayListItems));
+            console.log("Items Array List" + JSON.stringify($scope.itemsArrayList));
 
         })
         .catch(function(e) {
@@ -99,11 +125,8 @@ angular.module('capstoneApp')
       $scope.init = function() {
       console.log('Angular call function on product page load');
       $scope.subcategoriesProductList();
+      // getAllShopItems();
     };
 
-
-
-
-
-    }
+  }
   ]);

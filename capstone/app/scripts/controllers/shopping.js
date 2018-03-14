@@ -24,7 +24,7 @@ angular.module('capstoneApp').controller('ShoppingCtrl', [
       'Produce': 3
     };
     $scope.myProducts = function() {
-      // $window.alert(JSON.stringify(productService.getProducts().data));
+      // console.log(JSON.stringify(productService.getProducts().data));
       productService
         .getProducts()
         .then(function(products) {
@@ -47,14 +47,14 @@ angular.module('capstoneApp').controller('ShoppingCtrl', [
 
 
 
-            $window.alert("Sinlge Category" + JSON.stringify($scope.singleCategory));
+            console.log("Sinlge Category" + JSON.stringify($scope.singleCategory));
           };
 
           $scope.getMe = function () {
             $scope.goToCategoriesPage('Pantry Items')
             angular.forEach($scope.singleCategory, function (value) {
               angular.forEach(value.items, function (key, value) {
-                $window.alert(JSON.stringify(key));
+                console.log(JSON.stringify(key));
               })
 
             })
@@ -65,15 +65,15 @@ angular.module('capstoneApp').controller('ShoppingCtrl', [
             angular.forEach(key.subcategories, function (key, value) {
               $scope.subcatArrayNameList[key.name] =  m;
 
-              // $window.alert(JSON.stringify(key.name));
+              // console.log(JSON.stringify(key.name));
             })
 
           })
 
 
-            console.log(JSON.stringify($scope.subcatArrayNameList));
+          console.log(JSON.stringify($scope.subcatArrayNameList));
 
-          $window.alert("Sublist" + JSON.stringify($scope.subcatArrayNameList));
+          console.log("Sublist" + JSON.stringify($scope.subcatArrayNameList));
 
 
         })

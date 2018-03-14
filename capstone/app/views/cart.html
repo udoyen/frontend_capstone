@@ -1,1 +1,36 @@
 <p>This is the cart page</p>
+
+<main class="shoppingcart-container" data-ng-init="init()">
+  <section class="cart-items-list-container">
+    <div class="cart-items-list-inner-box">
+        <div>item  Details   Price Qty Total</div>
+        <div>item  Details   Price Qty Total</div>
+        <div>item  Details   Price Qty Total</div>
+    </div>
+    
+    <div>Subtotal</div>
+  </section>
+  <section class="payment-summary-container">
+    <div><span>Cart Summary</span></div>
+    <div class="cart-summary-breakdown-container">
+      <div class="cart-summary-details-container">
+          <div><span>Subtotal</span></div>
+          <div><span>Shipping</span></div>
+          <div><span>Tax</span></div>
+          <div><span>Total</span></div>
+      </div>
+      <div class="cart-summary-values-container">
+        <div><span></span></div>
+        <div><span></span></div>
+        <div><span></span></div>
+        <div><span></span></div>
+      </div>
+    </div>
+  </section>
+  <section class="checkout-btn-container">
+
+      <a ng-href="#" class="btn btn-primary checkout">Checkout</a>
+
+
+  </section>
+</main>

@@ -1,0 +1,71 @@
+div[data-ng-init^="init"] {
+  height: 100vh;
+}
+.details-container {
+ @include flexbox-display();
+//  height: 100%;
+ padding-bottom: 3em;
+}
+
+.details-container section {
+  border: 2px solid black;
+}
+
+.details-img-container {
+  @include grow(1);
+  width: 50%;
+  // height: 100%;
+  margin-right: 0.7em;
+  position: relative;
+  left: -30px;
+  &> img {
+    object-fit: scale-down;
+    height: 100vh;
+  }
+}
+
+.details-items-container {
+  @include flexbox-display();
+  flex-direction: column;
+  @include grow(1);
+  width: 50%;
+  padding-top: 2em;
+  margin-left: 0.7em;
+  position: relative;
+  right: -30px;
+  div span {
+    border: 2px solid black;
+    padding: 0.4em;
+  }
+  & div:nth-child(5) {
+    margin-bottom: 4em !important;
+  }
+  & div:nth-child(4) {
+    margin-bottom: 3em !important;
+  }
+}
+
+.detail-boxes {
+  @include flexbox-display();
+  justify-content: center;
+  // border: 2px solid black;
+  text-transform: capitalize;
+  width: auto;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  padding-bottom: 2em;
+
+}
+
+span#description {
+  width: 50%;
+}
+
+.fas.fa-star {
+  color: $dark-orange;
+}
+
+span[id='description'] {
+  height: 8em;
+  text-align: center;
+}
