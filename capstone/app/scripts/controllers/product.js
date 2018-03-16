@@ -37,7 +37,7 @@ angular.module('capstoneApp')
         'Produce': 3
       };
 
-      $scope.addItemToCartFromProductspage = cartFactoryService.addItemToCart;
+      $scope.addItemToCartFromProductspage = cartFactoryService;
       $scope.allShopItems = [];
 
       $scope.getDropdownIndex = function (dIndex) {

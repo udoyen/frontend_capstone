@@ -10,8 +10,9 @@ main.shoppingcart-container {
   flex-direction: column;
   padding-left: 2em;
   padding-right: 2em;
-  padding-top: 8em;
+  padding-top: 4em;
   margin-right: 1em;
+  overflow: auto;
   div div {
     @include flexbox-display();
     flex-direction: row;
@@ -43,14 +44,12 @@ main.shoppingcart-container {
     border: 2px solid black;
     margin-bottom: 4em;
   }
-
 }
 
 .cart-summary-breakdown-container {
   @include flexbox-display();
   flex-direction: row;
   padding: 2em 2em 6em 2em;
-
 }
 
 .cart-summary-details-container {
@@ -64,7 +63,6 @@ main.shoppingcart-container {
     text-align: center;
     @include flexbox-display();
     padding: 0.1em;
-
   }
   div span {
     border: 2px solid black;
@@ -92,22 +90,16 @@ main.shoppingcart-container {
   padding-top: 0.5em;
   div {
     padding: 0.2em;
-    border: 2px solid black;border: 2px solid black;
+    border: 2px solid black;
+    border: 2px solid black;
     margin-bottom: 0.6em;
-
   }
-
 }
-
 
 .checkout-btn-container {
   @include flexbox-display();
   justify-content: flex-end;
   padding-bottom: 3em;
-  a[class*='checkout'] {
-    // justify-self: flex-end;
-  }
-
 }
 
 .subtotal {
@@ -117,5 +109,20 @@ main.shoppingcart-container {
     border: 2px solid black;
     padding: 0.3em;
     width: auto;
+  }
+}
+
+.cart-items-list-inner-box {
+  div {
+    @include flexbox-display();
+    flex-direction: row;
+  }
+
+  div span {
+    @include grow(1);
+  }
+
+  div span:first-child() {
+    @include grow(2);
   }
 }

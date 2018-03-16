@@ -1,12 +1,17 @@
 <main class="shoppingcart-container special-h1" data-ng-init="init()">
   <section class="cart-items-list-container">
-    <div class="cart-items-list-inner-box">
-        <div>Item  Details   Price Qty Total</div>
-        <div>Item  Details   Price Qty Total</div>
-        <div>Item  Details   Price Qty Total</div>
+    <div class="cart-items-list-inner-box" ng-repeat="item in addedItems" >
+        <div>
+          <span>Name: {{item.name}}</span>
+          <span>Details: {{item.description}}</span>
+          <span>Price: &#x20A6;{{item.price | number:2}}</span>
+          <span>Qty: {{item.quantity}}</span>
+          <span>Total: &#x20A6;{{item.quantity * item.price | number:2}}</span>
+        </div>
+
     </div>
 
-    <div class="subtotal"><span>Subtotal &nbsp;&#x20A6;300</span></div>
+    <div class="subtotal"><span>Subtotal &nbsp;&#x20A6;{{subtotal | number:2}}</span></div>
   </section>
   <section class="payment-summary-container">
     <div class="details">
@@ -19,10 +24,10 @@
             <div><span>Total</span></div>
         </div>
         <div class="cart-summary-values-container">
-          <div><span>&#x20A6;200</span></div>
-          <div><span>&#x20A6;58</span></div>
-          <div><span>&#x20A6;22</span></div>
-          <div><span>&#x20A6;350</span></div>
+          <div><span>&#x20A6;{{subtotal | number:2}}</span></div>
+          <div><span>&#x20A6;{{shipping | number:2}}</span></div>
+          <div><span>&#x20A6;{{tax | number:2}}</span></div>
+          <div><span>&#x20A6;{{subtotal + shipping + tax | number:2}}</span></div>
         </div>
       </div>
     </div>
