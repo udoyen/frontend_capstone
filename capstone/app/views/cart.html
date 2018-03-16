@@ -1,36 +1,37 @@
-<p>This is the cart page</p>
-
-<main class="shoppingcart-container" data-ng-init="init()">
+<main class="shoppingcart-container special-h1" data-ng-init="init()">
   <section class="cart-items-list-container">
     <div class="cart-items-list-inner-box">
-        <div>item  Details   Price Qty Total</div>
-        <div>item  Details   Price Qty Total</div>
-        <div>item  Details   Price Qty Total</div>
+        <div>Item  Details   Price Qty Total</div>
+        <div>Item  Details   Price Qty Total</div>
+        <div>Item  Details   Price Qty Total</div>
     </div>
-    
-    <div>Subtotal</div>
+
+    <div class="subtotal"><span>Subtotal &nbsp;&#x20A6;300</span></div>
   </section>
   <section class="payment-summary-container">
-    <div><span>Cart Summary</span></div>
-    <div class="cart-summary-breakdown-container">
-      <div class="cart-summary-details-container">
-          <div><span>Subtotal</span></div>
-          <div><span>Shipping</span></div>
-          <div><span>Tax</span></div>
-          <div><span>Total</span></div>
-      </div>
-      <div class="cart-summary-values-container">
-        <div><span></span></div>
-        <div><span></span></div>
-        <div><span></span></div>
-        <div><span></span></div>
+    <div class="details">
+      <div class="cart-title-header"><span>Cart Summary</span></div>
+      <div class="cart-summary-breakdown-container">
+        <div class="cart-summary-details-container">
+            <div><span>Subtotal</span></div>
+            <div><span>Shipping</span></div>
+            <div><span>Tax</span></div>
+            <div><span>Total</span></div>
+        </div>
+        <div class="cart-summary-values-container">
+          <div><span>&#x20A6;200</span></div>
+          <div><span>&#x20A6;58</span></div>
+          <div><span>&#x20A6;22</span></div>
+          <div><span>&#x20A6;350</span></div>
+        </div>
       </div>
     </div>
+    <div class="checkout-btn-container">
+
+        <a ng-href="#" class="btn btn-primary checkout">Checkout</a>
+
+
+    </div>
   </section>
-  <section class="checkout-btn-container">
 
-      <a ng-href="#" class="btn btn-primary checkout">Checkout</a>
-
-
-  </section>
 </main>

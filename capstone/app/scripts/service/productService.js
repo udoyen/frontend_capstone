@@ -25,6 +25,7 @@ angular
           // }, resultArray);
           // console.log(resultArray);
           // console.log(response.data);
+          console.log(response.data);
         })
         .catch(function (e) {
           console.log('There was an error: ' + JSON.stringify(e));

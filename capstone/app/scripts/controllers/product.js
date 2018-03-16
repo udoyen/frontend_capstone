@@ -16,8 +16,8 @@ angular.module('capstoneApp')
     '$route',
     'cartFactoryService',
     function ($routeParams, $window, $scope, productService, $route, cartFactoryService) {
-      console.log("Subcategory" + $route.current.params.subcategory);
-      console.log("Category" + $routeParams.category);
+      console.log('Subcategory' + $route.current.params.subcategory);
+      console.log('Category' + $routeParams.category);
       $scope.subcategory = $routeParams.subcategory;
       $scope.category = $routeParams.category;
       $scope.singleCategory = {};
@@ -37,7 +37,7 @@ angular.module('capstoneApp')
         'Produce': 3
       };
 
-      $scope.addItemToCartFromProductspage = cartFactoryService.addItemToCart();
+      $scope.addItemToCartFromProductspage = cartFactoryService.addItemToCart;
       $scope.allShopItems = [];
 
       $scope.getDropdownIndex = function (dIndex) {
@@ -75,6 +75,7 @@ angular.module('capstoneApp')
 
             console.log(JSON.stringify($scope.singleCategory));
 
+            // Create ArrayList of subcategory items
             angular.forEach($scope.singleCategory, function (key, value) {
               angular.forEach(key.items, function (key, value) {
                 $scope.itemsNameArrayList.push(key.name);
@@ -84,13 +85,14 @@ angular.module('capstoneApp')
               })
 
             })
-            angular.forEach($scope.subcatArrayListItems, function (key, value) {
-              if (angular.equals(key.subcategory, $scope.subcategory)) {
-                console.log(JSON.stringify(key));
-                $scope.filteredItemsArrayList.push(key);
-              }
+            // Create filtered items
+            // angular.forEach($scope.subcatArrayListItems, function (key, value) {
+            //   if (angular.equals(key.subcategory, $scope.subcategory)) {
+            //     console.log(JSON.stringify(key));
+            //     $scope.filteredItemsArrayList.push(key);
+            //   }
 
-            })
+            // })
 
 
               angular.forEach(products, function (key, value) {
@@ -112,12 +114,12 @@ angular.module('capstoneApp')
 
             // }
             // console.log($scope.itemsNameArrayList.toString());
-            console.log("List items" + JSON.stringify($scope.subcatArrayListItems));
-            console.log("Items Array List" + JSON.stringify($scope.itemsArrayList));
+            console.log('List items' + JSON.stringify($scope.subcatArrayListItems));
+            console.log('Items Array List' + JSON.stringify($scope.itemsArrayList));
 
         })
         .catch(function(e) {
-          console.log("There was an error: " + e);
+          console.log('There was an error: ' + e);
         });
       };
 

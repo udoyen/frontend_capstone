@@ -17,13 +17,14 @@ Button Modules
   transition: all 0.3s ease 0s;
 }
 .btn-primary {
-  background: #8DC63F;
-  color: white;
-  border-color: #8DC63F;
+  background: $orangeAlpha;
+  color: $rgbDarkBrown;
+  border-color: $orange;
 }
 .btn-primary:hover {
-  background: none;
+  background: $rgbOrange;
   border-color: white;
+  color: $ceramic;
   text-decoration: none;
 }
 .btn-nav {

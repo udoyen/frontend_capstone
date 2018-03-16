@@ -14,15 +14,21 @@ angular.module("capstoneApp").controller("CartCtrl", [
   "cartFactoryService",
   function($window, $scope, productService, cartFactoryService) {
     $scope.addedItems = [];
+    $scope.cartIsEmptyText;
 
     $scope.cartDetails = function() {
       if (
-        $window.sessionStorage.get("cartItemsFromStorage") !== "undefined" ||
-        $window.sessionStorage.get("cartItemsFromStorage") !== "null"
+         cartFactoryService.get("cartItemsFromStorage") ===
+          'undefined' ||
+        cartFactoryService.get("cartItemsFromStorage") === null
       ) {
-        $scope.addedItems = $window.sessionStorage.get("cartItemsFromStorage");
-      } else {
+        $window.alert("No items were found");
         $scope.cartIsEmptyText = "Cart has no items in it!";
+        $window.alert($scope.cartIsEmptyText);
+
+      } else {
+        $window.alert("Inside the cartDetails function");
+        $scope.addedItems = cartFactoryService.get("cartItemsFromStorage");
       }
     };
 

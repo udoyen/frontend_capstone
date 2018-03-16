@@ -1,16 +1,22 @@
 main.shoppingcart-container {
   @include flexbox-display();
+  // height: 100vh;
 }
 
 .cart-items-list-container {
   @include flexbox-display();
-  border: 2px solid black;
   @include grow(1);
   width: 50%;
   flex-direction: column;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 8em;
+  margin-right: 1em;
   div div {
     @include flexbox-display();
     flex-direction: row;
+    padding: 0.8em;
+    margin-bottom: 1em;
   }
   & div:last-child() {
     align-self: flex-end;
@@ -27,38 +33,89 @@ main.shoppingcart-container {
 
 .payment-summary-container {
   @include flexbox-display();
-  border: 2px solid black;
   @include grow(1);
-  width: 50%;
   flex-direction: column;
+  width: 50%;
+  margin-left: 1em;
+  > div.details {
+    @include flexbox-display();
+    flex-direction: column;
+    border: 2px solid black;
+    margin-bottom: 4em;
+  }
+
 }
 
 .cart-summary-breakdown-container {
   @include flexbox-display();
   flex-direction: row;
+  padding: 2em 2em 6em 2em;
+
 }
 
 .cart-summary-details-container {
   @include flexbox-display();
   flex-direction: column;
+  @include grow(1);
+  padding-top: 0.5em;
+  margin-left: 2em;
+  div {
+    width: 70%;
+    text-align: center;
+    @include flexbox-display();
+    padding: 0.1em;
+
+  }
   div span {
     border: 2px solid black;
+    padding: 0.1em;
+    margin-bottom: 0.5em;
+    margin-top: 0.1em;
+  }
+}
+
+.cart-title-header {
+  justify-content: center;
+  display: flex;
+  margin-bottom: 3em;
+  padding-top: 1em;
+  span {
+    border: 2px solid black;
+    padding: 0.5em;
   }
 }
 
 .cart-summary-values-container {
   @include flexbox-display();
+  @include grow(2);
   flex-direction: column;
+  padding-top: 0.5em;
   div {
-    border: 2px solid black;
-    width: 70%;
+    padding: 0.2em;
+    border: 2px solid black;border: 2px solid black;
+    margin-bottom: 0.6em;
+
   }
+
 }
+
 
 .checkout-btn-container {
   @include flexbox-display();
+  justify-content: flex-end;
+  padding-bottom: 3em;
   a[class*='checkout'] {
-    justify-self: flex-end;
+    // justify-self: flex-end;
   }
 
+}
+
+.subtotal {
+  @include flexbox-display();
+  justify-content: flex-end;
+  span {
+    border: 2px solid black;
+    padding: 0.3em;
+    width: auto;
+  }
 }

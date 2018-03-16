@@ -25,12 +25,11 @@ angular.module('capstoneApp').controller('DetailsCtrl', [
 
     $scope.itemDetails = function() {
       if (
-        cartFactoryService.get('shopItems') !== 'undefined' ||
-        cartFactoryService.get('shopItems') !== 'null'
+        cartFactoryService.get('shopItems')
       ) {
         $window.alert("Getting data from seessionStorage");
-        $scope.getItemsInSessionStorage = cartFactoryService.get(
-          'shopItems'
+        $scope.getItemsInSessionStorage = JSON.parse(cartFactoryService.get(
+          'shopItems')
         );
         angular.forEach($scope.getItemsInSessionStorage, function(value) {
           if (value.name == $scope.itemName) {
