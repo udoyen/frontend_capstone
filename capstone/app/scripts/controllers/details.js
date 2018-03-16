@@ -19,7 +19,7 @@ angular.module('capstoneApp').controller('DetailsCtrl', [
     $scope.getProductsFromProductService = [];
     $scope.itemName = $routeParams.itemName;
     $scope.productDetails = [];
-    $scope.addItemToCartFromDetailsPage = cartFactoryService.addItemToCart();
+    $scope.addItemToCartFromDetailsPage = cartFactoryService.addItemToCart;
 
     $window.alert($routeParams.itemName);
 
