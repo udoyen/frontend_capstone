@@ -10,6 +10,7 @@ angular
 function cartFactoryService($window) {
   var addedItemsList = [];
   var itemsFromStorage = [];
+  var itemsToCart = [];
 
   function save(key, value) {
     $window.sessionStorage.setItem(key, JSON.stringify(value));
@@ -65,6 +66,26 @@ function cartFactoryService($window) {
       $window.alert("addedItemsList " + JSON.stringify(addedItemsList));
 
     }
+
+    // Get the list of products items
+    if (get('shopItems')) {
+      itemsFromStorage = JSON.parse(get('shopItems'));
+      angular.forEach(addedItemsList, function (i) {
+        angular.forEach(itemsFromStorage, function (d) {
+          if (i.name === d.name) {
+            d.quantity = i.quantity;
+            itemsToCart.push(d);
+          }
+        })
+      })
+    } else {
+      $window.alert("Cart is empty!");
+    }
+
+    // Create sessionStorage for cart
+    save('cartItemsFromStorage', itemsToCart);
+
+    $window.alert("Cart items " + JSON.stringify(itemsToCart));
 
 
 
