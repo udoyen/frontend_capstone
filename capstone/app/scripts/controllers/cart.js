@@ -64,13 +64,13 @@ angular.module('capstoneApp').controller('CartCtrl', [
      * @param {Amount to tax} AmountToTax
      */
     $scope.taxCal = function (percentageTax, AmountToTax) {
-      $scope.tax = (( percentageTax / 100 ) * AmountToTax ) + AmountToTax;
+      $scope.tax = (( percentageTax / 100 ) * AmountToTax );
 
       return $scope.tax;
     }
 
     $scope.shippingCal = function (rate, totalItemCost) {
-      $scope.shipping = (( rate / 100 ) * totalItemCost ) + totalItemCost;
+      $scope.shipping = (( rate / 100 ) * totalItemCost );
       return $scope.shipping;
     }
 
