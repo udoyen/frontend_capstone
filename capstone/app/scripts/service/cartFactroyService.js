@@ -46,7 +46,7 @@ function cartFactoryService($window) {
    * @param {item name} nameOfItem
    * @param {item quantity} itemQuantity
    */
-  function addItemToCart(nameOfItem, itemQuantity = 1) {
+  function addItemToCart(item, itemQuantity = 1) {
     var result = false;
 
     // Create the addedItemsList both in the app
@@ -58,7 +58,7 @@ function cartFactoryService($window) {
       $window.alert("Check for duplicates");
 
       for (var i of addedItemsList) {
-        if (i["name"] === nameOfItem) {
+        if (i["name"] === item.name) {
           i["quantity"] += itemQuantity;
           result = true;
           break;
@@ -67,38 +67,23 @@ function cartFactoryService($window) {
 
       if (!result) {
         $window.alert("Pusing into addedItemsList");
-        addedItemsList.push({
-          name: nameOfItem,
-          quantity: itemQuantity
-        });
+        // Add a quantity property
+        item.quantity = itemQuantity;
+        addedItemsList.push(item);
       }
 
       save("addedItemsList", addedItemsList);
       $window.alert("addedItemsList " + JSON.stringify(addedItemsList));
     } else {
-      addedItemsList.push({
-        name: nameOfItem,
-        quantity: itemQuantity
-      });
+      // Add a quantity property
+      item.quantity = itemQuantity;
+      addedItemsList.push(item);
       save("addedItemsList", addedItemsList);
       $window.alert("addedItemsList " + JSON.stringify(addedItemsList));
     }
 
-    // Get the list of products items
-    if (get("shopItems")) {
-      itemsFromStorage = JSON.parse(get("shopItems"));
-      angular.forEach(addedItemsList, function(i) {
-        angular.forEach(itemsFromStorage, function(d) {
-          if (i.name === d.name) {
-            // Update the item's quantity
-            d.quantity = i.quantity;
-            itemsToCart.push(d);
-          }
-        });
-      });
-    }
-
     // Create sessionStorage for cart
+    itemsToCart = addedItemsList;
     save("cartItemsFromStorage", itemsToCart);
 
     $window.alert("Cart items " + JSON.stringify(itemsToCart));
