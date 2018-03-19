@@ -30,7 +30,7 @@
     <aside class="col-md-2 products-menu-container menustyle-basic">
       <div class="shop-menu-child">
         <div class="shop-page-menu-container">
-          <p class="menu-header-text">{{category}}</p>
+          <p class="menu-header-text"><a ng-href="/product/{{category}}">{{category}}</a></p>
           <div class="shop-page-subcategories-menu-container">
             <ul>
               <li ng-repeat="sub in singleCategory">
@@ -43,7 +43,7 @@
     </aside>
     <main class="product-list col-md-10">
       <div class="items-container flexbox-sm">
-        <div ng-repeat="item in subcatArrayListItems | filter:subcategory" class="card col-md-4 product-boxitem">
+        <div ng-repeat="item in itemsArrayList | filter:subcategory" class="card col-md-4 product-boxitem">
           <a ng-href="/details/{{item.name}}"><img class="card-img-top .img-fluid" src="{{item.imagelink}}" alt="image of {{item.name}}"></a>
           <div class="card-body">
               <p class="special-h2">Name:<a ng-href="/details/{{item.name}}"> {{item.name}}</a></p>
@@ -52,6 +52,16 @@
           </div>
         </div>
       </div>
+      <!-- <div  ng-show="allPagePath()" class="items-container flexbox-sm">
+        <div ng-repeat="item in subcatArrayListItems" class="card col-md-4 product-boxitem">
+          <a ng-href="/details/{{item.name}}"><img class="card-img-top .img-fluid" src="{{item.imagelink}}" alt="image of {{item.name}}"></a>
+          <div class="card-body">
+              <p class="special-h2">Name:<a ng-href="/details/{{item.name}}"> {{item.name}}</a></p>
+              <p>Price: &#x20A6;{{item.price}}</p>
+              <a ng-href="#" ng-disabled="{{item.stock === '0'}}" ng-click="addItemToCartFromProductspage(item)" class="btn btn-primary">Add</a>
+          </div>
+        </div>
+      </div> -->
     </main>
   </section>
 </div>
