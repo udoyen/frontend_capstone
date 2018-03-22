@@ -8,9 +8,10 @@
     </div>
     <div class="shop-menu-child" ng-repeat="cat in allProductsData track by $index">
         <div class="shop-page-menu-container menustyle-basic">
-            <p class="menu-header-text"><a ng-href="/product/{{cat.category}}">{{cat.category}}</a></p>
+            <p class="menu-header-text" ><a ng-href="/product/{{cat.category}}">{{cat.category}}</a><i data-toggle="collapse" role="button"
+              data-target="#{{cat.category}}" aria-expanded="false" aria-controls="shopmenu" class="fas fa-caret-right"></i></p>
             <div class="shop-page-subcategories-menu-container">
-              <ul>
+              <ul id="{{cat.category}}" class="collapse shopme">
                 <li ng-repeat="c in cat.subcategories track by $index"><a ng-href="/product/{{cat.category}}/{{c.name}}">{{c.name}}</a></li>
               </ul>
             </div>

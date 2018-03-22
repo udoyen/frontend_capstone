@@ -5,7 +5,6 @@ main#shop-container {
   @include flexbox-display();
   height: 100%;
   margin-top: -3.4em;
-
 }
 
 .shop-menu-container {
@@ -13,14 +12,11 @@ main#shop-container {
   flex-direction: column;
 }
 
-
 main#shop-container > aside {
   border-right: 2px solid gray;
   // height: 100vh;
   padding-top: 70px;
-
 }
-
 
 main#shop-container > section {
   padding-top: 70px;
@@ -43,7 +39,6 @@ main#shop-container > section {
   @include flexbox-wrap(wrap);
   align-items: center;
   justify-content: center;
-
 }
 
 .subcategories-container .shop-page-subcategories {
@@ -59,7 +54,6 @@ main#shop-container > section {
 .shop-page-subcategories > p {
   align-items: center;
   justify-content: center;
-
 }
 
 .shop-page-subcategories {
@@ -69,18 +63,20 @@ main#shop-container > section {
   vertical-align: middle;
 }
 
-
 .link-in-div-fill {
   @include flexbox-display();
   width: 100%;
   height: 100%;
   justify-content: center;
-  &> span {
+  & > span {
     align-self: center;
   }
-
 }
 
-
-
-
+.menu-header-text > a + i {
+  font-size: 1.7em;
+  vertical-align: middle;
+  padding-left: 0.1em;
+  color: #a9a9a9;
+  cursor: pointer;
+}

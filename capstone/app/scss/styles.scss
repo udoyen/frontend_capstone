@@ -3,6 +3,7 @@ Adding Roboto Fonts
 ****************************/
 @import '~roboto-fontface/css/roboto-fontface.css';
 
+
 /***************************
 Reset and Base Imports
 ***************************/
@@ -26,7 +27,7 @@ Layout Imports
 /***************************
 Module Imports
 ***************************/
-@import "modules/buttons.scss";
+@import "modules/buttons";
 @import "modules/header";
 @import "modules/marketting";
 @import "modules/footer";
@@ -35,6 +36,7 @@ Module Imports
 @import "modules/itembox";
 @import "modules/navabar-custom";
 @import "modules/menu-dropdown";
+// @import "modules/switch";
 
 /***************************
 Theme Imports

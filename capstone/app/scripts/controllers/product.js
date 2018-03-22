@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /**
  * @ngdoc function
@@ -8,14 +8,14 @@
  * Controller of the capstoneApp
  */
 // TODO: Clean up this fle
-angular.module("capstoneApp").controller("ProductCtrl", [
-  "$routeParams",
-  "$window",
-  "$scope",
-  "productService",
-  "$route",
-  "cartFactoryService",
-  "$location",
+angular.module('capstoneApp').controller('ProductCtrl', [
+  '$routeParams',
+  '$window',
+  '$scope',
+  'productService',
+  '$route',
+  'cartFactoryService',
+  '$location',
   function(
     $routeParams,
     $window,
@@ -25,8 +25,8 @@ angular.module("capstoneApp").controller("ProductCtrl", [
     cartFactoryService,
     $location
   ) {
-    console.log("Subcategory" + $route.current.params.subcategory);
-    console.log("Category" + $routeParams.category);
+    console.log('Subcategory' + $route.current.params.subcategory);
+    console.log('Category' + $routeParams.category);
     $scope.subcategory = $routeParams.subcategory;
     $scope.category = $routeParams.category;
     $scope.currentPath = $location.path();
@@ -37,12 +37,12 @@ angular.module("capstoneApp").controller("ProductCtrl", [
     $scope.subcatArrayListItems = [];
     $scope.allProductsData = {};
     $scope.filteredItemsArrayList = [];
-    $scope.sortFilterArray = ["none", "price", "alphabetical", "rating"];
+    $scope.sortFilterArray = ['none', 'price', 'alphabetical', 'rating'];
     $scope.categoriesList = {
-      "Household and Beauty": 0,
-      "Pantry Items": 1,
-      Perishable: 2,
-      Produce: 3
+      'Household and Beauty': 0,
+      'Pantry Items': 1,
+      'Perishable': 2,
+      'Produce': 3
     };
 
     $scope.addItemToCartFromProductspage = cartFactoryService.addItemToCart;
@@ -108,7 +108,7 @@ angular.module("capstoneApp").controller("ProductCtrl", [
           });
 
           // The items in session storage
-          cartFactoryService.save("shopItems", $scope.allShopItems);
+          cartFactoryService.save('shopItems', $scope.allShopItems);
 
           console.log($scope.allShopItems);
 
@@ -118,20 +118,20 @@ angular.module("capstoneApp").controller("ProductCtrl", [
           // }
           // console.log($scope.itemsNameArrayList.toString());
           console.log(
-            "List items" + JSON.stringify($scope.subcatArrayListItems)
+            'List items' + JSON.stringify($scope.subcatArrayListItems)
           );
           console.log(
-            "Items Array List" + JSON.stringify($scope.itemsArrayList)
+            'Items Array List' + JSON.stringify($scope.itemsArrayList)
           );
         })
         .catch(function(e) {
-          console.log("There was an error: " + e);
+          console.log('There was an error: ' + e);
         });
     };
 
     // Use this function to load the api result into the page
     $scope.init = function() {
-      console.log("Angular call function on product page load");
+      console.log('Angular call function on product page load');
       $scope.subcategoriesProductList();
       // getAllShopItems();
     };

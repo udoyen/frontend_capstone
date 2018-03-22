@@ -84,3 +84,7 @@ input[type="color"]:focus,
   text-shadow: 1px 1px 0 rgba(0,0,0,.07)
 }
 
+/* Accordion page refesh collapse workaround */
+.collapsible-body {
+  display: none !important;
+}

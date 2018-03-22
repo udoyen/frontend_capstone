@@ -1,18 +1,39 @@
 <!-- // TODO: Add carousel item captions -->
-<div class="main-page-container">
+<div class="main-page-container" data-ng-init="init()">
   <main class="carousel-container">
     <div id="carouselControls" class="carousel slide" data-ride="carousel">
 
       <!-- Slide show -->
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="../images/berry.jpg" alt="berries" width="100%" height="300" />
+          <div class="row">
+            <div ng-repeat="f in slide1 track by $index" class="column">
+              <a ng-href="/details/{{f.name}}">
+                <img class="img-responsive" src="{{f.imagelink}}" alt="{{f.name}}" />
+              </a>
+            </div>
+          </div>
+          <!-- <img src="../images/berry.jpg" alt="berries" width="100%" height="300" /> -->
         </div>
         <div class="carousel-item">
-          <img src="../images/lychee.jpg" alt="lychee vegetables" width="100%" height="300" />
+          <div class="row">
+            <div ng-repeat="f in slide2 track by $index" class="column">
+              <a ng-href="/details/{{f.name}}">
+                <img class="img-responsive" src="{{f.imagelink}}" alt="{{f.name}}" />
+              </a>
+            </div>
+          </div>
+          <!-- <img src="../images/lychee.jpg" alt="lychee vegetables" width="100%" height="300" /> -->
         </div>
         <div class="carousel-item">
-          <img src="../images/citrus.jpg" alt="citrus fruits" width="100%" height="300" />
+          <div class="row">
+            <div ng-repeat="f in slide3 track by $index" class="column">
+              <a ng-href="/details/{{f.name}}">
+                <img class="img-responsive" src="{{f.imagelink}}" alt="{{f.name}}" />
+              </a>
+            </div>
+          </div>
+          <!-- <img src="../images/citrus.jpg" alt="citrus fruits" width="100%" height="300" /> -->
         </div>
       </div>
 
@@ -39,12 +60,24 @@
         </div>
       </div>
     </div>
+    <div class="text-content col-12 welcome-text">
+      Welcome to
+      <span>WorldWideImporters</span> Online Shop
+      <!-- Normal switch -->
+      <div class="toggleSwitch">
+        <label class="switch">
+          <input id="toggle" type="checkbox">
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+    </div>
   </main>
 
   <div class="container-fluid mainpage-btn">
     <div>
       <a ng-href="/shopping">
-        <input class="btn btn-primary" type="button" value="Go Shopping" />
+        <input class="btn btn-primary" type="button" value="Shop All" />
       </a>
     </div>
   </div>

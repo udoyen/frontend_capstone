@@ -46,6 +46,7 @@ div.wrapper-container.container-fluid {
   @include flexbox-display();
   flex-direction: column;
   border: 2px solid gray;
+  padding-top:  2em;
 }
 
 .sort-box-container {
