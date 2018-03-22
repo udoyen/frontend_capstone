@@ -26,6 +26,7 @@ angular.element(document).ready(function() {
       .removeClass("fa-caret-right")
       .addClass("fa-caret-down");
   });
+  
   $("#toggle").change(function() {
     alert($(this).prop("checked"));
   });
