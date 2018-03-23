@@ -33,7 +33,6 @@ main.shoppingcart-info-container {
         margin: 0 auto;
         font-size: 2em;
       }
-
     }
   }
 }
@@ -110,7 +109,6 @@ div.removeitem-btn-container {
     border: 2px solid black;
     display: inline-table;
   }
-
 }
 
 .cart-title-header {
@@ -166,4 +164,24 @@ div.removeitem-btn-container {
   div span:first-child() {
     @include grow(2);
   }
+}
+
+.submitBtn {
+  @include flexbox-display();
+  justify-content: space-between;
+}
+
+.shippingDetails {
+  p {
+    text-align: center;
+    margin-bottom: 2em;
+    font-size: 1.5em;
+  }
+}
+
+form.submitForm {
+    border-left: 1em solid gray;
+    padding-left: 1em;
+    border-right: 1em solid gray;
+    padding-right: 1em;
 }

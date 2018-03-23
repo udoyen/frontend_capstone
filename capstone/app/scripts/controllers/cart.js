@@ -20,6 +20,13 @@ angular.module('capstoneApp').controller('CartCtrl', [
     $scope.shipping;
     $scope.cartState;
     $scope.removeCartItem;
+    $scope.formValues = {};
+    $scope.submit = submit;
+    $scope.reset = reset;
+    $scope.totalCost;
+
+    reset();
+
 
     $scope.cartDetails = function() {
       if (
@@ -28,17 +35,17 @@ angular.module('capstoneApp').controller('CartCtrl', [
         cartFactoryService.get('cartItemsFromStorage') === null
       ) {
         $scope.cartState = false;
-        $window.alert('No items were found');
+        // $window.alert('No items were found');
         $scope.cartIsEmptyText = 'Cart has no items in it!';
-        $window.alert($scope.cartIsEmptyText);
+        // $window.alert($scope.cartIsEmptyText);
 
       } else {
         $scope.cartState = true;
-        $window.alert('Inside the cartDetails function');
+        // $window.alert('Inside the cartDetails function');
         $scope.addedItems = JSON.parse(cartFactoryService.get('cartItemsFromStorage'));
-        $window.alert("Cart items " + JSON.stringify($scope.addedItems));
+        // $window.alert("Cart items " + JSON.stringify($scope.addedItems));
         //Calculate subtotal
-        $window.alert("subtotal variable")
+        // $window.alert("subtotal variable")
         $scope.calSubtotal($scope.addedItems);
         //Calculate the tax
         $scope.taxCal(5, $scope.subtotal);
@@ -46,6 +53,17 @@ angular.module('capstoneApp').controller('CartCtrl', [
         $scope.shippingCal(2, $scope.subtotal);
       }
     };
+
+    function submit (values) {
+      $scope.formValues.totalCost = JSON.stringify($scope.subtotal + $scope.shipping + $scope.tax);
+      alert('Submitted\n' + JSON.stringify($scope.formValues));
+    };
+
+
+    function reset() {
+      $scope.formValues = {};
+    }
+
 
     /**
      *

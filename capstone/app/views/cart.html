@@ -34,6 +34,55 @@
         </div>
       </div>
     </div>
+    <div class="shippingDetails">
+      <p>Enter Shipping Details</p>
+      <form name="thisForm" novalidate class="submitForm">
+        <div class="form-group row">
+          <div class="col-md-3 col-form-label">
+            <label for="name">Name</label>
+          </div>
+          <div class="col-md-5">
+            <input type="text" name="name" id="name" placeholder="Name" ng-model="formValues.name" required>
+            <span ng-show="thisForm.name.$touched && thisForm.name.$invalid">Oops! This field is required.</span>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-md-3 col-form-label">
+            <label for="address">Address</label>
+          </div>
+          <div class="col-md-5">
+            <input type="text" name="address" id="address" placeholder="Address" ng-model="formValues.address" required>
+            <span ng-show="thisForm.address.$touched && thisForm.address.$invalid">Oops! A valid address is required.</span>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-md-3 col-form-label">
+            <label for="city">City</label>
+          </div>
+          <div class="col-md-5">
+            <input type="text" name="city" id="city" placeholder="City" ng-model="formValues.city" required>
+            <span ng-show="thisForm.city.$touched && thisForm.city.$invalid">Oops! A valid city is required.</span>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-md-3 col-form-label">
+            <label for="phoneNumber">Phonenumber</label>
+          </div>
+          <div class="col-md-5">
+            <input type="text" name="phoneNumber" id="phoneNumber" placeholder="Phone Number" ng-model="formValues.phoneNumber" required>
+            <span ng-show="thisForm.phoneNumber.$touched && thisForm.phoneNumber.$invalid">Oops! A valid phone number is required.</span>
+          </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-12 submitBtn">
+                <input type="submit" value="Submit" ng-disabled='thisForm.$invalid' ng-click='submit(formValues)' class="btn btn-primary checkout" />
+                <button ng-click="reset()" class="btn btn-default">Reset</button>
+            </div>
+        </div>
+      </form>
+
+
+    </div>
     <div class="checkout-btn-container">
 
         <a ng-href="#" class="btn btn-primary checkout">Checkout</a>
