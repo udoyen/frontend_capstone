@@ -88,29 +88,29 @@ function cartFactoryService($window) {
     save("cartItemsFromStorage", itemsToCart);
 
     $window.alert("Cart items " + JSON.stringify(itemsToCart));
-  };
-
+  }
 
   /**
    *
    * @param {object to remove from cart list} item
    */
-  function removeCartItem (item) {
-    $window.alert('Item ' + JSON.stringify(item));
-    if (get('cartItemsFromStorage')) {
-      itemToRemove = JSON.parse(get('cartItemsFromStorage'));
-      $window.alert('cartItemsFromStorage array ' + JSON.stringify(itemToRemove));
+  function removeCartItem(item) {
+    $window.alert("Item " + JSON.stringify(item));
+    if (get("cartItemsFromStorage")) {
+      itemToRemove = JSON.parse(get("cartItemsFromStorage"));
+      $window.alert(
+        "cartItemsFromStorage array " + JSON.stringify(itemToRemove)
+      );
 
       $window.alert("Before removal " + JSON.stringify(itemToRemove.length));
-      angular.forEach(itemToRemove, function (i, index) {
+      angular.forEach(itemToRemove, function(i, index) {
         if (item.name === i.name) {
           itemToRemove.splice(index, 1);
         }
-      })
+      });
       save("addedItemsList", itemToRemove);
       save("cartItemsFromStorage", itemToRemove);
       $window.alert("after removal " + JSON.stringify(itemToRemove.length));
-
     }
     // $window.alert('addedItemsList array ' + JSON.stringify(addedItemsList));
     // $window.alert('itemsToCart array ' + JSON.stringify(itemsToCart));

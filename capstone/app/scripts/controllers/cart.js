@@ -68,6 +68,8 @@ angular.module('capstoneApp').controller('CartCtrl', [
      */
     $scope.removeCartItem = function (cartItemObj) {
       cartFactoryService.removeCartItem(cartItemObj);
+      // Call the cartDetails function
+      // to refresh the page
       $scope.cartDetails();
     }
 
