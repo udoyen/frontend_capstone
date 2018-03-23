@@ -491,7 +491,6 @@ body {
     max-width: 730px; }
   /* Remove the padding we set earlier */
   .header,
-  .marketing,
   .footer {
     padding-left: 0;
     padding-right: 0; }
@@ -546,7 +545,6 @@ Base Container
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  min-height: 100vh;
   flex-direction: column; }
 
 .carousel-container {
@@ -577,7 +575,8 @@ div.mainpage-btn {
   display: flex;
   align-content: center;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  margin-bottom: 2em; }
 
 div.mainpage-btn > div {
   margin-bottom: 20px; }
@@ -689,7 +688,7 @@ ul.carousel-indicators li[class="active"] {
   text-align: center;
   font-size: 3em;
   margin-top: 2em;
-  margin-bottom: 2em; }
+  margin-bottom: 0.6em; }
   .welcome-text span {
     color: #ff9900;
     text-shadow: 2px 2px 2px #a9a9a9; }
@@ -746,6 +745,9 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%; }
+
+.toggleSwitch {
+  padding-top: 0.5em; }
 
 /**********************
 Shop Page Design
@@ -1011,9 +1013,6 @@ Pages Menu box basic Layout Styles
       text-decoration: none;
       text-shadow: none; }
 
-div[data-ng-init^="init"] {
-  height: 100vh; }
-
 .details-container {
   display: -webkit-box;
   display: -moz-box;
@@ -1088,6 +1087,46 @@ main.shoppingcart-container {
   display: -webkit-flex;
   display: flex; }
 
+main.shoppingcart-info-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center; }
+  main.shoppingcart-info-container .infobox {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    border: 2px solid black;
+    height: 50vh;
+    width: 50%;
+    justify-content: center;
+    justify-content: center;
+    box-shadow: 2px 2px 25px 3px #FF9900;
+    border-radius: 4px;
+    align-items: center;
+    background: #a9a9a9; }
+    main.shoppingcart-info-container .infobox > p {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+      width: 100%;
+      height: 30%;
+      align-items: center;
+      background: #FEFFFD; }
+      main.shoppingcart-info-container .infobox > p > span {
+        margin: 0 auto;
+        font-size: 2em; }
+
 .cart-items-list-container {
   display: -webkit-box;
   display: -moz-box;
@@ -1101,6 +1140,7 @@ main.shoppingcart-container {
   padding-left: 2em;
   padding-right: 2em;
   padding-top: 4em;
+  padding-bottom: 3em;
   margin-right: 1em;
   overflow: auto; }
   .cart-items-list-container div div {
@@ -1114,6 +1154,16 @@ main.shoppingcart-container {
     margin-bottom: 1em; }
   .cart-items-list-container div:last-child() {
     align-self: flex-end; }
+
+div.removeitem-btn-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 0 !important;
+  border: none !important; }
 
 .cart-items-list-inner-box {
   display: -webkit-box;
@@ -1167,19 +1217,12 @@ main.shoppingcart-container {
   padding-top: 0.5em;
   margin-left: 2em; }
   .cart-summary-details-container div {
-    width: 70%;
     text-align: center;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    padding: 0.1em; }
-  .cart-summary-details-container div span {
+    padding: 0.2em;
+    margin-bottom: 0.6em;
     border: 2px solid black;
-    padding: 0.3em;
-    margin-bottom: 0.5em;
-    margin-top: 0.1em; }
+    border: 2px solid black;
+    display: inline-table; }
 
 .cart-title-header {
   justify-content: center;
@@ -1327,10 +1370,8 @@ Footer Module
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #3D362D;
-  background: rgba(169, 169, 169, 0.8); }
-
-.container-narrow > hr {
-  margin: 30px 0; }
+  background: rgba(169, 169, 169, 0.8);
+  margin-bottom: -2em; }
 
 img {
   object-fit: cover; }

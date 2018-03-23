@@ -11,7 +11,8 @@ angular.module('capstoneApp').controller('ShoppingCtrl', [
   '$window',
   '$scope',
   'productService',
-  function($window, $scope, productService) {
+  'helperService',
+  function($window, $scope, productService, helperService) {
     $scope.allProductsData = {};
     $scope.subcatArrayNameList = {};
     $scope.subcatArrayListItems = [];

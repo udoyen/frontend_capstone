@@ -3,6 +3,41 @@ main.shoppingcart-container {
   // height: 100vh;
 }
 
+main.shoppingcart-info-container {
+  @include flexbox-display();
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  .infobox {
+    @include flexbox-display();
+    border: 2px solid black;
+    height: 50vh;
+    width: 50%;
+    justify-content: center;
+    justify-content: center;
+    box-shadow: 2px 2px 25px 3px $orange;
+    border-radius: 4px;
+    align-items: center;
+    background: $dark-gray;
+
+    & > p {
+      @include flexbox-display();
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+      width: 100%;
+      height: 30%;
+      align-items: center;
+      background: $ceramic;
+
+      & > span {
+        margin: 0 auto;
+        font-size: 2em;
+      }
+
+    }
+  }
+}
+
 .cart-items-list-container {
   @include flexbox-display();
   @include grow(1);
@@ -11,6 +46,7 @@ main.shoppingcart-container {
   padding-left: 2em;
   padding-right: 2em;
   padding-top: 4em;
+  padding-bottom: 3em;
   margin-right: 1em;
   overflow: auto;
   div div {
@@ -19,9 +55,17 @@ main.shoppingcart-container {
     padding: 0.8em;
     margin-bottom: 1em;
   }
+
   & div:last-child() {
     align-self: flex-end;
   }
+}
+
+div.removeitem-btn-container {
+  @include flexbox-display();
+  justify-content: flex-end;
+  padding-right: 0 !important;
+  border: none !important;
 }
 
 .cart-items-list-inner-box {
@@ -59,17 +103,14 @@ main.shoppingcart-container {
   padding-top: 0.5em;
   margin-left: 2em;
   div {
-    width: 70%;
     text-align: center;
-    @include flexbox-display();
-    padding: 0.1em;
-  }
-  div span {
+    padding: 0.2em;
+    margin-bottom: 0.6em;
     border: 2px solid black;
-    padding: 0.3em;
-    margin-bottom: 0.5em;
-    margin-top: 0.1em;
+    border: 2px solid black;
+    display: inline-table;
   }
+
 }
 
 .cart-title-header {

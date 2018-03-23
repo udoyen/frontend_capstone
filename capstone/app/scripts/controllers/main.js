@@ -11,7 +11,8 @@ angular.module("capstoneApp").controller("MainCtrl", [
   "$window",
   "$scope",
   "productService",
-  function($window, $scope, productService) {
+  "sessionFactory",
+  function($window, $scope, productService, sessionFactory) {
     $scope.allProductsData = {};
     $scope.slide1 = [];
     $scope.slide2 = [];
@@ -35,8 +36,12 @@ angular.module("capstoneApp").controller("MainCtrl", [
               });
             });
           });
-          console.log("itemsArrayList before shuffle" + JSON.stringify($scope.itemArrayList));
-
+          // Store in sessionStorage
+          sessionFactory.save("itemsArrayList", $scope.itemArrayList);
+          console.log(
+            "itemsArrayList before shuffle" +
+              JSON.stringify($scope.itemArrayList)
+          );
         } else {
           $window.alert("No data!");
         }
@@ -53,40 +58,57 @@ angular.module("capstoneApp").controller("MainCtrl", [
     };
 
     $scope.imageSelector = function() {
-      // Shuffle the productsImageArrayList
-      $scope.shuffleArray($scope.itemArrayList);
+      if (sessionFactory.get("itemsArrayList")) {
+        $window.alert("Getting images from sessionStorage");
+        $scope.myImages = JSON.parse(sessionFactory.get("itemsArrayList"));
+        // Shuffle the productsImageArrayList
+        $scope.shuffleArray($scope.myImages);
 
-      console.log("Image url after shuffle " + JSON.stringify($scope.itemArrayList))
+        // Create the slide images
+        for (let index = 0; index < 4; index++) {
+          $scope.slide1.push($scope.myImages[index]);
+        }
 
+        for (let index = 4; index < 8; index++) {
+          $scope.slide2.push($scope.myImages[index]);
+        }
 
-      // Create the slide images
-      for (let index = 0; index < 4; index++) {
-        $scope.slide1.push($scope.itemArrayList[index]);
+        for (let index = 8; index < 12; index++) {
+          $scope.slide3.push($scope.myImages[index]);
+        }
+      } else {
+        $window.alert('Getting images from online');
+        // Shuffle the productsImageArrayList
+        $scope.shuffleArray($scope.itemArrayList);
 
-      }
+        console.log(
+          "Image url after shuffle " + JSON.stringify($scope.itemArrayList)
+        );
 
-      for (let index = 4; index < 8; index++) {
-        $scope.slide2.push($scope.itemArrayList[index]);
+        // Create the slide images
+        for (let index = 0; index < 4; index++) {
+          $scope.slide1.push($scope.itemArrayList[index]);
+        }
 
-      }
+        for (let index = 4; index < 8; index++) {
+          $scope.slide2.push($scope.itemArrayList[index]);
+        }
 
-      for (let index = 8; index < 12; index++) {
-
-        $scope.slide3.push($scope.itemArrayList[index]);
-
+        for (let index = 8; index < 12; index++) {
+          $scope.slide3.push($scope.itemArrayList[index]);
+        }
       }
 
       console.log("Slide1 " + JSON.stringify($scope.slide1));
       console.log("Slide2 " + JSON.stringify($scope.slide2));
       console.log("Slide3 " + JSON.stringify($scope.slide3));
-
     };
 
     /**
      * Page initializer function
      */
     $scope.init = function() {
-      $window.alert('Call from cart details Controller');
+      $window.alert("Call from cart details Controller");
       $scope.myproducts();
     };
   }

@@ -4,7 +4,7 @@ Base Container
 
 .main-page-container {
   @include flexbox-display();
-  min-height: 100vh;
+  // min-height: 100vh;
   flex-direction: column;
 }
 
@@ -33,6 +33,7 @@ div.mainpage-btn {
   align-content: center;
   align-items: center;
   justify-content: center;
+  margin-bottom: 2em;
 }
 
 div.mainpage-btn > div {
@@ -159,7 +160,7 @@ ul.carousel-indicators li[class="active"] {
   text-align: center;
   font-size: 3em;
   margin-top: 2em;
-  margin-bottom: 2em;
+  margin-bottom: 0.6em;
 
   span {
     color: $rgbOrange;
@@ -225,6 +226,10 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.toggleSwitch {
+  padding-top: 0.5em;
 }
 
 

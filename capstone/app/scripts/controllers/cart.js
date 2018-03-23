@@ -18,6 +18,8 @@ angular.module('capstoneApp').controller('CartCtrl', [
     $scope.subtotal;
     $scope.tax;
     $scope.shipping;
+    $scope.cartState;
+    $scope.removeCartItem;
 
     $scope.cartDetails = function() {
       if (
@@ -25,11 +27,13 @@ angular.module('capstoneApp').controller('CartCtrl', [
           'undefined' ||
         cartFactoryService.get('cartItemsFromStorage') === null
       ) {
+        $scope.cartState = false;
         $window.alert('No items were found');
         $scope.cartIsEmptyText = 'Cart has no items in it!';
         $window.alert($scope.cartIsEmptyText);
 
       } else {
+        $scope.cartState = true;
         $window.alert('Inside the cartDetails function');
         $scope.addedItems = JSON.parse(cartFactoryService.get('cartItemsFromStorage'));
         $window.alert("Cart items " + JSON.stringify($scope.addedItems));
@@ -57,6 +61,15 @@ angular.module('capstoneApp').controller('CartCtrl', [
 
       return $scope.subtotal;
     };
+
+    /**
+     *
+     * @param {cart item to remove} cartItemObj
+     */
+    $scope.removeCartItem = function (cartItemObj) {
+      cartFactoryService.removeCartItem(cartItemObj);
+      $scope.cartDetails();
+    }
 
     /**
      *

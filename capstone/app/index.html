@@ -59,7 +59,7 @@
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
+     <!-- <script>
        !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
        (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
        r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
@@ -67,7 +67,7 @@
 
        ga('create', 'UA-XXXXX-X');
        ga('send', 'pageview');
-    </script>
+    </script> -->
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -84,11 +84,12 @@
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.3/ui-bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.3/ui-bootstrap-tpls.min.js"></script>
+        <script src="scripts/helpers/ui-bootstrap.min.js"></script>
+        <script src="scripts/helpers/ui-bootstrap-tpls.min.js"></script>
         <script src="scripts/app.js"></script>
         <script src="scripts/service/productService.js"></script>
         <script src="scripts/service/cartFactroyService.js"></script>
+        <script src="scripts/service/sessionFactory.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/cart.js"></script>
@@ -98,6 +99,8 @@
         <script src="scripts/controllers/details.js"></script>
         <script src="scripts/helpers/stepper.js"></script>
         <script src="scripts/helpers/mydropdown.js"></script>
+        <script src="scripts/helpers/myhelper.js"></script>
+
 
 
 

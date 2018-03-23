@@ -16,6 +16,7 @@ angular.module('capstoneApp').controller('ProductCtrl', [
   '$route',
   'cartFactoryService',
   '$location',
+  'helperService',
   function(
     $routeParams,
     $window,
@@ -23,7 +24,8 @@ angular.module('capstoneApp').controller('ProductCtrl', [
     productService,
     $route,
     cartFactoryService,
-    $location
+    $location,
+    helperService,
   ) {
     console.log('Subcategory' + $route.current.params.subcategory);
     console.log('Category' + $routeParams.category);
