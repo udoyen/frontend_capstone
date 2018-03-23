@@ -10,7 +10,7 @@
       <div class="detail-boxes special-h1"><span>Price &#x20A6;{{d.price}}</span></div>
       <div class="detail-boxes special-h1"><span id="description">{{d.description}}</span></div>
       <div class="js-spinner detail-boxes">
-              <input type="number" ng-model="model.qty" value="1" step="1" max="100" min="1" data-stepper-debounce="400" class="js-stepper">
+              <span class="qtyNoBorder">QTY:</span><input id="detailsQty" type="number" ng-model="model.qty" value="1" step="1" max="{{d.stock}}" min="1" data-stepper-debounce="400" class="js-stepper">
               <!-- <button type="button" spinner-button="up" title="add 1">+1</button>
               <button type="button" spinner-button="down" title="subtract 1">-1</button> -->
             </div>

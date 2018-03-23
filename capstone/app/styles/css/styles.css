@@ -1080,6 +1080,13 @@ span[id='description'] {
   height: 8em;
   text-align: center; }
 
+input#detailsQty {
+  width: 3.5em !important; }
+
+span.qtyNoBorder {
+  border: none !important;
+  font-size: 1.5em; }
+
 main.shoppingcart-container {
   display: -webkit-box;
   display: -moz-box;
@@ -1304,6 +1311,9 @@ form.submitForm {
   padding-left: 1em;
   border-right: 1em solid gray;
   padding-right: 1em; }
+
+input#qty {
+  width: 2.7em !important; }
 
 /***************************
 Module Imports
