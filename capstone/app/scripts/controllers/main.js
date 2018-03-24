@@ -12,7 +12,7 @@ angular.module("capstoneApp").controller("MainCtrl", [
   "$scope",
   "productService",
   "sessionFactory",
-  function($window, $scope, productService, sessionFactory) {
+  function ($window, $scope, productService, sessionFactory) {
     $scope.allProductsData = {};
     $scope.slide1 = [];
     $scope.slide2 = [];
@@ -24,31 +24,32 @@ angular.module("capstoneApp").controller("MainCtrl", [
 
 
     $scope.changeCarouselSpeed = function () {
-      jq('#toggle').on('change', function () {
-        if (this.checked) {
-          jq('#carouselControls').attr('data-interval', '3000');
-        }
+      $window.alert("Checkbox");
+      if ($scope.isChecked) {
 
-        if (!this.checked) {
-          jq('#carouselControls').removeAttr('data-interval');
-        }
-      })
+        jq('#carouselControls').attr('data-interval', '3000');
+      } else {
+        
+        jq('#carouselControls').removeAttr('data-interval');
+
+      }
+
     }
 
 
-    $scope.goToShop = function() {
+    $scope.goToShop = function () {
       $window.location.href = "http://localhost/shopping_page";
     };
 
-    $scope.myproducts = function() {
-      productService.getProducts().then(function(products) {
+    $scope.myproducts = function () {
+      productService.getProducts().then(function (products) {
         $scope.allProductsData = products;
 
         if ($scope.allProductsData) {
           // Create item list
-          angular.forEach($scope.allProductsData, function(obj) {
-            angular.forEach(obj.subcategories, function(subcat) {
-              angular.forEach(subcat.items, function(item) {
+          angular.forEach($scope.allProductsData, function (obj) {
+            angular.forEach(obj.subcategories, function (subcat) {
+              angular.forEach(subcat.items, function (item) {
                 $scope.itemArrayList.push(item);
               });
             });
@@ -57,7 +58,7 @@ angular.module("capstoneApp").controller("MainCtrl", [
           sessionFactory.save("itemsArrayList", $scope.itemArrayList);
           console.log(
             "itemsArrayList before shuffle" +
-              JSON.stringify($scope.itemArrayList)
+            JSON.stringify($scope.itemArrayList)
           );
         } else {
           $window.alert("No data!");
@@ -67,14 +68,14 @@ angular.module("capstoneApp").controller("MainCtrl", [
       });
     };
 
-    $scope.shuffleArray = function(array) {
+    $scope.shuffleArray = function (array) {
       for (let i = array.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
       }
     };
 
-    $scope.imageSelector = function() {
+    $scope.imageSelector = function () {
       if (sessionFactory.get("itemsArrayList")) {
         $window.alert("Getting images from sessionStorage");
         $scope.myImages = JSON.parse(sessionFactory.get("itemsArrayList"));
@@ -124,7 +125,7 @@ angular.module("capstoneApp").controller("MainCtrl", [
     /**
      * Page initializer function
      */
-    $scope.init = function() {
+    $scope.init = function () {
       $window.alert("Call from cart details Controller");
       $scope.myproducts();
     };

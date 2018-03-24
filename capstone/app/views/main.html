@@ -67,7 +67,7 @@
       <div class="toggleSwitch">
         <span>Toggle Slide Show</span>
         <label class="switch">
-          <input id="toggle" type="checkbox" ng-click="changeCarouselSpeed()">
+          <input id="toggle" type="checkbox" ng-model="isChecked" ng-change="changeCarouselSpeed()" />
           <span class="slider round"></span>
         </label>
       </div>
