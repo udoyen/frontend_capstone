@@ -19,5 +19,9 @@ function helperService($window) {
         .addClass('fa-caret-down');
     });
 
+    // $('input#qty').on('input', function (){
+    //   alert("Value changed on cart page");
+    // })
+
   })(jQuery);
 }

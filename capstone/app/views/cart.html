@@ -5,7 +5,7 @@
           <span>Name: {{item.name}}</span>
           <span>Details: {{item.description}}</span>
           <span>Price: &#x20A6;{{item.price | number:2}}</span>
-          <span>Qty: <input id="qty" type="number" value="{{item.quantity}}" max="{{item.stock}} min="1"></span>
+          <span>Qty: <input id="qty" type="number" value="{{item.quantity}}" max="{{item.stock}}" min="1"  ng-model="quantity" ng-change="updateQuantityChange(item.name, quantity)"></span>
           <span>Total: &#x20A6;{{item.quantity * item.price | number:2}}</span>
         </div>
         <div class="removeitem-btn-container">

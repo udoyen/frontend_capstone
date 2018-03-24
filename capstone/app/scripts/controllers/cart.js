@@ -24,6 +24,7 @@ angular.module('capstoneApp').controller('CartCtrl', [
     $scope.submit = submit;
     $scope.reset = reset;
     $scope.totalCost;
+    $scope.updateQuantityChange;
 
     reset();
 
@@ -54,14 +55,38 @@ angular.module('capstoneApp').controller('CartCtrl', [
       }
     };
 
+    /**
+     *
+     * @param {form values} values
+     */
     function submit (values) {
       $scope.formValues.totalCost = JSON.stringify($scope.subtotal + $scope.shipping + $scope.tax);
       alert('Submitted\n' + JSON.stringify($scope.formValues));
     };
 
 
+    /**
+     * Reset the form fields
+     */
     function reset() {
       $scope.formValues = {};
+    }
+
+    $scope.updateQuantityChange = function (itemName, quantity) {
+      if (cartFactoryService.get('cartItemsFromStorage')) {
+        $window.alert('Inside the cartItemsFromStorage if loop');
+        $scope.temp = JSON.parse(cartFactoryService.get('cartItemsFromStorage'));
+        angular.forEach($scope.temp, function (i) {
+          if (itemName === i.name) {
+            $window.alert('Inside the second if loop');
+            i.quantity = quantity;
+          }
+        });
+
+        cartFactoryService.save('cartItemsFromStorage', $scope.temp);
+        $scope.cartDetails();
+      }
+      $window.alert(JSON.stringify(itemName) + JSON.stringify(quantity));
     }
 
 

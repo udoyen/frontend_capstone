@@ -29,7 +29,6 @@ function cartFactoryService($window) {
   function get(key) {
     return $window.sessionStorage.getItem(key);
   }
-
   /**
    *
    * @param {Name of storage item} key
