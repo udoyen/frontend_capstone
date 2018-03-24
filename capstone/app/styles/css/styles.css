@@ -748,6 +748,10 @@ input:checked + .slider:before {
 
 .toggleSwitch {
   padding-top: 0.5em; }
+  .toggleSwitch span {
+    color: #3D362D !important;
+    font-size: 0.5em !important;
+    display: block !important; }
 
 /**********************
 Shop Page Design

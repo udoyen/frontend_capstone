@@ -18,6 +18,23 @@ angular.module("capstoneApp").controller("MainCtrl", [
     $scope.slide2 = [];
     $scope.slide3 = [];
     $scope.itemArrayList = [];
+    // To avoid conflicts with jquery
+    var jq = $.noConflict();
+    $scope.changeCarouselSpeed;
+
+
+    $scope.changeCarouselSpeed = function () {
+      jq('#toggle').on('change', function () {
+        if (this.checked) {
+          jq('#carouselControls').attr('data-interval', '3000');
+        }
+
+        if (!this.checked) {
+          jq('#carouselControls').removeAttr('data-interval');
+        }
+      })
+    }
+
 
     $scope.goToShop = function() {
       $window.location.href = "http://localhost/shopping_page";
@@ -111,5 +128,7 @@ angular.module("capstoneApp").controller("MainCtrl", [
       $window.alert("Call from cart details Controller");
       $scope.myproducts();
     };
+
+
   }
 ]);

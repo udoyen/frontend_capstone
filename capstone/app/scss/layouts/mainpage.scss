@@ -230,6 +230,12 @@ input:checked + .slider:before {
 
 .toggleSwitch {
   padding-top: 0.5em;
+  span {
+    color: $dark-brown !important;
+    font-size: 0.5em !important;
+    display: block !important;
+
+  }
 }
 
 
