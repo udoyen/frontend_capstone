@@ -74,11 +74,9 @@ angular.module('capstoneApp').controller('CartCtrl', [
 
     $scope.updateQuantityChange = function (itemName, quantity) {
       if (cartFactoryService.get('cartItemsFromStorage')) {
-        $window.alert('Inside the cartItemsFromStorage if loop');
         $scope.temp = JSON.parse(cartFactoryService.get('cartItemsFromStorage'));
         angular.forEach($scope.temp, function (i) {
           if (itemName === i.name) {
-            $window.alert('Inside the second if loop');
             i.quantity = quantity;
           }
         });
@@ -86,7 +84,6 @@ angular.module('capstoneApp').controller('CartCtrl', [
         cartFactoryService.save('cartItemsFromStorage', $scope.temp);
         $scope.cartDetails();
       }
-      $window.alert(JSON.stringify(itemName) + JSON.stringify(quantity));
     }
 
 
