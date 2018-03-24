@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * @ngdoc function
@@ -8,15 +8,15 @@
  * Controller of the capstoneApp
  */
 // TODO: Clean up this fle
-angular.module('capstoneApp').controller('ProductCtrl', [
-  '$routeParams',
-  '$window',
-  '$scope',
-  'productService',
-  '$route',
-  'cartFactoryService',
-  '$location',
-  'helperService',
+angular.module("capstoneApp").controller("ProductCtrl", [
+  "$routeParams",
+  "$window",
+  "$scope",
+  "productService",
+  "$route",
+  "cartFactoryService",
+  "$location",
+  "helperService",
   function(
     $routeParams,
     $window,
@@ -25,10 +25,8 @@ angular.module('capstoneApp').controller('ProductCtrl', [
     $route,
     cartFactoryService,
     $location,
-    helperService,
+    helperService
   ) {
-    console.log('Subcategory' + $route.current.params.subcategory);
-    console.log('Category' + $routeParams.category);
     $scope.subcategory = $routeParams.subcategory;
     $scope.category = $routeParams.category;
     $scope.currentPath = $location.path();
@@ -40,21 +38,22 @@ angular.module('capstoneApp').controller('ProductCtrl', [
     $scope.subcatArrayListItems = [];
     $scope.allProductsData = {};
     $scope.filteredItemsArrayList = [];
-    $scope.sortFilterArray = ['none', 'price', 'alphabetical', 'rating'];
-    $scope.sortFilterArrayItemValues = ['none', 'price', 'name', 'rating'];
+    $scope.sortFilterArray = ["none", "price", "alphabetical", "rating"];
+    $scope.sortFilterArrayItemValues = ["none", "price", "name", "rating"];
     $scope.categoriesList = {
-      'Household and Beauty': 0,
-      'Pantry Items': 1,
-      'Perishable': 2,
-      'Produce': 3
+      "Household and Beauty": 0,
+      "Pantry Items": 1,
+      Perishable: 2,
+      Produce: 3
     };
-
+   
     $scope.addItemToCartFromProductspage = cartFactoryService.addItemToCart;
     $scope.allShopItems = [];
 
     $scope.getDropdownIndex = function(dIndex) {
       $scope.dropdownChoiceIndex = $scope.sortFilterArray[dIndex];
-      $scope.dropdownChoiceIndexValue = $scope.sortFilterArrayItemValues[dIndex];
+      $scope.dropdownChoiceIndexValue =
+        $scope.sortFilterArrayItemValues[dIndex];
     };
 
     $scope.subcategoriesProductList = function() {
@@ -71,21 +70,15 @@ angular.module('capstoneApp').controller('ProductCtrl', [
         .then(function(products) {
           $scope.subcategory = $routeParams.subcategory;
           $scope.category = $routeParams.category;
-          console.log(typeof $scope.subcategory);
-          console.log(typeof $scope.category);
           $window.alert($scope.currentPath);
 
           // Get the index of the categoryName
           angular.forEach($scope.categoriesList, function(value, key) {
             if (key === $scope.category) {
               $scope.singleCategory = products[value].subcategories;
-              console.log($scope.singleCategory);
               $scope.category = products[value].category;
-              console.log($scope.category);
             }
           });
-
-          console.log(JSON.stringify($scope.singleCategory));
 
           // Create ArrayList of subcategory items
           angular.forEach($scope.singleCategory, function(key, value) {
@@ -95,14 +88,6 @@ angular.module('capstoneApp').controller('ProductCtrl', [
               $scope.subcatArrayListItems.push(key);
             });
           });
-          // Create filtered items
-          // angular.forEach($scope.subcatArrayListItems, function (key, value) {
-          //   if (angular.equals(key.subcategory, $scope.subcategory)) {
-          //     console.log(JSON.stringify(key));
-          //     $scope.filteredItemsArrayList.push(key);
-          //   }
-
-          // })
 
           angular.forEach(products, function(key, value) {
             angular.forEach(key.subcategories, function(key, value) {
@@ -113,32 +98,17 @@ angular.module('capstoneApp').controller('ProductCtrl', [
           });
 
           // The items in session storage
-          cartFactoryService.save('shopItems', $scope.allShopItems);
-
-          console.log($scope.allShopItems);
-
-          // for (let index = 0; index <  $scope.itemsNameArrayList.length; index++) {
-          //   console.log( $scope.itemsNameArrayList[index]);
-
-          // }
-          // console.log($scope.itemsNameArrayList.toString());
-          console.log(
-            'List items' + JSON.stringify($scope.subcatArrayListItems)
-          );
-          console.log(
-            'Items Array List' + JSON.stringify($scope.itemsArrayList)
-          );
+          cartFactoryService.save("shopItems", $scope.allShopItems);
         })
         .catch(function(e) {
-          console.log('There was an error: ' + e);
+          console.log("There was an error: " + e);
         });
     };
 
+
     // Use this function to load the api result into the page
     $scope.init = function() {
-      console.log('Angular call function on product page load');
       $scope.subcategoriesProductList();
-      // getAllShopItems();
     };
   }
 ]);

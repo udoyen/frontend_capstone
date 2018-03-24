@@ -107,8 +107,14 @@ function cartFactoryService($window) {
           itemToRemove.splice(index, 1);
         }
       });
-      save("addedItemsList", itemToRemove);
-      save("cartItemsFromStorage", itemToRemove);
+      if (itemToRemove.length > 0) {
+        save("addedItemsList", itemToRemove);
+        save("cartItemsFromStorage", itemToRemove);
+      } else {
+        removeItem('addedItemsList');
+        removeItem('cartItemsFromStorage');
+      }
+
       $window.alert("after removal " + JSON.stringify(itemToRemove.length));
     }
     // $window.alert('addedItemsList array ' + JSON.stringify(addedItemsList));

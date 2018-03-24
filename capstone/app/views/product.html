@@ -31,7 +31,7 @@
           <div class="toggleSwitch">
             <span class="my-stock">In Stock Only</span>
             <label class="switch">
-              <input id="toggle" type="checkbox" ng-model="isChecked" ng-change="changeCarouselSpeed()" />
+              <input id="toggle" type="checkbox" ng-model="isChecked" />
               <span class="slider round"></span>
             </label>
           </div>
@@ -57,7 +57,7 @@
       </div>
     </aside>
     <main class="product-list col-md-10">
-      <div class="items-container flexbox-sm">
+      <div ng-if="!isChecked" class="items-container flexbox-sm">
         <div ng-repeat="item in itemsArrayList | filter:subcategory | orderBy:dropdownChoiceIndexValue" class="card col-md-4 product-boxitem">
           <a ng-href="/details/{{item.name}}"><img class="card-img-top .img-fluid" src="{{item.imagelink}}" alt="image of {{item.name}}"></a>
           <div class="card-body">
@@ -66,7 +66,16 @@
               <a ng-href="#" ng-if="item.stock !== '0'" ng-click="addItemToCartFromProductspage(item)" class="btn btn-primary">Add</a>
               <a ng-href="#" ng-if="item.stock === '0'" placement="bottom" ngbTooltip="This item is not in stock!" class="btn btn-primary">Out of Stock</a>
             </div>
-
+        </div>
+      </div>
+      <div ng-if="isChecked" class="items-container flexbox-sm">
+          <div ng-repeat="item in itemsArrayList | filter:subcategory | orderBy:dropdownChoiceIndexValue | filter : inStock" data-ng-if="filter = item.stock !== '0'" class="card col-md-4 product-boxitem">
+          <a ng-href="/details/{{item.name}}"><img class="card-img-top .img-fluid" src="{{item.imagelink}}" alt="image of {{item.name}}"></a>
+          <div class="card-body">
+              <p class="special-h2">Name:<a ng-href="/details/{{item.name}}"> {{item.name}}</a></p>
+              <p>Price: &#x20A6;{{item.price}}</p>
+              <a ng-href="#" ng-model="myStock" ng-click="addItemToCartFromProductspage(item)" class="btn btn-primary">Add</a>
+            </div>
         </div>
       </div>
     </main>
