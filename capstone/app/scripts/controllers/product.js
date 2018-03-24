@@ -36,10 +36,12 @@ angular.module('capstoneApp').controller('ProductCtrl', [
     $scope.itemsNameArrayList = [];
     $scope.itemsArrayList = [];
     $scope.dropdownChoiceIndex;
+    $scope.dropdownChoiceIndexValue;
     $scope.subcatArrayListItems = [];
     $scope.allProductsData = {};
     $scope.filteredItemsArrayList = [];
     $scope.sortFilterArray = ['none', 'price', 'alphabetical', 'rating'];
+    $scope.sortFilterArrayItemValues = ['none', 'price', 'name', 'rating'];
     $scope.categoriesList = {
       'Household and Beauty': 0,
       'Pantry Items': 1,
@@ -52,6 +54,7 @@ angular.module('capstoneApp').controller('ProductCtrl', [
 
     $scope.getDropdownIndex = function(dIndex) {
       $scope.dropdownChoiceIndex = $scope.sortFilterArray[dIndex];
+      $scope.dropdownChoiceIndexValue = $scope.sortFilterArrayItemValues[dIndex];
     };
 
     $scope.subcategoriesProductList = function() {

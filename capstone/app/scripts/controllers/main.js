@@ -24,12 +24,11 @@ angular.module("capstoneApp").controller("MainCtrl", [
 
 
     $scope.changeCarouselSpeed = function () {
-      $window.alert("Checkbox");
       if ($scope.isChecked) {
 
         jq('#carouselControls').attr('data-interval', '3000');
       } else {
-        
+
         jq('#carouselControls').removeAttr('data-interval');
 
       }

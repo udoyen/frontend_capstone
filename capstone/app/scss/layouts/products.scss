@@ -33,7 +33,31 @@ div.wrapper-container.container-fluid {
 }
 
 .sort-box-container {
-  @include grow(3);
+  @include grow(1);
+}
+
+.controlls-bar {
+  @include flexbox-display();
+  font-size: 1.5em !important;
+  flex-direction: row;
+  @include grow(1);
+  justify-content: space-evenly;
+  .product-count {
+    @include flexbox-display();
+    align-items: center;
+  }
+  .instock {
+    font-size: 2em;
+    & > div.toggleSwitch {
+      @include flexbox-display();
+      padding-top: 0 !important;
+      span.my-stock {
+        padding-right: 1em !important;
+      }
+
+    }
+  }
+
 }
 
 .contents {
@@ -52,7 +76,17 @@ div.wrapper-container.container-fluid {
 .sort-box-container {
   @include flexbox-display();
   flex-direction: row;
+  @include grow(1);
 
+}
+
+.sort-box-container > label {
+  flex-grow: 1;
+  align-self: center;
+  text-align: end;
+  font-size: 1.5em;
+  padding-right: 0.3em;
+  width: 12em;
 }
 
 .dropdown-menu.show {
@@ -76,16 +110,7 @@ div.wrapper-container.container-fluid {
 
 .sort-btn-group {
   @include grow(10);
-  width: 0 !important;
-}
-
-.sort-box-container > label {
-  @include grow(1);
-  flex-grow: 1;
-  align-self: center;
-  text-align: end;
-  font-size: 1.5em;
-  padding-right: 0.3em;
+  // width: 0 !important;
 }
 
 .input-group-btn .btn {
@@ -137,4 +162,5 @@ img.card-img-top {
   margin: 1em !important;
   max-width: 24em !important;
 }
+
 

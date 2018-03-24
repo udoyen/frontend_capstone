@@ -17,9 +17,23 @@
               <span class="caret"></span>
             </button>
             <div class="dropdown-menu dropdown-menu-right">
-              <a ng-repeat="f in sortFilterArray" ng-click="getDropdownIndex($index)" class="dropdown-item text-capitalize" href="#">{{f}}</a>
+              <a ng-repeat="f in sortFilterArray" ng-click="getDropdownIndex($index)" ng-model="mfilter" ng-value="dropdownChoiceIndexValue" class="dropdown-item text-capitalize" href="#">{{f}}</a>
 
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="controlls-bar">
+        <div class="product-count">
+          <p>Product Count</p>
+        </div>
+        <div class="instock">
+          <div class="toggleSwitch">
+            <span class="my-stock">In Stock Only</span>
+            <label class="switch">
+              <input id="toggle" type="checkbox" ng-model="isChecked" ng-change="changeCarouselSpeed()" />
+              <span class="slider round"></span>
+            </label>
           </div>
         </div>
       </div>
@@ -44,7 +58,7 @@
     </aside>
     <main class="product-list col-md-10">
       <div class="items-container flexbox-sm">
-        <div ng-repeat="item in itemsArrayList | filter:subcategory" class="card col-md-4 product-boxitem">
+        <div ng-repeat="item in itemsArrayList | filter:subcategory | orderBy:dropdownChoiceIndexValue" class="card col-md-4 product-boxitem">
           <a ng-href="/details/{{item.name}}"><img class="card-img-top .img-fluid" src="{{item.imagelink}}" alt="image of {{item.name}}"></a>
           <div class="card-body">
               <p class="special-h2">Name:<a ng-href="/details/{{item.name}}"> {{item.name}}</a></p>

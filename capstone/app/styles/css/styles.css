@@ -729,10 +729,10 @@ ul.carousel-indicators li[class="active"] {
   transition: .4s; }
 
 input:checked + .slider {
-  background-color: #2196F3; }
+  background-color: #ff9900; }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3; }
+  box-shadow: 0 0 1px #ff9900; }
 
 input:checked + .slider:before {
   -webkit-transform: translateX(26px);
@@ -893,8 +893,38 @@ div.wrapper-container.container-fluid {
   padding-left: 3em; }
 
 .sort-box-container {
-  -webkit-grow: 3;
-  flex-grow: 3; }
+  -webkit-grow: 1;
+  flex-grow: 1; }
+
+.controlls-bar {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 1.5em !important;
+  flex-direction: row;
+  -webkit-grow: 1;
+  flex-grow: 1;
+  justify-content: space-evenly; }
+  .controlls-bar .product-count {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center; }
+  .controlls-bar .instock {
+    font-size: 2em; }
+    .controlls-bar .instock > div.toggleSwitch {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      padding-top: 0 !important; }
+      .controlls-bar .instock > div.toggleSwitch span.my-stock {
+        padding-right: 1em !important; }
 
 .contents {
   display: -webkit-box;
@@ -920,7 +950,17 @@ div.wrapper-container.container-fluid {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  -webkit-grow: 1;
+  flex-grow: 1; }
+
+.sort-box-container > label {
+  flex-grow: 1;
+  align-self: center;
+  text-align: end;
+  font-size: 1.5em;
+  padding-right: 0.3em;
+  width: 12em; }
 
 .dropdown-menu.show {
   left: -5em !important;
@@ -938,17 +978,7 @@ div.wrapper-container.container-fluid {
 
 .sort-btn-group {
   -webkit-grow: 10;
-  flex-grow: 10;
-  width: 0 !important; }
-
-.sort-box-container > label {
-  -webkit-grow: 1;
-  flex-grow: 1;
-  flex-grow: 1;
-  align-self: center;
-  text-align: end;
-  font-size: 1.5em;
-  padding-right: 0.3em; }
+  flex-grow: 10; }
 
 .input-group-btn .btn {
   background: #665847;
