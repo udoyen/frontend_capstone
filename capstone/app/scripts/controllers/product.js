@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /**
  * @ngdoc function
@@ -8,15 +8,15 @@
  * Controller of the capstoneApp
  */
 // TODO: Clean up this fle
-angular.module("capstoneApp").controller("ProductCtrl", [
-  "$routeParams",
-  "$window",
-  "$scope",
-  "productService",
-  "$route",
-  "cartFactoryService",
-  "$location",
-  "helperService",
+angular.module('capstoneApp').controller('ProductCtrl', [
+  '$routeParams',
+  '$window',
+  '$scope',
+  'productService',
+  '$route',
+  'cartFactoryService',
+  '$location',
+  'helperService',
   function(
     $routeParams,
     $window,
@@ -36,19 +36,29 @@ angular.module("capstoneApp").controller("ProductCtrl", [
     $scope.dropdownChoiceIndex;
     $scope.dropdownChoiceIndexValue;
     $scope.subcatArrayListItems = [];
+    $scope.subcatArrayListItemsCount;
     $scope.allProductsData = {};
     $scope.filteredItemsArrayList = [];
-    $scope.sortFilterArray = ["none", "price", "alphabetical", "rating"];
-    $scope.sortFilterArrayItemValues = ["none", "price", "name", "rating"];
+    $scope.sortFilterArray = ['none', 'price', 'alphabetical', 'rating'];
+    $scope.sortFilterArrayItemValues = ['none', 'price', 'name', 'rating'];
     $scope.categoriesList = {
-      "Household and Beauty": 0,
-      "Pantry Items": 1,
+      'Household and Beauty': 0,
+      'Pantry Items': 1,
       Perishable: 2,
       Produce: 3
     };
-   
+
     $scope.addItemToCartFromProductspage = cartFactoryService.addItemToCart;
     $scope.allShopItems = [];
+    $scope.subItems = [];
+    $scope.subItemsCount;
+    $scope.reduceProductCount;
+    // To avoid conflicts with jquery
+    var jq = jQuery.noConflict();
+    $scope.countBoolean;
+    $scope.iCount;
+    $scope.pathCheck;
+    $scope.subtractionValue;
 
     $scope.getDropdownIndex = function(dIndex) {
       $scope.dropdownChoiceIndex = $scope.sortFilterArray[dIndex];
@@ -74,9 +84,11 @@ angular.module("capstoneApp").controller("ProductCtrl", [
 
           // Get the index of the categoryName
           angular.forEach($scope.categoriesList, function(value, key) {
+            $window.alert('value ' + JSON.stringify(value));
+            $window.alert('key ' + JSON.stringify(key));
             if (key === $scope.category) {
               $scope.singleCategory = products[value].subcategories;
-              $scope.category = products[value].category;
+              // $scope.category = products[value].category;
             }
           });
 
@@ -86,8 +98,35 @@ angular.module("capstoneApp").controller("ProductCtrl", [
               $scope.itemsNameArrayList.push(key.name);
               $scope.itemsArrayList.push(key);
               $scope.subcatArrayListItems.push(key);
+              if (key.subcategory === $scope.subcategory) {
+                $scope.subItems.push(key);
+              }
             });
           });
+
+          $window.alert('subItems ' + JSON.stringify($scope.subItems));
+
+          // Set the subItemsCount
+          $scope.subcatArrayListItemsCount = $scope.subcatArrayListItems.length;
+          $window.alert('subcarArrayListItemsCount ' + $scope.subcatArrayListItemsCount);
+          $scope.subItemsCount = $scope.subItems.length;
+          $window.alert('subItemsCount ' + $scope.subItemsCount);
+          $scope.pathCheck = function () {
+            $window.alert('PathCheck function called');
+            if ($scope.currentPath === '/product/' + $scope.category) {
+              $scope.countBoolean = true;
+            } else {
+              $scope.countBoolean = false;
+            }
+
+            // if ($scope.currentPath === '/product/' + $scope.category + '/' + $scope.subcategory) {
+            //   $scope.countBoolean = false;
+            // }
+          };
+
+          $scope.pathCheck();
+          $window.alert('countBoolean ' + $scope.countBoolean);
+
 
           angular.forEach(products, function(key, value) {
             angular.forEach(key.subcategories, function(key, value) {
@@ -97,18 +136,89 @@ angular.module("capstoneApp").controller("ProductCtrl", [
             });
           });
 
+          $scope.reduceProductCount = function() {
+            angular.element(document).ready(function() {
+              $window.alert(jq('.card').length);
+              $scope.iCount = jq('.card').length;
+              if ($scope.isChecked) {
+                $scope.subcatArrayListItemsCount = $scope.iCount;
+                $scope.subItemsCount = $scope.iCount;
+
+              } else {
+                $scope.subcatArrayListItemsCount = $scope.iCount;
+                $scope.subItemsCount = $scope.iCount;
+              }
+
+              // The new subItemsCount after removing
+              // products not in stock via checkbox button
+              // if ($scope.isChecked) {
+              //   $window.alert('Inside isChecked true');
+              //   if ($scope.countBoolean) {
+              //     $window.alert('isChecked true countBoolean true');
+              //     $scope.iCount = jq('.card').length;
+              //     $window.alert('iCOunt ' + $scope.iCount);
+              //     $scope.subcatArrayListItemsCount = $scope.iCount;
+              //     $window.alert($scope.subcatArrayListItemsCount);
+              //   }
+              //   if (!$scope.countBoolean) {
+              //     $window.alert('isChecked true countBoolean false');
+              //     $scope.iCount = jq('.card').length;
+              //     $window.alert('iCount ' + $scope.iCount);
+              //     $scope.subItemsCount =  $scope.iCount;
+              //     $window.alert($scope.subItemsCount);
+              //   }
+              // }
+
+              // if (!$scope.isChecked) {
+              //   $window.alert('Inside isChecked false');
+              //   if ($scope.countBoolean) {
+              //     $window.alert('isChecked false countBoolean true');
+              //     $scope.iCount = jq('.card').length;
+              //     $window.alert('iCount ' + $scope.iCount);
+              //     $scope.subcatArrayListItemsCount = $scope.iCount;
+              //     $window.alert($scope.subcatArrayListItemsCount);
+              //   }
+              //   if (!$scope.countBoolean) {
+              //     $window.alert('isChecked false countBoolean false');
+              //     $scope.iCount = jq('.card').length;
+              //     $window.alert('iCount ' + $scope.iCount);
+              //     $scope.subItemsCount =  $scope.iCount;
+              //     $window.alert($scope.subItemsCount);
+              //   }
+              // }
+
+            });
+          };
+
           // The items in session storage
-          cartFactoryService.save("shopItems", $scope.allShopItems);
+          cartFactoryService.save('shopItems', $scope.allShopItems);
         })
         .catch(function(e) {
-          console.log("There was an error: " + e);
+          console.log('There was an error: ' + e);
         });
     };
+
+    (function(jq) {
+      // $window.alert($('.shopme').attr('id'));
+
+      jq('#submenu').on('hide.bs.collapse', function() {
+        jq('#shopmenu')
+          .removeClass('fa-caret-down')
+          .addClass('fa-caret-right');
+      });
+      jq('#submenu').on('show.bs.collapse', function() {
+        jq('#shopmenu')
+          .removeClass('fa-caret-right')
+          .addClass('fa-caret-down');
+      });
+    })(jQuery);
+
 
 
     // Use this function to load the api result into the page
     $scope.init = function() {
       $scope.subcategoriesProductList();
+      // helperService();
     };
   }
 ]);
