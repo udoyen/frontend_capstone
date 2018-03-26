@@ -84,11 +84,9 @@ angular.module('capstoneApp').controller('ProductCtrl', [
 
           // Get the index of the categoryName
           angular.forEach($scope.categoriesList, function(value, key) {
-            $window.alert('value ' + JSON.stringify(value));
-            $window.alert('key ' + JSON.stringify(key));
             if (key === $scope.category) {
               $scope.singleCategory = products[value].subcategories;
-              // $scope.category = products[value].category;
+              $scope.category = products[value].category;
             }
           });
 
@@ -98,7 +96,10 @@ angular.module('capstoneApp').controller('ProductCtrl', [
               $scope.itemsNameArrayList.push(key.name);
               $scope.itemsArrayList.push(key);
               $scope.subcatArrayListItems.push(key);
-              if (key.subcategory === $scope.subcategory) {
+              // $window.alert('key.subcategory ' + JSON.stringify(key.subcategory).toUpperCase());
+              // $window.alert('subcategory ' + JSON.stringify($scope.subcategory));
+              if ( key.subcategory.toUpperCase() === $scope.subcategory.toUpperCase()) {
+                $window.alert('Inside the if loop');
                 $scope.subItems.push(key);
               }
             });
@@ -118,10 +119,6 @@ angular.module('capstoneApp').controller('ProductCtrl', [
             } else {
               $scope.countBoolean = false;
             }
-
-            // if ($scope.currentPath === '/product/' + $scope.category + '/' + $scope.subcategory) {
-            //   $scope.countBoolean = false;
-            // }
           };
 
           $scope.pathCheck();
@@ -212,8 +209,6 @@ angular.module('capstoneApp').controller('ProductCtrl', [
           .addClass('fa-caret-down');
       });
     })(jQuery);
-
-
 
     // Use this function to load the api result into the page
     $scope.init = function() {
