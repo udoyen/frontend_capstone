@@ -98,10 +98,12 @@ angular.module('capstoneApp').controller('ProductCtrl', [
               $scope.subcatArrayListItems.push(key);
               // $window.alert('key.subcategory ' + JSON.stringify(key.subcategory).toUpperCase());
               // $window.alert('subcategory ' + JSON.stringify($scope.subcategory));
-              if ( key.subcategory.toUpperCase() === $scope.subcategory.toUpperCase()) {
-                $window.alert('Inside the if loop');
-                $scope.subItems.push(key);
+              if ($scope.subcategory) {
+                if ( key.subcategory.toUpperCase() === $scope.subcategory.toUpperCase()) {
+                  $scope.subItems.push(key);
+                }
               }
+
             });
           });
 
