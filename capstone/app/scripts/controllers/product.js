@@ -114,6 +114,7 @@ angular.module('capstoneApp').controller('ProductCtrl', [
           $window.alert('subcarArrayListItemsCount ' + $scope.subcatArrayListItemsCount);
           $scope.subItemsCount = $scope.subItems.length;
           $window.alert('subItemsCount ' + $scope.subItemsCount);
+          
           $scope.pathCheck = function () {
             $window.alert('PathCheck function called');
             if ($scope.currentPath === '/product/' + $scope.category) {
