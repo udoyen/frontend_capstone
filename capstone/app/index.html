@@ -32,11 +32,11 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-info fixed-top">
             <a class="navbar-brand" href="/">capstone</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAll" aria-controls="navbarNavAll" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+              <div class="navbar-toggler-icon"></div>
             </button>
             <div class="collapse navbar-collapse justify-content-between" id="navbarNavAll">
               <div class="navbar-nav my-link" ng-controller="NavigationCtrl">
-                <a class="nav-item nav-link" ng-class="{ active: isCurrentPath('/') }" ng-href="/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" ng-class="{ active: isCurrentPath('/') }" ng-href="/">Home <div class="sr-only">(current)</div></a>
                 <a class="nav-item nav-link" ng-class="{ active: isCurrentPath('/shopping') }" ng-href="/shopping">Shop</a>
                 <a class="nav-item nav-link" ng-class="{ active: isCurrentPath('/cart') }" ng-href="/cart">Shopping Cart</a>
               </div>
@@ -53,11 +53,11 @@
 
     <div class="footer">
       <div class="container">
-        <div>
-          <span><img class="logoImg img-fluid" ng-src="./images/logo2-1.png" alt="logo image"></span>
-          <span>Email: datameshprojects@gmail.com</span>
-          <span><a ng-href="/contact">Contact Us</a></span>
-          <span><a ng-href="/about">About Us</a></span>
+        <div class="inner">
+          <div class=""><img class="logoImg img-fluid" ng-src="./images/logo2-1.png" alt="logo image"></div>
+          <div class="">Email:&nbsp;datameshprojects@gmail.com</div>
+          <div class=""><a ng-href="/contact">Contact Us</a></div>
+          <div class=""><a ng-href="/about">About Us</a></div>
           </div>
       </div>
     </div>

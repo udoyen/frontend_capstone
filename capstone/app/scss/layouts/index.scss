@@ -17,8 +17,9 @@ Footer Module
     max-width: 70%;
     justify-content: center;
 
-    div {
-      span {
+    div.inner {
+      @include flexbox-display();
+      div {
         margin: 1em;
         a {
           text-shadow: 1px 1px 2px $ceramic;
@@ -30,6 +31,11 @@ Footer Module
           text-shadow: 1px 1px 2px $dark-brown;
         }
       }
+
+      div:nth-child(2), div:nth-child(3), div:nth-child(4) {
+        padding-top: 1.5em;
+
+      }
     }
   }
 }
@@ -37,5 +43,28 @@ Footer Module
 
 .logoImg {
   width: auto;
+
+}
+
+@include extra-small-only {
+  .footer {
+
+    .container {
+
+
+      div.inner {
+        @include flexbox-display();
+        flex-direction: column;
+        div {
+          @include flexbox-display();
+          justify-content: center;
+          margin-bottom: 0.3em;
+          width: auto;
+
+        }
+      }
+    }
+  }
+
 
 }

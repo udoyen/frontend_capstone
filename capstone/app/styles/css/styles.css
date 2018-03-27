@@ -1400,18 +1400,44 @@ Footer Module
     display: flex;
     max-width: 70%;
     justify-content: center; }
-    .footer .container div span {
-      margin: 1em; }
-      .footer .container div span a {
-        text-shadow: 1px 1px 2px #FEFFFD;
-        color: #3D362D; }
-      .footer .container div span a:hover {
-        text-decoration: none;
-        color: #FEFFFD;
-        text-shadow: 1px 1px 2px #3D362D; }
+    .footer .container div.inner {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex; }
+      .footer .container div.inner div {
+        margin: 1em; }
+        .footer .container div.inner div a {
+          text-shadow: 1px 1px 2px #FEFFFD;
+          color: #3D362D; }
+        .footer .container div.inner div a:hover {
+          text-decoration: none;
+          color: #FEFFFD;
+          text-shadow: 1px 1px 2px #3D362D; }
+      .footer .container div.inner div:nth-child(2), .footer .container div.inner div:nth-child(3), .footer .container div.inner div:nth-child(4) {
+        padding-top: 1.5em; }
 
 .logoImg {
   width: auto; }
+
+@media only screen and (max-width: 47.9375em) {
+  .footer .container div.inner {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column; }
+    .footer .container div.inner div {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 0.3em;
+      width: auto; } }
 
 .contact-main {
   font-size: 1.4em;
@@ -1562,6 +1588,17 @@ main.about-main {
   border-right: 1.6em solid #FF9900;
   padding-left: 1em; }
 
+@media only screen and (max-width: 47.9375em) {
+  .sum-header-left span, .sum-header-right span {
+    font-size: 1.4em; }
+  .gist-left {
+    border-right: 0.4em solid #FF9900; }
+  .gist-right {
+    border-left: 0.4em solid #FF9900; }
+  main.about-main section.row.content div.left-box div.row,
+  main.about-main section.row.content div.right-box div.row {
+    margin-bottom: 1.4em; } }
+
 /***************************
 Module Imports
 ***************************/
@@ -1698,6 +1735,12 @@ Custom Navabar Style
  ***********************/
 .hide-menu {
   display: none; }
+
+.navbar-light .navbar-toggler {
+  color: white;
+  background: wheat;
+  border: 1px solid white;
+  border-color: rgba(255, 255, 255, 0.1); }
 
 /***************************
 Theme Imports

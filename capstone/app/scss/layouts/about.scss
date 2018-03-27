@@ -88,3 +88,24 @@ main.about-main {
   padding-left: 1em;
 
 }
+
+@include extra-small-only {
+  .sum-header-left span, .sum-header-right span {
+    font-size: 1.4em;
+  }
+
+  .gist-left {
+    border-right: 0.4em solid $orange;
+  }
+
+  .gist-right {
+    border-left: 0.4em solid $orange;
+  }
+
+  main.about-main section.row.content div.left-box div.row,
+  main.about-main section.row.content div.right-box div.row {
+    margin-bottom: 1.4em;
+  }
+
+
+}
