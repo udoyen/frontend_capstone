@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * @ngdoc function
@@ -7,24 +7,22 @@
  * # ContactCtrl
  * Controller of the capstoneApp
  */
-angular.module('capstoneApp')
-  .controller('ContactCtrl', [
-    '$window',
-    '$scope',
-    function ($window, $scope) {
-      $scope.dropdownChoiceValue
-      $scope.submit = submit;
-      $scope.reset = reset;
-      $scope.getDropdownValue;
+angular.module("capstoneApp").controller("ContactCtrl", [
+  "$window",
+  "$scope",
+  function($window, $scope) {
+    $scope.dropdownChoiceValue;
+    $scope.submit = submit;
+    $scope.reset = reset;
+    $scope.getDropdownValue;
 
-      /**
+    /**
      *
      * @param {form values} values
      */
-    function submit (values) {
+    function submit(values) {
       alert(JSON.stringify(values));
-    };
-
+    }
 
     /**
      * Reset the form fields
@@ -33,10 +31,10 @@ angular.module('capstoneApp')
       $scope.formValues = {};
     }
 
-
-      $scope.getDropdownValue = function (value) {
-        $scope.dropdownChoiceValue = value;
-    };
-    }
-  ]);
-
+    $scope.subjects = [
+      { code: "1", name: "Bad Product" },
+      { code: "2", name: "More Information" },
+      { code: "3", name: "Other" }
+    ];
+  }
+]);

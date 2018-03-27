@@ -21,37 +21,36 @@
         </div>
       </div>
       <div class="form-group row">
-        <div class="btn-group offset-md-3 drop-container">
-            <button type="button" class="btn btn-primary btn-sm dropdown-toggle subBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Chose subject
-            </button>
-            <div class="dropdown-menu dropdown-menu-right itemCont" ng-model="mSubject">
-                <a class="dropdown-item"  ng-click="getDropdownValue(formValues.mVal)" ng-value="Action" href="#">Action</a>
-                <a class="dropdown-item"  ng-click="getDropdownValue(formValues.mVal)" ng-model="formValues.mVal" href="#">Another action</a>
-                <a class="dropdown-item"  ng-click="getDropdownValue(formValues.mVal)" ng-model="formValues.mVal" href="#">Something else here</a>
-            </div>
-          </div>
-      </div>
-      <div class="form-group row">
-        <div class="col-md-2 offset-md-3">
-            <input  class="form-control" type="text" name="subject" id="subject" placeholder="Subject"  ng-value="dropdownChoiceValue" ng-model="dropdownChoiceValue" required>
+        <div class="col-form-label col-md-3 contact-form">
+          <label for="subject">Subject</label>
         </div>
+        <div class="input-group mb-3 col-md-3">
+          <select class="custom-select" id="subject" ng-model="subjectnames" name="subject" ng-options="c.code as c.name for c in subjects"
+            required>
+            <option value="">-- Choose --</option>
+          </select>
+        </div>
+        <span ng-show="contactForm.subject.$touched && contactForm.subject.$invalid">Oops! This field is required.</span>
+
       </div>
+
       <div class="form-group row">
         <div class="col-md-3 col-form-label contact-form">
           <label for="message">Message:</label>
         </div>
         <div class="col-md-6">
-          <textarea class="form-control" rows="10" name="message" id="message" placeholder="Message" ng-model="formValues.message" required> </textarea>
+          <textarea class="form-control" rows="10" name="message" id="message" placeholder="Message" ng-model="formValues.message"
+            required> </textarea>
           <span ng-show="contactForm.message.$touched && contactForm.message.$invalid">Oops! This field is required.</span>
         </div>
       </div>
       <div class="form-group row">
         <div class="col-md-6 offset-md-3">
-            <input type="submit" value="Send" ng-disabled='contactForm.$invalid' ng-click='submit(formValues.message)' class="btn btn-primary btn-special-disabled" />
-            <button ng-click="reset()" class="btn btn-default reset">Reset</button>
+          <input type="submit" value="Send" ng-disabled='contactForm.$invalid' ng-click='submit(formValues.message)' class="btn btn-primary btn-special-disabled"
+          />
+          <button ng-click="reset()" class="btn btn-default reset">Reset</button>
         </div>
-    </div>
+      </div>
     </form>
   </section>
 </main>

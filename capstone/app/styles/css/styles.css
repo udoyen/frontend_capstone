@@ -1417,7 +1417,8 @@ Footer Module
   font-size: 1.4em;
   background: #a9a9a9;
   padding-bottom: 3em;
-  margin-bottom: 2em; }
+  margin-bottom: 2em;
+  box-shadow: 1px 1px 22px 3px #a9a9a9; }
   .contact-main header {
     display: flex;
     justify-content: center;
@@ -1690,7 +1691,7 @@ Custom Navabar Style
     .navbar-light.bg-info .navbar-nav .nav-item.nav-link:hover {
       color: #FEFFFD !important; }
   .navbar-light.bg-info .navbar-nav .nav-item.nav-link.active {
-    color: #FEFFFD !important; }
+    color: #FF9900 !important; }
 
 /***********************
  Marketting Module

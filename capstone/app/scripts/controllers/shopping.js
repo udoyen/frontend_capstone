@@ -75,7 +75,6 @@ angular.module("capstoneApp").controller("ShoppingCtrl", [
     };
 
     $scope.changeMe = function () {
-      alert('ji');
       if (jq(this).hasClass('fa-caret-right')) {
         alert('true');
       }
