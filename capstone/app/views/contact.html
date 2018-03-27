@@ -3,30 +3,30 @@
   <section>
     <form name="contactForm" novalidate class="contactUsForm">
       <div class="form-group row">
-        <div class="col-md-3 col-form-label contact-form">
+        <div class="col-md-3 col-sm-12 col-xs-12 col-form-label contact-form">
           <label for="name">Name:</label>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-12 col-xs-12">
           <input class="form-control" type="text" name="name" id="name" placeholder="Name" ng-model="formValues.name" required>
           <span ng-show="contactForm.name.$touched && contactForm.name.$invalid">Oops! This field is required.</span>
         </div>
       </div>
       <div class="form-group row">
-        <div class="col-md-3 col-form-label contact-form">
+        <div class="col-md-3 col-sm-12 col-xs-12 col-form-label contact-form">
           <label for="email">Email:</label>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-12 col-xs-12">
           <input class="form-control" type="email" name="email" id="email" placeholder="Email" ng-model="formValues.email" required>
           <span ng-show="contactForm.email.$touched && contactForm.email.$invalid">Oops! This field is required.</span>
         </div>
       </div>
       <div class="form-group row">
-        <div class="col-form-label col-md-3 contact-form">
+        <div class="col-form-label col-sm-12 col-xs-12 col-md-3 contact-form">
           <label for="subject">Subject</label>
         </div>
-        <div class="input-group mb-3 col-md-3">
+        <div class="input-group mb-3 col-md-3 col-sm-12 col-xs-12">
           <select class="custom-select" id="subject" ng-model="subjectnames" name="subject" ng-options="c.code as c.name for c in subjects"
-            required>
+            readonly required>
             <option value="">-- Choose --</option>
           </select>
         </div>
@@ -35,10 +35,10 @@
       </div>
 
       <div class="form-group row">
-        <div class="col-md-3 col-form-label contact-form">
+        <div class="col-md-3 col-sm-12 col-xs-12 col-form-label contact-form">
           <label for="message">Message:</label>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 col-sm-12 col-xs-12">
           <textarea class="form-control" rows="10" name="message" id="message" placeholder="Message" ng-model="formValues.message"
             required> </textarea>
           <span ng-show="contactForm.message.$touched && contactForm.message.$invalid">Oops! This field is required.</span>

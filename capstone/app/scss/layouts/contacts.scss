@@ -5,7 +5,6 @@
   margin-bottom: 2em;
   box-shadow: 1px 1px 22px 3px $dark-gray;
 
-
   header {
     display: flex;
     justify-content: center;
@@ -40,7 +39,8 @@
   background: $brown !important;
   border-color: $orangeAlpha !important;
   color: $ceramic !important;
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background: $orange !important;
     border-color: $orangeAlpha !important;
     color: $dark-brown !important;
@@ -48,8 +48,24 @@
 }
 
 .btn.btn-default.reset {
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background: $dark-brown;
     color: $ceramic;
+  }
+}
+
+@include extra-small-only {
+  .contact-main {
+    padding-left: 1em;
+    padding-right: 1em;
+    header {
+      margin-bottom: 1em;
+    }
+  }
+
+  .col-md-3.col-form-label.contact-form {
+    @include flexbox-display();
+    justify-content: center;
   }
 }
