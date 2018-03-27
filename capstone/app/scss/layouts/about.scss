@@ -1,0 +1,90 @@
+main.about-main {
+  @include flexbox-display();
+  margin-top: 3em;
+  flex-direction: column;
+  padding-bottom: 3em;
+
+  section.row.page-head {
+    @include flexbox-display();
+    @include grow(1);
+    justify-content: center;
+    align-items: center;
+    header {
+      font-size: 3em;
+      margin-bottom: 2em;
+      text-shadow: 1px 1px 2px #ff9900;
+      border-top: 2px solid orange;
+      border-bottom: 2px solid orange;
+    }
+  }
+
+  section.row.content {
+    @include grow(4);
+    @include flexbox-display();
+    flex-direction: row;
+    justify-content: center;
+    div.left-box {
+      @include flexbox-display();
+      flex-direction: column;
+      width: 100%;
+      @include grow(4);
+
+      div.row {
+        @include flex(1 0 auto);
+
+        p.sum-header-left {
+          width: 100%;
+          text-align: end;
+          span {
+            padding: 1em;
+            text-shadow: 1px 1px 2px #ff9900;
+          }
+        }
+      }
+    }
+
+    div.middle-box {
+      @include flexbox-display();
+      @include grow(1);
+    }
+
+    div.right-box {
+      @include flexbox-display();
+      flex-direction: column;
+      width: 100%;
+      @include grow(14);
+
+      div.row {
+        @include flex(1 0 auto);
+
+        p.sum-header-right {
+          width: 100%;
+          text-align: start;
+          span {
+            padding: 1em 1em 1em 0em;
+            text-shadow: 1px 1px 2px #ff9900;
+          }
+        }
+      }
+    }
+  }
+}
+
+.hide-me {
+  visibility: hidden;
+}
+
+.sum-header-left span, .sum-header-right span {
+  font-size:  2.4em;
+}
+
+.gist-right {
+  border-left: 1.6em solid $orange;
+  padding-left: 1em;
+}
+
+.gist-left {
+  border-right: 1.6em solid $orange;
+  padding-left: 1em;
+
+}

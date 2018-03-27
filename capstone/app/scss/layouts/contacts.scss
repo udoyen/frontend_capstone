@@ -1,0 +1,53 @@
+.contact-main {
+  font-size: 1.4em;
+  background: $dark-gray;
+  padding-bottom: 3em;
+  margin-bottom: 2em;
+
+  header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2em;
+    font-size: 2em;
+    text-shadow: 1px 1px 2px $orange;
+  }
+}
+
+.col-md-3.col-form-label.contact-form {
+  @include flexbox-display();
+  justify-content: flex-end;
+  position: relative !important;
+  right: -0.6em !important;
+}
+
+.subBtn {
+  font-size: 0.8em !important;
+  position: relative !important;
+}
+
+.itemCont {
+  right: 0.5em !important;
+  left: -0.4em !important;
+}
+
+.drop-container {
+  left: 0.6em;
+}
+
+.btn.btn-primary.btn-special-disabled {
+  background: $brown !important;
+  border-color: $orangeAlpha !important;
+  color: $ceramic !important;
+  &:hover, &:focus {
+    background: $orange !important;
+    border-color: $orangeAlpha !important;
+    color: $dark-brown !important;
+  }
+}
+
+.btn.btn-default.reset {
+  &:hover, &:focus {
+    background: $dark-brown;
+    color: $ceramic;
+  }
+}

@@ -69,7 +69,6 @@ angular.module('capstoneApp').controller('ProductCtrl', [
     $scope.subcategoriesProductList = function () {
       productService.getProducts().then(function (products) {
         $scope.allProductsData = products;
-        console.log(products);
       });
 
       /**
@@ -80,7 +79,6 @@ angular.module('capstoneApp').controller('ProductCtrl', [
         .then(function (products) {
           $scope.subcategory = $routeParams.subcategory;
           $scope.category = $routeParams.category;
-          $window.alert($scope.currentPath);
 
           // Get the index of the categoryName
           angular.forEach($scope.categoriesList, function (value, key) {
@@ -96,8 +94,7 @@ angular.module('capstoneApp').controller('ProductCtrl', [
               $scope.itemsNameArrayList.push(key.name);
               $scope.itemsArrayList.push(key);
               $scope.subcatArrayListItems.push(key);
-              // $window.alert('key.subcategory ' + JSON.stringify(key.subcategory).toUpperCase());
-              // $window.alert('subcategory ' + JSON.stringify($scope.subcategory));
+
               if ($scope.subcategory) {
                 if (key.subcategory.toUpperCase() === $scope.subcategory.toUpperCase()) {
                   $scope.subItems.push(key);
@@ -107,16 +104,12 @@ angular.module('capstoneApp').controller('ProductCtrl', [
             });
           });
 
-          $window.alert('subItems ' + JSON.stringify($scope.subItems));
 
           // Set the subItemsCount
           $scope.subcatArrayListItemsCount = $scope.subcatArrayListItems.length;
-          $window.alert('subcarArrayListItemsCount ' + $scope.subcatArrayListItemsCount);
           $scope.subItemsCount = $scope.subItems.length;
-          $window.alert('subItemsCount ' + $scope.subItemsCount);
 
           $scope.pathCheck = function () {
-            $window.alert('PathCheck function called');
             if ($scope.currentPath === '/product/' + $scope.category) {
               $scope.countBoolean = true;
             } else {
@@ -125,7 +118,6 @@ angular.module('capstoneApp').controller('ProductCtrl', [
           };
 
           $scope.pathCheck();
-          $window.alert('countBoolean ' + $scope.countBoolean);
 
 
           angular.forEach(products, function (key, value) {
@@ -138,7 +130,6 @@ angular.module('capstoneApp').controller('ProductCtrl', [
 
 
           $scope.reduceProductCount = function () {
-            $window.alert(jq('.card').length);
             $scope.iCount = jq('.card').length;
             $scope.subcatArrayListItemsCount = $scope.iCount;
             $scope.subItemsCount = $scope.iCount;
@@ -171,7 +162,6 @@ angular.module('capstoneApp').controller('ProductCtrl', [
     // Use this function to load the api result into the page
     $scope.init = function () {
       $scope.subcategoriesProductList();
-      // helperService();
     };
   }
 ]);

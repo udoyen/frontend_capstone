@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 // TODO: Clean up this file
 /**
  * @ngdoc function
@@ -7,11 +7,11 @@
  * # ShoppingCtrl
  * Controller of the capstoneApp
  */
-angular.module('capstoneApp').controller('ShoppingCtrl', [
-  '$window',
-  '$scope',
-  'productService',
-  'helperService',
+angular.module("capstoneApp").controller("ShoppingCtrl", [
+  "$window",
+  "$scope",
+  "productService",
+  "helperService",
   function($window, $scope, productService, helperService) {
     $scope.allProductsData = {};
     $scope.subcatArrayNameList = {};
@@ -19,19 +19,17 @@ angular.module('capstoneApp').controller('ShoppingCtrl', [
     $scope.singleCategory = {};
 
     $scope.categoriesList = {
-      'Household and Beauty': 0,
-      'Pantry Items': 1,
-      'Perishable': 2,
-      'Produce': 3
+      "Household and Beauty": 0,
+      "Pantry Items": 1,
+      Perishable: 2,
+      Produce: 3
     };
+    var jq = jQuery.noConflict();
     $scope.myProducts = function() {
       // console.log(JSON.stringify(productService.getProducts().data));
-      productService
-        .getProducts()
-        .then(function(products) {
+      productService.getProducts().then(function(products) {
         $scope.allProductsData = products;
         console.log(products);
-
       });
 
       productService
@@ -46,46 +44,50 @@ angular.module('capstoneApp').controller('ShoppingCtrl', [
               }
             });
 
-
-
-            console.log("Sinlge Category" + JSON.stringify($scope.singleCategory));
+            console.log(
+              "Sinlge Category" + JSON.stringify($scope.singleCategory)
+            );
           };
 
-          $scope.getMe = function () {
-            $scope.goToCategoriesPage('Pantry Items')
-            angular.forEach($scope.singleCategory, function (value) {
-              angular.forEach(value.items, function (key, value) {
+          $scope.getMe = function() {
+            $scope.goToCategoriesPage("Pantry Items");
+            angular.forEach($scope.singleCategory, function(value) {
+              angular.forEach(value.items, function(key, value) {
                 console.log(JSON.stringify(key));
-              })
-
-            })
+              });
+            });
           };
 
-          angular.forEach($scope.allProductsData, function (key, value) {
+          angular.forEach($scope.allProductsData, function(key, value) {
             var m = key.category;
-            angular.forEach(key.subcategories, function (key, value) {
-              $scope.subcatArrayNameList[key.name] =  m;
+            angular.forEach(key.subcategories, function(key, value) {
+              $scope.subcatArrayNameList[key.name] = m;
 
               // console.log(JSON.stringify(key.name));
-            })
-
-          })
-
-
-          console.log(JSON.stringify($scope.subcatArrayNameList));
-
-          console.log("Sublist" + JSON.stringify($scope.subcatArrayNameList));
+            });
+          });
 
 
         })
         .catch(function(e) {
-          console.log('There was an error: ' + e);
+          console.log("There was an error: " + e);
         });
+    };
+
+    $scope.changeMe = function () {
+      alert('ji');
+      if (jq(this).hasClass('fa-caret-right')) {
+        alert('true');
+      }
+
+
+
+      // $scope.jq(this).removeClass('.fa-caret-right').addClass('.fa-caret-down');
     };
 
     // Use this function to load the api result into the page
     $scope.init = function() {
-      console.log('Angular call function on page load');
+      console.log("Angular call function on page load");
       $scope.myProducts();
     };
   }

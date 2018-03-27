@@ -33,7 +33,7 @@ div.mainpage-btn {
   align-content: center;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2em;
+  margin-bottom: 7em;
 }
 
 div.mainpage-btn > div {
@@ -56,7 +56,6 @@ div.mainpage-btn > div {
   height: 100%;
   position: relative;
 }
-
 
 .indicator-container > div:nth-child(1) {
   @include flexbox-display();
@@ -169,8 +168,8 @@ ul.carousel-indicators li[class="active"] {
 }
 
 /* Toggle Switch Style */
- /* The switch - the box around the slider */
- .switch {
+/* The switch - the box around the slider */
+.switch {
   position: relative;
   display: inline-block;
   width: 60px;
@@ -178,7 +177,9 @@ ul.carousel-indicators li[class="active"] {
 }
 
 /* Hide default HTML checkbox */
-.switch input {display:none;}
+.switch input {
+  display: none;
+}
 
 /* The slider */
 .slider {
@@ -189,8 +190,8 @@ ul.carousel-indicators li[class="active"] {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -201,8 +202,8 @@ ul.carousel-indicators li[class="active"] {
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
@@ -234,8 +235,6 @@ input:checked + .slider:before {
     color: $dark-brown !important;
     font-size: 0.5em !important;
     display: block !important;
-
   }
 }
-
 

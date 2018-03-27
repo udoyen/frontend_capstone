@@ -133,7 +133,6 @@ angular.module('capstoneApp').controller('CartCtrl', [
      * Page initializer function
      */
     $scope.init = function() {
-      $window.alert('Call from cart details Controller');
       $scope.cartDetails();
     };
   }

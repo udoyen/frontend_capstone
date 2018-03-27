@@ -35,10 +35,10 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-between" id="navbarNavAll">
-              <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="/shopping">Shop</a>
-                <a class="nav-item nav-link" href="/cart">Shopping Cart</a>
+              <div class="navbar-nav my-link" ng-controller="NavigationCtrl">
+                <a class="nav-item nav-link" ng-class="{ active: isCurrentPath('/') }" ng-href="/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" ng-class="{ active: isCurrentPath('/shopping') }" ng-href="/shopping">Shop</a>
+                <a class="nav-item nav-link" ng-class="{ active: isCurrentPath('/cart') }" ng-href="/cart">Shopping Cart</a>
               </div>
               <div class="navbar-nav navbar-right">
                 <a class="nav-item nav-link" ng-href="#"><i class="fas fa-shopping-cart"></i></a>
@@ -53,7 +53,12 @@
 
     <div class="footer">
       <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> Footer</p>
+        <div>
+          <span><img class="logoImg img-fluid" ng-src="./images/logo2-1.png" alt="logo image"></span>
+          <span>Email: datameshprojects@gmail.com</span>
+          <span><a ng-href="/contact">Contact us</a></span>
+          <span><a ng-href="/about">About us</a></span>
+          </div>
       </div>
     </div>
 
@@ -99,6 +104,7 @@
         <script src="scripts/controllers/details.js"></script>
         <script src="scripts/helpers/stepper.js"></script>
         <script src="scripts/helpers/myhelper.js"></script>
+
 
 
 

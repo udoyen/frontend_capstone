@@ -1,0 +1,41 @@
+/****************
+Footer Module
+*****************/
+/* Custom page footer */
+.footer {
+  @include flexbox-display();
+  background: $orange;
+  border-top: 1px solid $dark-brown;
+  padding-top: 19px;
+  margin-bottom: -2em;
+  justify-content: center;
+  padding-bottom: 1em;
+  padding-top: 1em;
+  font-size: 1.5em;
+  .container {
+    @include flexbox-display();
+    max-width: 70%;
+    justify-content: center;
+
+    div {
+      span {
+        margin: 1em;
+        a {
+          text-shadow: 1px 1px 2px $ceramic;
+          color: $dark-brown;
+        }
+        a:hover {
+          text-decoration: none;
+          color: $ceramic;
+          text-shadow: 1px 1px 2px $dark-brown;
+        }
+      }
+    }
+  }
+}
+
+
+.logoImg {
+  width: auto;
+
+}

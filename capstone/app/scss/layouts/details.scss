@@ -36,9 +36,11 @@ div[data-ng-init^="init"] {
   div span {
     border: 2px solid black;
     padding: 0.4em;
+    order: 1;
   }
   & div:nth-child(5) {
     margin-bottom: 4em !important;
+    justify-content: center;
   }
   & div:nth-child(4) {
     margin-bottom: 3em !important;
@@ -47,12 +49,12 @@ div[data-ng-init^="init"] {
 
 .detail-boxes {
   @include flexbox-display();
-  justify-content: center;
-  // border: 2px solid black;
+  flex-direction: row-reverse;
+  justify-content: space-around;
   text-transform: capitalize;
   width: auto;
-  display: -webkit-inline-flex;
-  display: inline-flex;
+  // display: -webkit-inline-flex;
+  // display: inline-flex;
   padding-bottom: 2em;
 
 }

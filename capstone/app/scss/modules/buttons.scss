@@ -31,7 +31,8 @@ Button Modules
   color: white;
 }
 
-.btn-primary.disabled, .btn-primary:disabled {
+.btn-primary.disabled,
+.btn-primary:disabled {
   color: #fff;
   background-color: $dark-gray;
   border-color: $dark-gray;
@@ -45,4 +46,17 @@ Button Modules
 .jumbotron .btn {
   font-size: 21px;
   padding: 14px 24px;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show > .btn-primary.dropdown-toggle {
+  border-color: $brown !important;
+  background-color: $orange !important;
+  color: $ceramic !important;
+}
+
+.btn-primary.focus, .btn-primary:focus {
+  -webkit-box-shadow: 0 0 0 .2rem $orangeAlpha !important;
+  box-shadow: 0 0 0 .2rem $orangeAlpha !important;
 }

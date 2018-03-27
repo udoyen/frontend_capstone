@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * @ngdoc funtion
@@ -8,36 +8,30 @@
  * Controller of the capstoneApp
  */
 // TODO: Tidy this file
-angular.module('capstoneApp').controller('DetailsCtrl', [
-  '$routeParams',
-  '$window',
-  '$scope',
-  'productService',
-  'cartFactoryService',
+angular.module("capstoneApp").controller("DetailsCtrl", [
+  "$routeParams",
+  "$window",
+  "$scope",
+  "productService",
+  "cartFactoryService",
   function($routeParams, $window, $scope, productService, cartFactoryService) {
     $scope.getItemsInSessionStorage = [];
     $scope.getProductsFromProductService = [];
     $scope.itemName = $routeParams.itemName;
     $scope.productDetails = [];
     $scope.addItemToCartFromDetailsPage = cartFactoryService.addItemToCart;
-
-    $window.alert($routeParams.itemName);
+    $scope.goBack;
 
     $scope.itemDetails = function() {
-      if (
-        cartFactoryService.get('shopItems')
-      ) {
-        $window.alert("Getting data from seessionStorage");
-        $scope.getItemsInSessionStorage = JSON.parse(cartFactoryService.get(
-          'shopItems')
+      if (cartFactoryService.get("shopItems")) {
+        $scope.getItemsInSessionStorage = JSON.parse(
+          cartFactoryService.get("shopItems")
         );
         angular.forEach($scope.getItemsInSessionStorage, function(value) {
           if (value.name == $scope.itemName) {
             $scope.productDetails.push(value);
           }
         });
-        $window.alert(JSON.stringify($scope.getItemsInSessionStorage));
-        $window.alert(JSON.stringify($scope.productDetails));
       } else {
         productService
           .getProducts()
@@ -57,18 +51,18 @@ angular.module('capstoneApp').controller('DetailsCtrl', [
                 $scope.productDetails.push(value);
               }
             });
-            $window.alert(JSON.stringify($scope.getProductsFromProductService));
-            $window.alert(JSON.stringify($scope.productDetails));
-
           })
           .catch(function(e) {
-            console.log('There was an error: ' + e);
+            console.log("There was an error: " + e);
           });
       }
     };
 
-    $scope.init = function () {
-      $window.alert('Call from details Controller');
+    $scope.goBack = function () {
+      $window.history.back();
+    };
+
+    $scope.init = function() {
       $scope.itemDetails();
     };
   }
