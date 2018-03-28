@@ -4,7 +4,7 @@ div.wrapper-container.container-fluid {
   margin-right: -1em !important;
   padding-bottom: 3em !important;
   flex-direction: column;
-  // height: 100%;
+  height: 100%;
 }
 
 .no-product {
@@ -14,7 +14,7 @@ div.wrapper-container.container-fluid {
 .page-search-header {
   @include flexbox-display();
   // @include grow(1);
-  margin-bottom: 30px;
+  margin-bottom: 3em;
   flex-direction: row;
   align-items: center;
   height: 40%;
@@ -169,6 +169,10 @@ img.card-img-top {
 
 
 @include smart-phones-port-land {
+  .no-product {
+    height: 100vh !important;
+  }
+
   div.wrapper-container.container-fluid {
     margin-right: 0 !important;
   }
@@ -176,6 +180,8 @@ img.card-img-top {
     @include flexbox-display();
     justify-content: center;
     flex-direction: column;
+    margin-bottom: 5em;
+    margin-top: 5em;
   }
 
   .contents {
