@@ -864,6 +864,10 @@ main#shop-container > section {
   color: #EE7600;
   cursor: pointer; }
 
+@media only screen and (max-width: 47.9375em) {
+  .subcategories-container .shop-page-subcategories {
+    width: 100%; } }
+
 div.wrapper-container.container-fluid {
   display: -webkit-box;
   display: -moz-box;
@@ -875,8 +879,10 @@ div.wrapper-container.container-fluid {
   flex-wrap: nowrap;
   margin-right: -1em !important;
   padding-bottom: 3em !important;
-  flex-direction: column;
-  height: 100%; }
+  flex-direction: column; }
+
+.no-product {
+  height: 100vh !important; }
 
 .page-search-header {
   display: -webkit-box;
@@ -979,10 +985,11 @@ div.wrapper-container.container-fluid {
   width: 12em; }
 
 .dropdown-menu.show {
-  left: -5em !important;
+  left: -4.9em !important;
   border-radius: 0 !important;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background: #a9a9a9; }
+  background: #a9a9a9;
+  width: 79% !important; }
 
 .input-group-btn div {
   width: 33.3%; }
@@ -1050,6 +1057,42 @@ img.card-img-top {
   padding: 0.4em;
   text-align: center;
   background: #EE7600; }
+
+@media only screen and (max-width: 47.9375em) {
+  .page-search-header {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center; }
+  .contents {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column; }
+  main.product-list {
+    padding-left: 0;
+    padding-right: 0; }
+  .controlls-bar {
+    margin-top: 1em; }
+  .controlls-bar .product-count {
+    font-size: 0.6em; }
+  .controlls-bar .instock > div.toggleSwitch {
+    font-size: 0.6em; }
+  .search-name {
+    padding: 0.2em;
+    margin-top: 1em; }
+  .search-header-content > div:first-child {
+    padding-left: 1em; }
+  div.wrapper-container.container-fluid {
+    margin-right: 0; }
+  .sort-box-container > label {
+    font-size: 1em;
+    width: auto;
+    margin-top: 1em; } }
 
 /**************************
 Pages Menu box basic Layout Styles
@@ -1415,11 +1458,32 @@ Footer Module
           text-decoration: none;
           color: #FEFFFD;
           text-shadow: 1px 1px 2px #3D362D; }
-      .footer .container div.inner div:nth-child(2), .footer .container div.inner div:nth-child(3), .footer .container div.inner div:nth-child(4) {
+      .footer .container div.inner div:nth-child(2),
+      .footer .container div.inner div:nth-child(3),
+      .footer .container div.inner div:nth-child(4) {
         padding-top: 1.5em; }
 
 .logoImg {
   width: auto; }
+
+div.counter {
+  border: 1.5px solid #f5deb3;
+  background: #FF9900;
+  height: 1.5em;
+  width: 1.5em;
+  border-radius: 1em;
+  position: absolute;
+  right: 1em;
+  top: 0.8em;
+  text-align: center; }
+  div.counter span {
+    font-size: 0.9em;
+    color: white;
+    position: relative;
+    bottom: 0.1em; }
+
+.fas.fa-shopping-cart {
+  font-size: 2em; }
 
 @media only screen and (max-width: 47.9375em) {
   .footer .container div.inner {
@@ -1451,6 +1515,10 @@ Footer Module
     margin-bottom: 2em;
     font-size: 2em;
     text-shadow: 1px 1px 2px #FF9900; }
+    .contact-main header span {
+      border-top: 2px solid orange;
+      border-bottom: 2px solid orange;
+      margin-top: 1em; }
 
 .col-md-3.col-form-label.contact-form {
   display: -webkit-box;

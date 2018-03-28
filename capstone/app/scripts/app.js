@@ -72,9 +72,20 @@ angular
   .controller("NavigationCtrl", [
     "$scope",
     "$location",
-    function($scope, $location) {
+    '$window',
+    function($scope, $location, $window) {
+      $scope.cNumber;
+      $scope.items;
+      $scope.dCount;
+
       $scope.isCurrentPath = function(path) {
         return $location.path() == path;
       };
+
+      if ($window.sessionStorage.getItem('cartItemsFromStorage')) {
+        $scope.items = JSON.parse($window.sessionStorage.getItem('cartItemsFromStorage'));
+        $scope.dCount = $scope.items.length;
+      }
+
     }
   ]);

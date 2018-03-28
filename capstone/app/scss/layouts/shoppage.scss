@@ -80,3 +80,9 @@ main#shop-container > section {
   color: $dark-orange;
   cursor: pointer;
 }
+
+@include extra-small-only {
+  .subcategories-container .shop-page-subcategories {
+    width: 100%;
+  }
+}

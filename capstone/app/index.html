@@ -34,19 +34,20 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAll" aria-controls="navbarNavAll" aria-expanded="false" aria-label="Toggle navigation">
               <div class="navbar-toggler-icon"></div>
             </button>
-            <div class="collapse navbar-collapse justify-content-between" id="navbarNavAll">
-              <div class="navbar-nav my-link" ng-controller="NavigationCtrl">
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNavAll" ng-controller="NavigationCtrl">
+              <div class="navbar-nav my-link">
                 <a class="nav-item nav-link" ng-class="{ active: isCurrentPath('/') }" ng-href="/">Home <div class="sr-only">(current)</div></a>
                 <a class="nav-item nav-link" ng-class="{ active: isCurrentPath('/shopping') }" ng-href="/shopping">Shop</a>
                 <a class="nav-item nav-link" ng-class="{ active: isCurrentPath('/cart') }" ng-href="/cart">Shopping Cart</a>
               </div>
               <div class="navbar-nav navbar-right">
-                <a class="nav-item nav-link" ng-href="#"><i class="fas fa-shopping-cart"></i></a>
+                <a class="nav-item nav-link" ng-href="#"><div ng-model="dCount" class="counter"><span>{{dCount}}</span></div><i class="fas fa-shopping-cart"></i></a>
               </div>
             </div>
 
           </nav>
     </header>
+
     <div id="base-container" class="container-fluid">
     <div ng-view=""></div>
     </div>

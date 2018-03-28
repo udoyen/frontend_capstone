@@ -1,5 +1,5 @@
  <main id="shop-container" class="container-fluid" data-ng-init="init()">
-   <aside class="col-md-2 shop-menu-container">
+   <aside class="col-md-2 shop-menu-container d-none d-md-block d-xl-block">
     <!-- <p>Aside Menu</p> -->
     <!-- <button type="button" class="btn btn-dark" ng-click="getMe()">Click Me!</button> -->
     <!-- <p>{{$scope.allProductsData}}</p> -->
@@ -20,7 +20,7 @@
         </div>
     </div>
    </aside>
-   <section class="col-md-10 col-sm-6 col-xs-12 subcategories-item-box">
+   <section class="col-md-10 col-sm-4 col-xs-12 subcategories-item-box">
           <div class="subcategories-container flexbox-sm">
             <!-- <p>{{cat.category}}</p> -->
               <div ng-repeat="(key, value) in subcatArrayNameList" class="card shop-page-subcategories col-0-3 product-boxitem">

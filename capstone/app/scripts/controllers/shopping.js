@@ -81,7 +81,6 @@ angular.module("capstoneApp").controller("ShoppingCtrl", [
 
 
 
-      // $scope.jq(this).removeClass('.fa-caret-right').addClass('.fa-caret-down');
     };
 
     // Use this function to load the api result into the page

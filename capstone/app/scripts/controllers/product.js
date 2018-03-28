@@ -59,6 +59,7 @@ angular.module('capstoneApp').controller('ProductCtrl', [
     $scope.iCount;
     $scope.pathCheck;
     $scope.subtractionValue;
+    $scope.noProduct;
 
     $scope.getDropdownIndex = function (dIndex) {
       $scope.dropdownChoiceIndex = $scope.sortFilterArray[dIndex];
@@ -158,6 +159,16 @@ angular.module('capstoneApp').controller('ProductCtrl', [
           .addClass('fa-caret-down');
       });
     })(jQuery);
+
+    $scope.noProduct = function (item1, item2) {
+      if ((item1 === 0 && item2 === 0)) {
+          return true;
+      }
+
+      if ($scope.countBoolean) {
+        return false;
+      }
+    }
 
     // Use this function to load the api result into the page
     $scope.init = function () {

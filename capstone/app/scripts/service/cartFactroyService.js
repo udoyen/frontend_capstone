@@ -12,6 +12,7 @@ function cartFactoryService($window) {
   var itemsFromStorage = [];
   var itemsToCart = [];
   var itemToRemove;
+  var jq = jQuery.noConflict();
 
   /**
    *
@@ -55,8 +56,6 @@ function cartFactoryService($window) {
       addedItemsList = JSON.parse(get("addedItemsList"));
       // check for duplicates and only update
       // the quantity value
-      $window.alert("Check for duplicates");
-
       for (var i of addedItemsList) {
         if (i["name"] === item.name) {
           i["quantity"] += itemQuantity;
@@ -66,27 +65,26 @@ function cartFactoryService($window) {
       }
 
       if (!result) {
-        $window.alert("Pusing into addedItemsList");
         // Add a quantity property
         item.quantity = itemQuantity;
         addedItemsList.push(item);
       }
 
       save("addedItemsList", addedItemsList);
-      $window.alert("addedItemsList " + JSON.stringify(addedItemsList));
+      $window.location.reload();
     } else {
       // Add a quantity property
       item.quantity = itemQuantity;
       addedItemsList.push(item);
       save("addedItemsList", addedItemsList);
-      $window.alert("addedItemsList " + JSON.stringify(addedItemsList));
+      $window.location.reload();
     }
 
     // Create sessionStorage for cart
     itemsToCart = addedItemsList;
     save("cartItemsFromStorage", itemsToCart);
+    $window.location.reload();
 
-    $window.alert("Cart items " + JSON.stringify(itemsToCart));
   }
 
   /**
@@ -94,14 +92,9 @@ function cartFactoryService($window) {
    * @param {object to remove from cart list} item
    */
   function removeCartItem(item) {
-    $window.alert("Item " + JSON.stringify(item));
     if (get("cartItemsFromStorage")) {
       itemToRemove = JSON.parse(get("cartItemsFromStorage"));
-      $window.alert(
-        "cartItemsFromStorage array " + JSON.stringify(itemToRemove)
-      );
 
-      $window.alert("Before removal " + JSON.stringify(itemToRemove.length));
       angular.forEach(itemToRemove, function(i, index) {
         if (item.name === i.name) {
           itemToRemove.splice(index, 1);
@@ -114,11 +107,9 @@ function cartFactoryService($window) {
         removeItem('addedItemsList');
         removeItem('cartItemsFromStorage');
       }
-
-      $window.alert("after removal " + JSON.stringify(itemToRemove.length));
+      $window.location.reload();
     }
-    // $window.alert('addedItemsList array ' + JSON.stringify(addedItemsList));
-    // $window.alert('itemsToCart array ' + JSON.stringify(itemsToCart));
+
   }
 
   return {
