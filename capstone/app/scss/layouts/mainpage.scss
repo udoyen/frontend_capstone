@@ -137,23 +137,6 @@ ul.carousel-indicators li[class="active"] {
   }
 }
 
-@include extra-small-only {
-  // .carousel-item > .row {
-  //   .column {
-  //     flex: 100%;
-  //     max-width: 100%;
-  //   }
-  // }
-}
-
-@include small-and-above {
-  // .carousel-item > .row {
-  //   .column {
-  //     flex: 50%;
-  //     max-width: 50%;
-  //   }
-  // }
-}
 
 .welcome-text {
   text-align: center;
@@ -238,3 +221,24 @@ input:checked + .slider:before {
   }
 }
 
+@include smart-phones-port-land {
+  .carousel-inner {
+    height: 12.5em;
+  }
+
+  .welcome-text {
+    font-size: 1.5em;
+  }
+
+
+}
+
+@include smart-phones-land {
+
+}
+
+@include desktops-and-laptops {
+  .email, .mcontact, .mabout {
+    font-size: 1em;
+  }
+}

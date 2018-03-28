@@ -9,5 +9,5 @@
  */
 angular.module('capstoneApp')
   .controller('AboutCtrl', function () {
-   
+
   });

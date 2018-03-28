@@ -167,10 +167,15 @@ img.card-img-top {
   background: $dark-orange;
 }
 
-@include extra-small-only {
+
+@include smart-phones-port-land {
+  div.wrapper-container.container-fluid {
+    margin-right: 0 !important;
+  }
   .page-search-header {
     @include flexbox-display();
     justify-content: center;
+    flex-direction: column;
   }
 
   .contents {
@@ -185,10 +190,12 @@ img.card-img-top {
 
   .controlls-bar {
     margin-top: 1em;
+    margin-bottom: 1em;
   }
 
   .controlls-bar .product-count {
     font-size: 0.6em;
+    margin-top: 1em;
   }
 
   .controlls-bar .instock > div.toggleSwitch {
@@ -200,21 +207,24 @@ img.card-img-top {
     margin-top: 1em;
   }
 
-  .search-header-content > div:first-child {
-    padding-left: 1em ;
+  .search-header-content {
+    flex-direction: column;
+    & > div:first-child {
+      padding-left: 1em;
+    }
   }
 
-  div.wrapper-container.container-fluid {
-    margin-right: 0;
+  .sort-box-container {
+    margin-top: 3em;
+    & > label {
+      font-size: 1em;
+      width: auto;
+      margin-top: 2em;
+    }
   }
 
-  .sort-box-container > label {
-    font-size: 1em;
-    width: auto;
-    margin-top: 1em;
+  div.counter {
+    top: 5.2em !important;
+    left: 1em !important;
   }
-}
-
-@include small-and-above {
-
 }

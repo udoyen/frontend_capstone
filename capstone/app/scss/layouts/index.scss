@@ -48,19 +48,19 @@ Footer Module
 div.counter {
   border: 1.5px solid $wheat;
   background: $orange;
-  height: 1.5em;
-  width: 1.5em;
+  height: 0.9em;
+  width: 0.9em;
   border-radius: 1em;
   position: absolute;
-  right: 1em;
-  top: 0.8em;
+  right: 0.3em;
+  top: 0.2em;
   text-align: center;
 
   span {
-    font-size: 0.9em;
+    font-size: 0.5em;
     color: white;
     position: relative;
-    bottom: 0.1em;
+    bottom: 0.5em;
     // font-weight: bold;
   }
 }
@@ -69,19 +69,49 @@ div.counter {
   font-size: 2em;
 }
 
-@include extra-small-only {
+@include smart-phones-port-land {
+
+  .email {
+    font-size: 0.7em;
+  }
+
   .footer {
+    font-size: 1em;
     .container {
       div.inner {
         @include flexbox-display();
         flex-direction: column;
+        text-align: center;
         div {
           @include flexbox-display();
           justify-content: center;
-          margin-bottom: 0.3em;
+          margin: 0.2em;
           width: auto;
         }
       }
     }
+  }
+}
+
+@include smart-phones-port {
+  div.counter {
+    top: 5.1em;
+    left: 1.2em;
+  }
+}
+
+@include desktops-and-laptops {
+  
+  .footer {
+    .container {
+      div.inner {
+        div {
+        }
+      }
+    }
+  }
+
+  .logoImg {
+    max-width: none;
   }
 }

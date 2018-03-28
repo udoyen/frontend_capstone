@@ -1,5 +1,4 @@
 "use strict";
-// TODO: Clean up this file
 /**
  * @ngdoc function
  * @name capstoneApp.controller:ShoppingCtrl

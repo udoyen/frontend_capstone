@@ -41,7 +41,7 @@
                 <a class="nav-item nav-link" ng-class="{ active: isCurrentPath('/cart') }" ng-href="/cart">Shopping Cart</a>
               </div>
               <div class="navbar-nav navbar-right">
-                <a class="nav-item nav-link" ng-href="#"><div ng-model="dCount" class="counter"><span>{{dCount}}</span></div><i class="fas fa-shopping-cart"></i></a>
+                <a class="nav-item nav-link" ng-href="#"><i class="fas fa-shopping-cart"><div ng-model="dCount" class="counter"><span>{{dCount}}</span></div></i></a>
               </div>
             </div>
 
@@ -55,10 +55,10 @@
     <div class="footer">
       <div class="container">
         <div class="inner">
-          <div class=""><img class="logoImg img-fluid" ng-src="./images/logo2-1.png" alt="logo image"></div>
-          <div class="">Email:&nbsp;datameshprojects@gmail.com</div>
-          <div class=""><a ng-href="/contact">Contact Us</a></div>
-          <div class=""><a ng-href="/about">About Us</a></div>
+          <div class="logo-img-container"><img class="logoImg img-fluid" ng-src="./images/logo2-1.png" alt="logo image"></div>
+          <div class="email">Email:&nbsp;datameshprojects@gmail.com</div>
+          <div class="mcontact"><a ng-href="/contact">Contact Us</a></div>
+          <div class="mabout"><a ng-href="/about">About Us</a></div>
           </div>
       </div>
     </div>

@@ -374,6 +374,26 @@ textarea {
 /* 768px / 16px = 48em */
 /* Extra Small Only */
 /* Small Devices, Tablets */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  /* Styles */ }
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  /* Styles */ }
+
+/**********
+  iPad 3
+**********/
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  /* Styles */ }
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  /* Styles */ }
+
+/* iPhone 4 ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  /* Styles */ }
+
 /***************************
 ****************************
 Reset
@@ -769,6 +789,19 @@ input:checked + .slider:before {
     font-size: 0.5em !important;
     display: block !important; }
 
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .carousel-inner {
+    height: 12.5em; }
+  .welcome-text {
+    font-size: 1.5em; } }
+
+/* Smartphones (landscape) ----------- */
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+  .email, .mcontact, .mabout {
+    font-size: 1em; } }
+
 /**********************
 Shop Page Design
 ***********************/
@@ -1058,14 +1091,18 @@ img.card-img-top {
   text-align: center;
   background: #EE7600; }
 
-@media only screen and (max-width: 47.9375em) {
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  div.wrapper-container.container-fluid {
+    margin-right: 0 !important; }
   .page-search-header {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    justify-content: center; }
+    justify-content: center;
+    flex-direction: column; }
   .contents {
     display: -webkit-box;
     display: -moz-box;
@@ -1077,22 +1114,29 @@ img.card-img-top {
     padding-left: 0;
     padding-right: 0; }
   .controlls-bar {
-    margin-top: 1em; }
+    margin-top: 1em;
+    margin-bottom: 1em; }
   .controlls-bar .product-count {
-    font-size: 0.6em; }
+    font-size: 0.6em;
+    margin-top: 1em; }
   .controlls-bar .instock > div.toggleSwitch {
     font-size: 0.6em; }
   .search-name {
     padding: 0.2em;
     margin-top: 1em; }
-  .search-header-content > div:first-child {
-    padding-left: 1em; }
-  div.wrapper-container.container-fluid {
-    margin-right: 0; }
-  .sort-box-container > label {
-    font-size: 1em;
-    width: auto;
-    margin-top: 1em; } }
+  .search-header-content {
+    flex-direction: column; }
+    .search-header-content > div:first-child {
+      padding-left: 1em; }
+  .sort-box-container {
+    margin-top: 3em; }
+    .sort-box-container > label {
+      font-size: 1em;
+      width: auto;
+      margin-top: 2em; }
+  div.counter {
+    top: 5.2em !important;
+    left: 1em !important; } }
 
 /**************************
 Pages Menu box basic Layout Styles
@@ -1469,39 +1513,56 @@ Footer Module
 div.counter {
   border: 1.5px solid #f5deb3;
   background: #FF9900;
-  height: 1.5em;
-  width: 1.5em;
+  height: 0.9em;
+  width: 0.9em;
   border-radius: 1em;
   position: absolute;
-  right: 1em;
-  top: 0.8em;
+  right: 0.3em;
+  top: 0.2em;
   text-align: center; }
   div.counter span {
-    font-size: 0.9em;
+    font-size: 0.5em;
     color: white;
     position: relative;
-    bottom: 0.1em; }
+    bottom: 0.5em; }
 
 .fas.fa-shopping-cart {
   font-size: 2em; }
 
-@media only screen and (max-width: 47.9375em) {
-  .footer .container div.inner {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    flex-direction: column; }
-    .footer .container div.inner div {
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .email {
+    font-size: 0.7em; }
+  .footer {
+    font-size: 1em; }
+    .footer .container div.inner {
       display: -webkit-box;
       display: -moz-box;
       display: -ms-flexbox;
       display: -webkit-flex;
       display: flex;
-      justify-content: center;
-      margin-bottom: 0.3em;
-      width: auto; } }
+      flex-direction: column;
+      text-align: center; }
+      .footer .container div.inner div {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        justify-content: center;
+        margin: 0.2em;
+        width: auto; } }
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 320px) {
+  div.counter {
+    top: 5.1em;
+    left: 1.2em; } }
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+  .logoImg {
+    max-width: none; } }
 
 .contact-main {
   font-size: 1.4em;
