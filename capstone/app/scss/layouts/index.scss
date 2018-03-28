@@ -70,7 +70,6 @@ div.counter {
 }
 
 @include smart-phones-port-land {
-
   .email {
     font-size: 0.7em;
   }
@@ -101,7 +100,6 @@ div.counter {
 }
 
 @include desktops-and-laptops {
-  
   .footer {
     .container {
       div.inner {
@@ -113,5 +111,43 @@ div.counter {
 
   .logoImg {
     max-width: none;
+  }
+}
+
+@include ipads-port-land {
+  div.counter {
+    top: 0.2em;
+    left: 31em;
+  }
+
+  .footer {
+    font-size: inherit;
+    .container {
+      margin: 0;
+      max-width: 100%;
+
+    }
+  }
+}
+
+@include ipads-land {
+  div.counter {
+      top: 0.2em;
+      left: 31em;
+    }
+}
+
+
+@include desktops-and-laptops {
+  div.counter {
+    right: 0.3em;
+    top: 0.2em;
+  }
+}
+
+@include tablets {
+  div.counter {
+    top: 5.1em;
+    left: 1.1em;
   }
 }

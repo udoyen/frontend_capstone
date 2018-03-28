@@ -86,3 +86,32 @@ main#shop-container > section {
     width: 100%;
   }
 }
+
+@include smart-phones-port-land {
+  main#shop-container {
+    & > section {
+      width: auto;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+}
+
+@include ipads-port-land {
+  main#shop-container {
+    & > section {
+      flex: 0 0 100%;
+    }
+  }
+
+
+
+  .subcategories-item-box {
+    max-width: 100%;
+  }
+
+
+}
+
+

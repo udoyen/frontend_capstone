@@ -901,6 +901,21 @@ main#shop-container > section {
   .subcategories-container .shop-page-subcategories {
     width: 100%; } }
 
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  main#shop-container > section {
+    width: auto;
+    padding-left: 0;
+    padding-right: 0; } }
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Styles */
+  main#shop-container > section {
+    flex: 0 0 100%; }
+  .subcategories-item-box {
+    max-width: 100%; } }
+
 div.wrapper-container.container-fluid {
   display: -webkit-box;
   display: -moz-box;
@@ -1142,6 +1157,10 @@ img.card-img-top {
   div.counter {
     top: 5.2em !important;
     left: 1em !important; } }
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Styles */ }
 
 /**************************
 Pages Menu box basic Layout Styles
@@ -1466,6 +1485,40 @@ form.submitForm {
 input#qty {
   width: 2.7em !important; }
 
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Styles */
+  main.shoppingcart-container {
+    flex-direction: column;
+    align-items: center; }
+  .cart-items-list-container {
+    width: 100%; }
+  .cart-items-list-container {
+    width: 100%; } }
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  /* Styles */ }
+
+/* Desktops and laptops ----------- */
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  main.shoppingcart-container {
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8em; }
+  .cart-items-list-container {
+    width: 100%; }
+  .cart-items-list-container {
+    width: 100%; }
+  .payment-summary-container {
+    width: 100%; } }
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 768px) {
+  .payment-summary-container {
+    width: 100%;
+    margin-left: auto; } }
+
 /****************
 Footer Module
 *****************/
@@ -1568,6 +1621,36 @@ div.counter {
 @media only screen and (min-width: 1224px) {
   .logoImg {
     max-width: none; } }
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Styles */
+  div.counter {
+    top: 0.2em;
+    left: 31em; }
+  .footer {
+    font-size: inherit; }
+    .footer .container {
+      margin: 0;
+      max-width: 100%; } }
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  /* Styles */
+  div.counter {
+    top: 0.2em;
+    left: 31em; } }
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+  div.counter {
+    right: 0.3em;
+    top: 0.2em; } }
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 768px) {
+  div.counter {
+    top: 5.1em;
+    left: 1.1em; } }
 
 .contact-main {
   font-size: 1.4em;

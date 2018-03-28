@@ -171,9 +171,7 @@ angular.module("capstoneApp").controller("ProductCtrl", [
      * @param {parameter 2} item2
      */
     $scope.noProduct = function(val1, val2, val3) {
-      // alert('val1 ' + val1);
-      // alert('val2 ' + val2);
-      // alert('val3 ' + val3);
+      
       if (
         (val2 === 0 && !$scope.countBoolean) ||
         (val1 === 0 && $scope.countBoolean)
