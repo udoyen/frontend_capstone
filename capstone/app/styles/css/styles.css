@@ -1024,7 +1024,7 @@ div.wrapper-container.container-fluid {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  font-size: 1.5em !important;
+  font-size: 1em !important;
   flex-direction: row;
   -webkit-grow: 1;
   flex-grow: 1;
@@ -1128,9 +1128,9 @@ main.product-list {
   align-items: center;
   justify-content: start; }
   .items-container .product-boxitem {
-    margin: 0.2em !important;
-    max-width: 32.33% !important;
-    min-width: 32.33% !important; }
+    margin: 2em !important;
+    max-width: 25.33% !important;
+    min-width: 25.33% !important; }
 
 .product-page-items {
   display: -webkit-box;
