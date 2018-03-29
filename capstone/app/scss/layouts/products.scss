@@ -42,7 +42,7 @@ div.wrapper-container.container-fluid {
 
 .controlls-bar {
   @include flexbox-display();
-  font-size: 1.5em !important;
+  font-size: 1em !important;
   flex-direction: row;
   @include grow(1);
   justify-content: space-evenly;
@@ -161,11 +161,6 @@ img.card-img-top {
   object-fit: scale-down;
 }
 
-// .card.col-md-4.product-boxitem {
-//   margin: 1em !important;
-//   max-width: 24em !important;
-// }
-
 .card-body {
   p {
     a {
@@ -182,20 +177,41 @@ img.card-img-top {
 }
 
 @include desktops-and-laptops {
-
   .items-container {
     padding-left: 1em;
     .product-boxitem {
       padding-left: 0.3em;
-    padding-right: 0.3em;
+      padding-right: 0.3em;
       .card-body {
         padding-left: 0.1em;
         padding-right: 0.1em;
       }
     }
   }
+}
 
- 
+@include tablets {
+  .accordion {
+    .card {
+      .card-header {
+        background: $rgbDarkBrown;
+        .card-title {
+          color: $ceramic;
+        }
+      }
+      .card-body {
+        padding: 0;
+        li {
+          background: $wheat;
+          list-style: none;
+          border-top: solid 1px black;
+          border-bottom: 1px solid black;
+        }
+      }
+    }
+  }
+
+
 }
 
 @include smart-phones-port-land {
@@ -270,5 +286,34 @@ img.card-img-top {
       max-width: 100% !important;
       min-width: 100% !important;
     }
+  }
+
+  .accordion {
+    .card {
+      .card-header {
+        text-align: center;
+        background: $rgbDarkBrown;
+        .card-title {
+          color: $rgbDarkBrown;
+        }
+      }
+      .card-body {
+        text-align: center;
+        padding: 0;
+        li {
+          background: $wheat;
+          list-style: none;
+          border-top: solid 1px black;
+          border-bottom: 1px solid black;
+          a {
+            color: inherit;
+          }
+        }
+      }
+    }
+  }
+
+  .search-name {
+    font-size: 1em;
   }
 }

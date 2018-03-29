@@ -1,5 +1,5 @@
  <main id="shop-container" class="container-fluid" data-ng-init="init()">
-   <aside class="col-md-2 shop-menu-container d-none d-sm-none d-md-none d-xl-block">
+   <aside class="col-md-2 shop-menu-container d-none d-lg-block d-xl-block">
 
     <div ng-if="!allProductsData">
       Loading results...
@@ -17,6 +17,22 @@
             </div>
         </div>
     </div>
+   </aside>
+   <aside class="alternative-aside-menu d-block d-dm-none d-lg-none">
+     <div class="accordion" id="accordion">
+       <div class="card mb-0" ng-repeat="cat in allProductsData track by $index" >
+        <div class="card-header collapsed" data-toggle="collapse" ng-href="#{{cat.category}}">
+          <a class="card-title">
+              <p class="menu-header-text" ><a ng-href="/product/{{cat.category}}">{{cat.category}}</a>
+          </a>
+        </div>
+        <div id="{{cat.category}}" class="card-body collapse" data-parent="#accordion">
+            <li ng-repeat="c in cat.subcategories track by $index" >
+                <a ng-href="/product/{{cat.category}}/{{c.name}}">{{c.name}}</a>
+            </li>
+        </div>
+       </div>
+     </div>
    </aside>
    <section class="col-md-10 col-sm-12 col-xs-12 subcategories-item-box">
           <div class="subcategories-container flexbox-sm">

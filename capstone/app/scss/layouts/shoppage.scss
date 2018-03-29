@@ -104,14 +104,103 @@ main#shop-container > section {
       flex: 0 0 100%;
     }
   }
-
-
-
   .subcategories-item-box {
     max-width: 100%;
   }
+}
+
+@include tablets {
+  main#shop-container {
+    flex-direction: column;
+    aside {
+      border: none;
+      .accordion {
+        .card {
+          text-align: center;
+          .menu-header-text {
+            color: $ceramic;
+          }
+          .card-header {
+            background: $rgbDarkBrown;
+
+
+          }
+          .card-body {
+            padding: 0;
+            li {
+              list-style: none;
+              border-top: solid 1px black;
+              border-bottom: 1px solid black;
+              background: $wheat;
+
+              a {
+                color: inherit;
+              }
+
+              &:last-child() {
+                border-top: 2px solid black;
+              }
+
+              &:first-child() {
+                border-top: 2px solid black;
+              }
+            }
+
+
+          }
+        }
+      }
+    }
+  }
+
 
 
 }
+
+@include smart-phones-port-land {
+  main#shop-container {
+    flex-direction: column;
+    aside {
+      border: none;
+      .accordion {
+        .card {
+          text-align: center;
+          .menu-header-text {
+            color: $ceramic;
+          }
+          .card-header {
+            background: $rgbDarkBrown;
+          }
+          .card-body {
+            padding: 0;
+            li {
+              list-style: none;
+              border-top: solid 1px black;
+              border-bottom: 1px solid black;
+              background: $wheat;
+
+
+              a {
+                color: inherit;
+              }
+
+              &:last-child() {
+                border-top: 2px solid black;
+              }
+
+              &:first-child() {
+                border-top: 2px solid black;
+              }
+            }
+
+
+          }
+        }
+      }
+    }
+  }
+
+}
+
 
 

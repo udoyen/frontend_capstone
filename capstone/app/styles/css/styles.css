@@ -916,6 +916,57 @@ main#shop-container > section {
   .subcategories-item-box {
     max-width: 100%; } }
 
+@media only screen and (min-device-width: 481px) and (max-device-width: 768px) {
+  main#shop-container {
+    flex-direction: column; }
+    main#shop-container aside {
+      border: none; }
+      main#shop-container aside .accordion .card {
+        text-align: center; }
+        main#shop-container aside .accordion .card .menu-header-text {
+          color: #FEFFFD; }
+        main#shop-container aside .accordion .card .card-header {
+          background: #3d362d; }
+        main#shop-container aside .accordion .card .card-body {
+          padding: 0; }
+          main#shop-container aside .accordion .card .card-body li {
+            list-style: none;
+            border-top: solid 1px black;
+            border-bottom: 1px solid black;
+            background: #f5deb3; }
+            main#shop-container aside .accordion .card .card-body li a {
+              color: inherit; }
+            main#shop-container aside .accordion .card .card-body li:last-child() {
+              border-top: 2px solid black; }
+            main#shop-container aside .accordion .card .card-body li:first-child() {
+              border-top: 2px solid black; } }
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  main#shop-container {
+    flex-direction: column; }
+    main#shop-container aside {
+      border: none; }
+      main#shop-container aside .accordion .card {
+        text-align: center; }
+        main#shop-container aside .accordion .card .menu-header-text {
+          color: #FEFFFD; }
+        main#shop-container aside .accordion .card .card-header {
+          background: #3d362d; }
+        main#shop-container aside .accordion .card .card-body {
+          padding: 0; }
+          main#shop-container aside .accordion .card .card-body li {
+            list-style: none;
+            border-top: solid 1px black;
+            border-bottom: 1px solid black;
+            background: #f5deb3; }
+            main#shop-container aside .accordion .card .card-body li a {
+              color: inherit; }
+            main#shop-container aside .accordion .card .card-body li:last-child() {
+              border-top: 2px solid black; }
+            main#shop-container aside .accordion .card .card-body li:first-child() {
+              border-top: 2px solid black; } }
+
 div.wrapper-container.container-fluid {
   display: -webkit-box;
   display: -moz-box;
@@ -1123,6 +1174,19 @@ img.card-img-top {
         padding-left: 0.1em;
         padding-right: 0.1em; } }
 
+@media only screen and (min-device-width: 481px) and (max-device-width: 768px) {
+  .accordion .card .card-header {
+    background: #3d362d; }
+    .accordion .card .card-header .card-title {
+      color: #FEFFFD; }
+  .accordion .card .card-body {
+    padding: 0; }
+    .accordion .card .card-body li {
+      background: #f5deb3;
+      list-style: none;
+      border-top: solid 1px black;
+      border-bottom: 1px solid black; } }
+
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .no-product {
@@ -1177,7 +1241,24 @@ img.card-img-top {
     padding-left: inherit; }
     .items-container .product-boxitem {
       max-width: 100% !important;
-      min-width: 100% !important; } }
+      min-width: 100% !important; }
+  .accordion .card .card-header {
+    text-align: center;
+    background: #3d362d; }
+    .accordion .card .card-header .card-title {
+      color: #3d362d; }
+  .accordion .card .card-body {
+    text-align: center;
+    padding: 0; }
+    .accordion .card .card-body li {
+      background: #f5deb3;
+      list-style: none;
+      border-top: solid 1px black;
+      border-bottom: 1px solid black; }
+      .accordion .card .card-body li a {
+        color: inherit; }
+  .search-name {
+    font-size: 1em; } }
 
 /**************************
 Pages Menu box basic Layout Styles
