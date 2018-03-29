@@ -125,18 +125,16 @@ div.counter {
     .container {
       margin: 0;
       max-width: 100%;
-
     }
   }
 }
 
 @include ipads-land {
   div.counter {
-      top: 0.2em;
-      left: 31em;
-    }
+    top: 0.2em;
+    left: 31em;
+  }
 }
-
 
 @include desktops-and-laptops {
   div.counter {
@@ -149,5 +147,19 @@ div.counter {
   div.counter {
     top: 5.1em;
     left: 1.1em;
+  }
+
+  #collapseOne {
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+    li {
+      list-style: none;
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+      border-right: none;
+      border-left: none;
+      padding: 0.7em;
+    }
   }
 }

@@ -6,7 +6,7 @@
     </section>
     <section class="details-items-container">
       <div class="detail-boxes special-h1"><span>{{d.name}}</span></div>
-      <div class="detail-boxes special-h1"><span>Product Ratings: {{d.rating}} <i class="fas fa-star"></i></span></div>
+      <div class="detail-boxes special-h1"><span class="rate">Product Ratings: {{d.rating}} <i class="fas fa-star"></i></span></div>
       <div class="detail-boxes special-h1"><span>Stock Number: {{d.stock}}</span></div>
       <div class="detail-boxes special-h1"><span>Price &#x20A6;{{d.price}}</span></div>
       <div class="detail-boxes special-h1"><span id="description">{{d.description}}</span></div>
@@ -15,9 +15,9 @@
               <!-- <button type="button" spinner-button="up" title="add 1">+1</button>
               <button type="button" spinner-button="down" title="subtract 1">-1</button> -->
             </div>
-      <div class="detail-boxes special-h1">
-        <a href="#" ng-disabled="{{d.stock === '0'}}" ng-click="addItemToCartFromDetailsPage(d, model.qty)" class="btn btn-primary">Add to Cart</a>
-        <a href="#" class="btn btn-primary" ng-click="goBack()" >Back</a>
+      <div class="detail-boxes special-h1 cartBtn">
+        <a href="#" ng-disabled="{{d.stock === '0'}}" ng-click="addItemToCartFromDetailsPage(d, model.qty)" class="btn btn-primary cartBtn">Add to Cart</a>
+        <a href="#" class="btn btn-primary cartBtn" ng-click="goBack()" >Back</a>
       </div>
     </section>
   </main>

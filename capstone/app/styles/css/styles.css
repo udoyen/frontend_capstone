@@ -1059,8 +1059,8 @@ div.wrapper-container.container-fluid {
   border-radius: 0; }
 
 main.product-list {
-  padding-left: 5em;
-  padding-right: 5em;
+  padding-left: 0;
+  padding-right: 0;
   padding-top: 2em; }
 
 .items-container {
@@ -1072,8 +1072,14 @@ main.product-list {
   -ms-flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
+  padding-left: 3em;
+  padding-right: 0;
   align-items: center;
   justify-content: start; }
+  .items-container .product-boxitem {
+    margin: 0.2em !important;
+    max-width: 32.33% !important;
+    min-width: 32.33% !important; }
 
 .product-page-items {
   display: -webkit-box;
@@ -1096,9 +1102,8 @@ img.card-img-top {
   height: 15em;
   object-fit: scale-down; }
 
-.card.col-md-4.product-boxitem {
-  margin: 1em !important;
-  max-width: 24em !important; }
+.card-body p a {
+  font-size: 0.8em; }
 
 .search-name {
   border: 1px solid #EE7600;
@@ -1106,6 +1111,17 @@ img.card-img-top {
   padding: 0.4em;
   text-align: center;
   background: #EE7600; }
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+  .items-container {
+    padding-left: 1em; }
+    .items-container .product-boxitem {
+      padding-left: 0.3em;
+      padding-right: 0.3em; }
+      .items-container .product-boxitem .card-body {
+        padding-left: 0.1em;
+        padding-right: 0.1em; } }
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
@@ -1156,11 +1172,12 @@ img.card-img-top {
       margin-top: 2em; }
   div.counter {
     top: 5.2em !important;
-    left: 1em !important; } }
-
-/* iPads (portrait and landscape) ----------- */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  /* Styles */ }
+    left: 1em !important; }
+  .items-container {
+    padding-left: inherit; }
+    .items-container .product-boxitem {
+      max-width: 100% !important;
+      min-width: 100% !important; } }
 
 /**************************
 Pages Menu box basic Layout Styles
@@ -1246,7 +1263,7 @@ span#description {
 .fas.fa-star {
   color: #EE7600; }
 
-span[id='description'] {
+span[id="description"] {
   height: 8em;
   text-align: center; }
 
@@ -1256,6 +1273,50 @@ input#detailsQty {
 span.qtyNoBorder {
   border: none !important;
   font-size: 1.5em; }
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 768px) {
+  .details-container .details-img-container {
+    width: 100%;
+    margin-bottom: 2em;
+    left: 0; }
+    .details-container .details-img-container section {
+      width: 100%;
+      right: 0;
+      margin-left: inherit; }
+  .details-items-container {
+    right: 0; }
+    .details-items-container .detail-boxes span.rate {
+      font-size: 0.8em; }
+  .detail-boxes {
+    padding-left: 1em;
+    padding-right: 1em; }
+    .detail-boxes .cartBtn {
+      font-size: inherit; }
+    .detail-boxes .special-h1 {
+      font-size: inherit; }
+      .detail-boxes .special-h1 .rate {
+        font-size: 0.8em; } }
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .details-container {
+    max-width: 100% !important;
+    min-width: 100% !important;
+    flex-direction: column; }
+    .details-container section {
+      max-width: 100% !important;
+      min-width: 100% !important;
+      right: 0; }
+    .details-container .details-img-container {
+      width: 100%;
+      margin-bottom: 2em;
+      left: 0; }
+  .details-items-container {
+    margin-left: inherit; }
+    .details-items-container .detail-boxes span.rate {
+      font-size: 0.8em; }
+  .detail-boxes {
+    font-size: 0.7em; } }
 
 main.shoppingcart-container {
   display: -webkit-box;
@@ -1515,9 +1576,54 @@ input#qty {
     width: 100%; } }
 
 @media only screen and (min-device-width: 481px) and (max-device-width: 768px) {
+  div.wrapper-container.container-fluid {
+    margin-right: inherit !important; }
   .payment-summary-container {
     width: 100%;
-    margin-left: auto; } }
+    margin-left: auto; }
+  aside {
+    width: 100%;
+    text-align: center; }
+  .search-header-content {
+    flex-direction: column; }
+    .search-header-content > div:first-child {
+      width: 100% !important;
+      max-width: 100%;
+      min-width: 100%;
+      margin-top: 3em; }
+      .search-header-content > div:first-child p {
+        font-size: 1em; }
+  .sort-box-container {
+    max-width: 100% !important;
+    min-width: 100% !important; }
+    .sort-box-container > label {
+      max-width: 5em;
+      min-width: 5em; }
+    .sort-box-container .sort-btn-group {
+      max-width: 24em;
+      min-width: 24em; }
+  .controlls-bar {
+    max-width: 100% !important;
+    min-width: 100% !important;
+    margin-bottom: 1em; }
+    .controlls-bar .product-count {
+      align-self: center; }
+    .controlls-bar .instock {
+      align-self: center; }
+  main.product-list {
+    min-width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important; }
+    main.product-list .items-container {
+      max-width: 100% !important;
+      min-width: 100% !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important; }
+      main.product-list .items-container .product-boxitem {
+        max-width: 45% !important;
+        min-width: 45% !important;
+        margin: 0.9em !important; } }
 
 /****************
 Footer Module
@@ -1650,7 +1756,18 @@ div.counter {
 @media only screen and (min-device-width: 481px) and (max-device-width: 768px) {
   div.counter {
     top: 5.1em;
-    left: 1.1em; } }
+    left: 1.1em; }
+  #collapseOne {
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0; }
+    #collapseOne li {
+      list-style: none;
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+      border-right: none;
+      border-left: none;
+      padding: 0.7em; } }
 
 .contact-main {
   font-size: 1.4em;
