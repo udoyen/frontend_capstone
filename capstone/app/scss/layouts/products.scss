@@ -42,7 +42,7 @@ div.wrapper-container.container-fluid {
 
 .controlls-bar {
   @include flexbox-display();
-  font-size: 1em !important;
+  font-size: 1.4em !important;
   flex-direction: row;
   @include grow(1);
   justify-content: space-evenly;
