@@ -7,7 +7,6 @@
  * # DetailsCtrl
  * Controller of the capstoneApp
  */
-// TODO: Tidy this file
 angular.module("capstoneApp").controller("DetailsCtrl", [
   "$routeParams",
   "$window",

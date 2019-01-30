@@ -7,7 +7,6 @@
  * # ProductCtrl
  * Controller of the capstoneApp
  */
-// TODO: Clean up this fle
 angular.module("capstoneApp").controller("ProductCtrl", [
   "$routeParams",
   "$window",
@@ -151,7 +150,6 @@ angular.module("capstoneApp").controller("ProductCtrl", [
     };
 
     (function(jq) {
-      // $window.alert($('.shopme').attr('id'));
 
       jq("#submenu").on("hide.bs.collapse", function() {
         jq("#shopmenu")

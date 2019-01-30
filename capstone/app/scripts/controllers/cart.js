@@ -95,7 +95,7 @@ angular.module('capstoneApp').controller('CartCtrl', [
       var sub = 0;
       for ( var i of itemObject) {
         var cal = i['quantity'] * i['price'];
-        sub += cal
+        sub += cal;
       }
       $scope.subtotal = sub;
 

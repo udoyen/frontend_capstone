@@ -1,20 +1,20 @@
 var express = require('express');
 var app = express();
 
-// Load the full build.
-var _ = require('lodash');
-// Load the core build.
-var _ = require('lodash/core');
-// Load the FP build for immutable auto-curried iteratee-first data-last methods.
-var fp = require('lodash/fp');
+// // Load the full build.
+// var _ = require('lodash');
+// // Load the core build.
+// var _ = require('lodash/core');
+// // Load the FP build for immutable auto-curried iteratee-first data-last methods.
+// var fp = require('lodash/fp');
 
-// Load method categories.
-var array = require('lodash/array');
-var object = require('lodash/fp/object');
+// // Load method categories.
+// var array = require('lodash/array');
+// var object = require('lodash/fp/object');
 
-// Cherry-pick methods for smaller browserify/rollup/webpack bundles.
-var at = require('lodash/at');
-var curryN = require('lodash/fp/curryN');
+// // Cherry-pick methods for smaller browserify/rollup/webpack bundles.
+// var at = require('lodash/at');
+// var curryN = require('lodash/fp/curryN');
 // Serve static directories
 app.use(express.static(__dirname + '/app'));
 

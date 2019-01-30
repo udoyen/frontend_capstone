@@ -3,7 +3,6 @@
  the API service
  ****************************************************/
 'use strict';
-// TODO: Clean up this file
 angular
   .module('capstoneApp')
   .service('productService', function($window, $http, $q) {
@@ -20,11 +19,7 @@ angular
       })
         .then(function successCallback(response) {
           deferred.resolve(response.data);
-          // angular.forEach(JSON.parse(response.data), function (value, key) {
-          //   this.push(key + ': ' + value);
-          // }, resultArray);
-          // console.log(resultArray);
-          // console.log(response.data);
+
           console.log(response.data);
         })
         .catch(function (e) {

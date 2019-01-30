@@ -1,5 +1,4 @@
 "use strict";
-// TODO: Tidy this page
 /**
  * @ngdoc function
  * @name capstoneApp.controller:MainCtrl
